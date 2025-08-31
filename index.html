@@ -47,6 +47,42 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
     }
+
+    /* Resume Styling */
+    .resume .resume-item {
+      padding: 15px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .resume .resume-item:last-child {
+      border-bottom: none;
+    }
+    .resume .resume-item h4 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .resume .resume-item h5 {
+      font-size: 14px;
+      font-style: italic;
+      float: right;
+      color: #555;
+    }
+    .resume .resume-item p em {
+      font-weight: 600;
+      color: #333;
+    }
+    .resume .resume-item ul {
+      margin-top: 10px;
+    }
+
+    /* Contact Section Styling */
+    .contact-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
     .form-status {
       margin-top: 15px;
       font-size: 14px;
@@ -249,33 +285,35 @@
     </section>
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="contact section light-background">
       <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
+        <h2><i class="bi bi-envelope"></i> Contact</h2>
         <p>Get in touch with me using the form below:</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <form id="contact-form" action="https://formspree.io/f/xldwnwwe" method="POST" class="php-email-form">
-          <div class="row gy-4">
-            <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+        <div class="contact-card">
+          <form id="contact-form" action="https://formspree.io/f/xldwnwwe" method="POST" class="php-email-form">
+            <div class="row gy-4">
+              <div class="col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6">
+                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+              </div>
+              <div class="col-md-12">
+                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+              </div>
+              <div class="col-md-12">
+                <textarea name="message" rows="6" class="form-control" placeholder="Message" required></textarea>
+              </div>
+              <div class="col-md-12 text-center">
+                <button type="submit" id="submit-btn">Send Message</button>
+                <div id="form-status" class="form-status"></div>
+              </div>
             </div>
-            <div class="col-md-6">
-              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-            </div>
-            <div class="col-md-12">
-              <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-            </div>
-            <div class="col-md-12">
-              <textarea name="message" rows="6" class="form-control" placeholder="Message" required></textarea>
-            </div>
-            <div class="col-md-12 text-center">
-              <button type="submit" id="submit-btn">Send Message</button>
-              <div id="form-status" class="form-status"></div>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </section>
 
