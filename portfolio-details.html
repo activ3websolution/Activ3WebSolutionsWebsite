@@ -4,9 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - Jacob Davis</title>
-  <meta content="Portfolio details of Jacob Davis" name="description">
-  <meta content="Jacob Davis, portfolio, GitHub, web development" name="keywords">
+  <title>Jacob Davis - Portfolio</title>
+  <meta content="Portfolio of Jacob Davis showcasing school and personal projects" name="description">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -26,6 +25,29 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .github-btn {
+      background-color: #24292e;
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .github-btn:hover {
+      background-color: #0366d6;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+  </style>
 </head>
 
 <body class="portfolio-details-page">
@@ -49,74 +71,33 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="index.html"><i class="bi bi-house navicon"></i> Home</a></li>
+        <li><a href="portfolio-details.html" class="active"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="service-details.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
         <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
         <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
-
   </header>
 
   <main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title dark-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Portfolio Details</li>
-          </ol>
-        </nav>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>My Portfolio</h2>
+        <p>This page highlights my school projects and personal work, including this website. I focus on blending technical development with problem-solving to create real-world value.</p>
       </div>
-    </div>
 
-    <!-- Portfolio Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
-
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper init-swiper">
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {"delay": 5000},
-                  "slidesPerView": "auto",
-                  "pagination": {"el": ".swiper-pagination","type": "bullets","clickable": true}
-                }
-              </script>
-              <div class="swiper-wrapper align-items-center">
-                <div class="swiper-slide">
-                  <img src="assets/img/github-logo.png" alt="GitHub Logo">
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-6">
+            <div class="portfolio-info text-center">
+              <h3>Explore My Work</h3>
+              <p>You can find my latest projects, contributions, and code on my GitHub profile.</p>
+              <a href="https://github.com/Activ3208" target="_blank" class="github-btn"><i class="bi bi-github"></i> Visit My GitHub</a>
             </div>
           </div>
-
-          <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project Information</h3>
-              <ul>
-                <li><strong>Category</strong>: Web Development & School Projects</li>
-                <li><strong>Project Date</strong>: 2025</li>
-                <li><strong>Project URL</strong>: <a href="https://github.com/Activ3208" target="_blank">github.com/Activ3208</a></li>
-              </ul>
-            </div>
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Highlighted Projects</h2>
-              <p>
-                My portfolio currently highlights my projects in school as well as personal projects such as this website. All of my code and ongoing work can be explored directly on my GitHub profile.
-              </p>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -136,17 +117,16 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
