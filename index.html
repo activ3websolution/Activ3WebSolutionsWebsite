@@ -25,95 +25,6 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <style>
-    .github-btn {
-      background-color: #24292e;
-      color: #ffffff;
-      border-radius: 8px;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-    .github-btn:hover {
-      background-color: #0366d6;
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Resume Styling */
-    .resume .resume-item {
-      padding: 15px 0;
-      border-bottom: 1px solid #ddd;
-    }
-    .resume .resume-item:last-child {
-      border-bottom: none;
-    }
-    .resume .resume-item h4 {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
-    .resume .resume-item h5 {
-      font-size: 14px;
-      font-style: italic;
-      float: right;
-      color: #555;
-    }
-    .resume .resume-item p em {
-      font-weight: 600;
-      color: #333;
-    }
-    .resume .resume-item ul {
-      margin-top: 10px;
-    }
-
-    /* Contact Section Styling */
-    .contact-card {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .form-status {
-      margin-top: 15px;
-      font-size: 14px;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-    .form-status.show {
-      opacity: 1;
-    }
-    .form-status.success {
-      color: green;
-    }
-    .form-status.error {
-      color: red;
-    }
-    .loading-spinner {
-      border: 2px solid #f3f3f3;
-      border-top: 2px solid #555;
-      border-radius: 50%;
-      width: 16px;
-      height: 16px;
-      animation: spin 1s linear infinite;
-      display: inline-block;
-      vertical-align: middle;
-      margin-left: 6px;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  </style>
 </head>
 
 <body class="index-page">
@@ -140,7 +51,7 @@
         <li><a href="index.html" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
         <li><a href="portfolio-details.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
         <li><a href="service-details.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="#why-us"><i class="bi bi-star navicon"></i> Why Choose Us</a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
     </nav>
@@ -159,128 +70,82 @@
       </div>
     </section>
 
-    <!-- ======= Skills Section ======= -->
+    <!-- ======= Our Expertise Section ======= -->
     <section id="skills" class="skills section light-background">
       <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>A combination of sales expertise, technical development, and soft skills that set me apart.</p>
+        <h2>Our Expertise</h2>
+        <p>We help businesses stand out online with professional web development, SEO, and marketing solutions.</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row">
           <div class="col-lg-6">
-            <h4>Sales</h4>
+            <h4>Core Services</h4>
             <ul>
-              <li>Door-to-door sales</li>
-              <li>Consultative selling</li>
-              <li>Lead generation</li>
-              <li>Client relationship building</li>
-            </ul>
-
-            <h4>Soft Skills</h4>
-            <ul>
-              <li>Communication</li>
-              <li>Resilience</li>
-              <li>Problem-solving</li>
-              <li>Adaptability</li>
-              <li>Curiosity</li>
-              <li>Self-starter mindset</li>
+              <li>Custom Website Design & Development</li>
+              <li>SEO Optimization & Ranking Strategies</li>
+              <li>Email Marketing Campaigns</li>
             </ul>
           </div>
 
           <div class="col-lg-6">
-            <h4>Technical</h4>
+            <h4>Additional Expertise</h4>
             <ul>
-              <li>HTML</li>
-              <li>C#</li>
-              <li>Python (currently learning)</li>
-              <li>Web and mobile development fundamentals</li>
-            </ul>
-
-            <h4>Tools</h4>
-            <ul>
-              <li>CRM platforms</li>
-              <li>Mobile/tablet presentation tools</li>
-              <li>Google Workspace</li>
+              <li>Analytics & Performance Tracking</li>
+              <li>Client-Focused Support</li>
+              <li>Scalable Solutions for Growth</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume section light-background">
+    <!-- ======= Why Choose Us Section ======= -->
+    <section id="why-us" class="resume section light-background">
       <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>Here’s a quick overview of my education and professional experience. You can also download my full resume below.</p>
-        <a href="assets/Jacob_Davis_Resume.pdf" download class="btn btn-primary mt-2">Download Resume</a>
+        <h2>Why Choose Us</h2>
+        <p>We deliver more than just websites — we create growth opportunities for your business.</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row">
-          <!-- Education -->
           <div class="col-lg-6">
-            <h3 class="resume-title">Education</h3>
             <div class="resume-item">
-              <h4>Undergraduate Certificate – Mobile & Web Development</h4>
-              <h5>2024 – Present</h5>
-              <p><em>DeVry University</em></p>
-              <ul>
-                <li>Courses in front-end development, UX, and responsive web design</li>
-                <li>Hands-on projects in HTML, C#, Python, and IoT</li>
-              </ul>
+              <h4>Proven Expertise</h4>
+              <p><em>Years of combined experience in web development, SEO, and digital marketing strategies.</em></p>
+            </div>
+            <div class="resume-item">
+              <h4>Results Driven</h4>
+              <p><em>Our strategies focus on measurable results — more traffic, leads, and conversions.</em></p>
             </div>
           </div>
-
-          <!-- Experience -->
           <div class="col-lg-6">
-            <h3 class="resume-title">Experience</h3>
-
             <div class="resume-item">
-              <h4>Residential Sales Representative</h4>
-              <h5>2025 – Present</h5>
-              <p><em>Maverick Windows, Lubbock, TX</em></p>
-              <ul>
-                <li>Generated $286,000 in revenue within 6 months through direct door-to-door sales</li>
-                <li>Delivered persuasive consultations by translating technical details into clear customer value</li>
-                <li>Awarded <strong>Top Rookie Sales Performer</strong></li>
-              </ul>
+              <h4>Affordable for Small Businesses</h4>
+              <p><em>We tailor solutions to your budget without compromising on quality or results.</em></p>
             </div>
-
             <div class="resume-item">
-              <h4>Sales Representative</h4>
-              <h5>2024</h5>
-              <p><em>Vexus Fiber, Lubbock, TX</em></p>
-              <ul>
-                <li>Sold fiber internet and landline services in a high-volume environment</li>
-                <li>Strengthened ability to explain and position technical services to non-technical audiences</li>
-              </ul>
-            </div>
-
-            <div class="resume-item">
-              <h4>Sales Representative</h4>
-              <h5>Summer 2023</h5>
-              <p><em>Hawx Smart Pest Control, Austin, TX</em></p>
-              <ul>
-                <li>Generated $34,000 in serviced revenue in just 2 months at age 17</li>
-                <li>Recognized with the <strong>Summer Sales Achievement Award</strong></li>
-              </ul>
+              <h4>Dedicated Support</h4>
+              <p><em>We work closely with our clients, ensuring every project aligns with their goals.</em></p>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Awards -->
-        <div class="row mt-4">
-          <div class="col-lg-12">
-            <h3 class="resume-title">Awards</h3>
-            <div class="resume-item">
-              <ul>
-                <li><strong>Top Rookie Sales Performer</strong> – Maverick Windows</li>
-                <li><strong>Summer Sales Achievement Award</strong> – Hawx Smart Pest Control</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <!-- ======= Client Success Stories Section ======= -->
+    <section id="success" class="resume section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Client Success Stories</h2>
+        <p>Real results from businesses that chose Activ3 Web Solutions.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <ul>
+          <li><strong>Local Retailer</strong> – Boosted website traffic by 200% in 3 months.</li>
+          <li><strong>Startup Company</strong> – Achieved 40% email open rates with targeted campaigns.</li>
+          <li><strong>Service Business</strong> – Increased lead generation by 150% through SEO improvements.</li>
+        </ul>
       </div>
     </section>
 
@@ -288,7 +153,7 @@
     <section id="contact" class="contact section light-background">
       <div class="container section-title" data-aos="fade-up">
         <h2><i class="bi bi-envelope"></i> Contact</h2>
-        <p>Get in touch with me using the form below:</p>
+        <p>Get in touch with us using the form below:</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -341,49 +206,5 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
-  <!-- Contact Form Script -->
-  <script>
-    const form = document.getElementById('contact-form');
-    const statusDiv = document.getElementById('form-status');
-    const submitBtn = document.getElementById('submit-btn');
-
-    function showStatus(message, type) {
-      statusDiv.textContent = message;
-      statusDiv.className = `form-status ${type} show`;
-      setTimeout(() => {
-        statusDiv.classList.remove('show');
-      }, 5000);
-    }
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-
-      const originalText = submitBtn.textContent;
-      submitBtn.innerHTML = 'Sending... <span class="loading-spinner"></span>';
-      submitBtn.disabled = true;
-
-      try {
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        if (response.ok) {
-          showStatus('✅ Your message has been sent!', 'success');
-          form.reset();
-        } else {
-          showStatus('❌ Oops! Something went wrong. Please try again.', 'error');
-        }
-      } catch (error) {
-        showStatus('❌ Network error. Please try again later.', 'error');
-      } finally {
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-      }
-    });
-  </script>
-
 </body>
 </html>
