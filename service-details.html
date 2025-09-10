@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Activ3 Web Solutions - Services</title>
-  <meta content="Helping businesses grow their online presence" name="description">
+  <meta content="Detailed overview of services provided by Activ3 Web Solutions including website design, SEO, and marketing." name="description">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -26,7 +27,7 @@
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="service-details-page">
 
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
@@ -42,7 +43,7 @@
     <div class="social-links text-center">
       <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
       <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
-      <!-- Updated GitHub -->
+      <!-- ✅ Updated GitHub -->
       <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
     </div>
 
@@ -51,43 +52,63 @@
         <li><a href="index.html"><i class="bi bi-house navicon"></i> Home</a></li>
         <li><a href="portfolio-details.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
         <li><a href="service-details.html" class="active"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li><a href="#why-us"><i class="bi bi-star navicon"></i> Why Choose Us</a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
         <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-        <!-- Schedule link -->
-        <li><a class="schedule-link"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
+        <!-- ✅ New Schedule link -->
+        <li><a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="main">
-    <section class="section light-background">
-      <div class="container" data-aos="fade-up">
-        <h2>Our Services</h2>
-        <p>Helping businesses grow their online presence</p>
 
-        <!-- Buttons -->
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <img src="assets/img/hero-bg.jpg" alt="Background" data-aos="fade-in">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>Our Services</h2>
+        <p>Helping businesses grow with websites, SEO, and marketing solutions</p>
+        <!-- ✅ Buttons -->
         <div class="mt-3">
-          <a class="btn btn-primary schedule-link me-2">Schedule a Call</a>
-          <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#auditModal">Free Audit</button>
+          <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary me-2">Schedule a Call</a>
+          <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#auditModal">Free Audit</button>
         </div>
       </div>
     </section>
 
-    <section class="section light-background">
-      <div class="container" data-aos="fade-up">
-        <h3>What We Offer</h3>
-        <p>Activ3 Web Solutions specializes in creating powerful websites, boosting search visibility, and driving customer engagement through email marketing.</p>
+    <!-- Service Details Section -->
+    <section id="services" class="services section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>What We Offer</h2>
+        <p>Our services are tailored to meet the needs of small businesses, startups, and growing brands. We focus on solutions that deliver measurable results.</p>
+      </div>
 
-        <h4>Web Design &amp; Development</h4>
-        <p>We build modern, responsive websites that are optimized for performance, user experience, and conversions.</p>
-
-        <h4>SEO Optimization</h4>
-        <p>Our SEO strategies improve your rankings, increase organic traffic, and ensure your business is found by the right audience.</p>
-
-        <h4>Email Marketing</h4>
-        <p>We design and automate email campaigns that build relationships, nurture leads, and boost customer retention.</p>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <div class="service-box">
+              <h4>Website Design & Development</h4>
+              <p>Custom, responsive websites built to reflect your brand and optimized for user experience.</p>
+            </div>
+            <div class="service-box">
+              <h4>SEO Optimization</h4>
+              <p>Improve search engine rankings and drive more organic traffic to your website with proven SEO techniques.</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="service-box">
+              <h4>Email Marketing</h4>
+              <p>Engage customers and increase conversions with targeted, automated email campaigns that deliver results.</p>
+            </div>
+            <div class="service-box">
+              <h4>Analytics & Reporting</h4>
+              <p>Data-driven insights into how your website and marketing campaigns perform, with actionable recommendations for growth.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
@@ -145,27 +166,13 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Calendly wiring: change CALENDLY_URL value if your page is different -->
+  <!-- ✅ Calendly redirect -->
   <script>
-    var CALENDLY_URL = "https://calendly.com/activ3websolution";
-
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.schedule-link').forEach(function (a) {
-        a.setAttribute('href', CALENDLY_URL);
-        a.setAttribute('target', '_blank');
-        a.classList.add('text-decoration-none');
-      });
-
-      var auditForm = document.getElementById('auditForm');
-      if (auditForm) {
-        auditForm.addEventListener('submit', function (e) {
-          e.preventDefault();
-          window.open(CALENDLY_URL, "_blank");
-          var modalEl = document.getElementById('auditModal');
-          var modalInst = bootstrap.Modal.getInstance(modalEl);
-          if (modalInst) modalInst.hide();
-        });
-      }
+    document.getElementById('auditForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      window.open("https://calendly.com/jacobdavis-activ3websolutions/30min", "_blank");
+      var modal = bootstrap.Modal.getInstance(document.getElementById('auditModal'));
+      modal.hide();
     });
   </script>
 </body>
