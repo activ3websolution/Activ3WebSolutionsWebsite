@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Activ3 Web Solutions - Portfolio</title>
-  <meta content="Showcasing websites, SEO, and digital marketing projects" name="description">
+  <meta content="Portfolio of Activ3 Web Solutions showcasing client websites, SEO projects, and digital marketing work." name="description">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -24,9 +25,32 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .github-btn {
+      background-color: #24292e;
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .github-btn:hover {
+      background-color: #0366d6;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+  </style>
 </head>
 
-<body>
+<body class="portfolio-details-page">
 
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
@@ -42,7 +66,7 @@
     <div class="social-links text-center">
       <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
       <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
-      <!-- Updated GitHub -->
+      <!-- ✅ Updated GitHub -->
       <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
     </div>
 
@@ -51,40 +75,51 @@
         <li><a href="index.html"><i class="bi bi-house navicon"></i> Home</a></li>
         <li><a href="portfolio-details.html" class="active"><i class="bi bi-images navicon"></i> Portfolio</a></li>
         <li><a href="service-details.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li><a href="#why-us"><i class="bi bi-star navicon"></i> Why Choose Us</a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
         <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-        <!-- Schedule link (uses JS variable below) -->
-        <li><a class="schedule-link"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
+        <!-- ✅ New Schedule link -->
+        <li><a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="main">
-    <!-- Page hero / intro -->
-    <section class="section light-background">
-      <div class="container" data-aos="fade-up">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <img src="assets/img/hero-bg.jpg" alt="Background" data-aos="fade-in">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Our Portfolio</h2>
         <p>Showcasing websites, SEO, and digital marketing projects</p>
-
-        <!-- Buttons -->
+        <!-- ✅ Buttons -->
         <div class="mt-3">
-          <a class="btn btn-primary schedule-link me-2">Schedule a Call</a>
-          <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#auditModal">Free Audit</button>
+          <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary me-2">Schedule a Call</a>
+          <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#auditModal">Free Audit</button>
         </div>
       </div>
     </section>
 
-    <!-- Project highlights (kept from your repo) -->
-    <section class="section light-background">
-      <div class="container" data-aos="fade-up">
-        <h3>Project Highlights</h3>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Project Highlights</h2>
         <p>This page highlights the work of Activ3 Web Solutions, including website builds, SEO campaigns, and marketing projects. We focus on blending design, performance, and strategy to deliver measurable results.</p>
+      </div>
 
-        <h4>Explore Our Work</h4>
-        <p>Check out recent projects, contributions, and code samples on our GitHub profile.</p>
-        <p><a href="https://github.com/activ3websolution" target="_blank">Visit Our GitHub</a></p>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-6">
+            <div class="portfolio-info text-center">
+              <h3>Explore Our Work</h3>
+              <p>Check out recent projects, contributions, and code samples on our GitHub profile.</p>
+              <!-- ✅ Updated GitHub -->
+              <a href="https://github.com/activ3websolution" target="_blank" class="github-btn"><i class="bi bi-github"></i> Visit Our GitHub</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
@@ -98,7 +133,7 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
 
-  <!-- ======= Free Audit Modal (same markup as index) ======= -->
+  <!-- ======= Free Audit Modal ======= -->
   <div class="modal fade" id="auditModal" tabindex="-1" aria-labelledby="auditModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -142,31 +177,13 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Calendly wiring: change CALENDLY_URL value if your page is different -->
+  <!-- ✅ Calendly redirect -->
   <script>
-    // Put your working Calendly share link here:
-    // I set a best-guess value — change this if your Calendly username is different.
-    var CALENDLY_URL = "https://calendly.com/activ3websolution";
-
-    document.addEventListener('DOMContentLoaded', function () {
-      // Set all anchors with class "schedule-link" to open your Calendly page.
-      document.querySelectorAll('.schedule-link').forEach(function (a) {
-        a.setAttribute('href', CALENDLY_URL);
-        a.setAttribute('target', '_blank');
-        a.classList.add('text-decoration-none');
-      });
-
-      // Redirect the audit form to Calendly on submit (open in new tab)
-      var auditForm = document.getElementById('auditForm');
-      if (auditForm) {
-        auditForm.addEventListener('submit', function (e) {
-          e.preventDefault();
-          window.open(CALENDLY_URL, "_blank");
-          var modalEl = document.getElementById('auditModal');
-          var modalInst = bootstrap.Modal.getInstance(modalEl);
-          if (modalInst) modalInst.hide();
-        });
-      }
+    document.getElementById('auditForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      window.open("https://calendly.com/jacobdavis-activ3websolutions/30min", "_blank");
+      var modal = bootstrap.Modal.getInstance(document.getElementById('auditModal'));
+      modal.hide();
     });
   </script>
 </body>
