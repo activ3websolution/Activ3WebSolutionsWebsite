@@ -1,70 +1,61 @@
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+--default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+--heading-font: "Raleway", sans-serif;
+--nav-font: "Poppins", sans-serif;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff;
-  --default-color: #272829;
-  --heading-color: #050d18;
-  --accent-color: #149ddd;
-  --surface-color: #ffffff;
-  --contrast-color: #ffffff;
-}
 
 :root {
-  --nav-color: #a8a9b4;
-  --nav-hover-color: #ffffff;
-  --nav-mobile-background-color: #040b14;
-  --nav-dropdown-background-color: #040b14;
-  --nav-dropdown-color: #a8a9b4;
-  --nav-dropdown-hover-color: #ffffff;
+--background-color: #ffffff;
+--default-color: #272829;
+--heading-color: #050d18;
+--accent-color: #149ddd; /* Theme blue */
+--surface-color: #ffffff;
+--contrast-color: #ffffff;
 }
 
-.light-background {
-  --background-color: #f4fafd;
-  --surface-color: #ffffff;
-}
-
-.dark-background {
-  --background-color: #040b14;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --surface-color: #151f2b;
-  --contrast-color: #ffffff;
-}
 
 :root {
-  scroll-behavior: smooth;
+--nav-color: #a8a9b4;
+--nav-hover-color: #ffffff;
+--nav-mobile-background-color: #040b14;
+--nav-dropdown-background-color: #040b14;
+--nav-dropdown-color: #a8a9b4;
+--nav-dropdown-hover-color: #ffffff;
 }
+
+
+.light-background { --background-color: #f4fafd; --surface-color: #ffffff; }
+.dark-background { --background-color: #040b14; --default-color: #ffffff; --heading-color: #ffffff; --surface-color: #151f2b; --contrast-color: #ffffff; }
+
+
+:root { scroll-behavior: smooth; }
+
 
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
-body {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  font-family: var(--default-font);
-}
+body { color: var(--default-color); background-color: var(--background-color); font-family: var(--default-font); }
+a { color: var(--accent-color); text-decoration: none; transition: 0.3s; }
+a:hover { color: color-mix(in srgb, var(--accent-color), transparent 25%); text-decoration: none; }
+h1, h2, h3, h4, h5, h6 { color: var(--heading-color); font-family: var(--heading-font); }
 
-a {
-  color: var(--accent-color);
-  text-decoration: none;
-  transition: 0.3s;
-}
 
-a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
-  text-decoration: none;
-}
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header { color: var(--default-color); background-color: var(--background-color); position: fixed; top: 0; left: 0; bottom: 0; padding: 0 15px; width: 300px; transition: all ease-in-out 0.3s; overflow-y: auto; z-index: 997; border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); }
 
-h1, h2, h3, h4, h5, h6 {
-  color: var(--heading-color);
-  font-family: var(--heading-font);
-}
 
+.header .profile-img img {
+margin: 15px auto;
+display: block;
+width: 120px;
+height: 120px;
+object-fit: contain;
+border-radius: 50%;
+border: 3px solid var(--accent-color); /* thinner + theme blue */
+}
 /* PHP Email Form Messages */
 .php-email-form .error-message {
   display: none;
