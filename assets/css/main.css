@@ -6,25 +6,22 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #050d18; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #149ddd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --background-color: #ffffff;
+  --default-color: #272829;
+  --heading-color: #050d18;
+  --accent-color: #149ddd;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
 }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #a8a9b4;  /* The default color of the main navmenu links */
-  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #040b14; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #040b14; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #a8a9b4; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #ffffff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #a8a9b4;
+  --nav-hover-color: #ffffff;
+  --nav-mobile-background-color: #040b14;
+  --nav-dropdown-background-color: #040b14;
+  --nav-dropdown-color: #a8a9b4;
+  --nav-dropdown-hover-color: #ffffff;
 }
-
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
   --background-color: #f4fafd;
@@ -39,7 +36,6 @@
   --contrast-color: #ffffff;
 }
 
-/* Smooth scroll */
 :root {
   scroll-behavior: smooth;
 }
@@ -64,18 +60,12 @@ a:hover {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
 }
 
-/* PHP Email Form Messages
-------------------------------*/
+/* PHP Email Form Messages */
 .php-email-form .error-message {
   display: none;
   background: #df1529;
@@ -117,13 +107,8 @@ h6 {
 }
 
 @keyframes php-email-form-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /*--------------------------------------------------------------
@@ -147,34 +132,18 @@ h6 {
 .header .profile-img img {
   margin: 15px auto;
   display: block;
-  width: 120px;        /* control width */
-  height: 120px;       /* force square */
-  object-fit: contain; /* keep full logo visible */
-  border-radius: 50%;  /* ensure circular */
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 50%;
   border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
-.header .logo {
-  line-height: 1;
-  margin-bottom: 15px;
-}
+.header .logo { line-height: 1; margin-bottom: 15px; }
+.header .logo img { max-height: 32px; margin-right: 8px; }
+.header .logo h1 { font-size: 24px; margin: 0; font-weight: 700; color: var(--heading-color); }
 
-.header .logo img {
-  max-height: 32px;
-  margin-right: 8px;
-}
-
-.header .logo h1 {
-  font-size: 24px;
-  margin: 0;
-  font-weight: 700;
-  color: var(--heading-color);
-}
-
-.header .social-links {
-  margin: 0 0 20px 0;
-}
-
+.header .social-links { margin: 0 0 20px 0; }
 .header .social-links a {
   font-size: 16px;
   display: inline-flex;
@@ -189,29 +158,13 @@ h6 {
   height: 40px;
   transition: 0.3s;
 }
-
-.header .social-links a:hover {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-}
+.header .social-links a:hover { color: var(--contrast-color); background: var(--accent-color); }
 
 @media (min-width: 1200px) {
-
-  .header~main,
-  .header~#footer {
-    margin-left: 300px;
-  }
+  .header~main, .header~#footer { margin-left: 300px; }
 }
-
-@media (max-width: 1199px) {
-  .header {
-    left: -100%;
-  }
-}
-
-.header.header-show {
-  left: 0;
-}
+@media (max-width: 1199px) { .header { left: -100%; } }
+.header.header-show { left: 0; }
 
 .header .header-toggle {
   color: var(--contrast-color);
@@ -230,32 +183,17 @@ h6 {
   z-index: 9999;
   transition: background-color 0.3s;
 }
-
-.header .header-toggle:hover {
-  color: var(--contrast-color);
-  background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
-}
+.header .header-toggle:hover { color: var(--contrast-color); background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%); }
 
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-.mobile-nav-toggle {
-  display: none;
-}
+.mobile-nav-toggle { display: none; }
 
-.navmenu {
-  padding: 0;
-  z-index: 9997;
-}
+.navmenu { padding: 0; z-index: 9997; }
+.navmenu ul { list-style: none; padding: 0 0 20px 0; margin: 0; }
 
-.navmenu ul {
-  list-style: none;
-  padding: 0 0 20px 0;
-  margin: 0;
-}
-
-.navmenu a,
-.navmenu a:focus {
+.navmenu a, .navmenu a:focus {
   color: var(--nav-color);
   padding: 15px 10px;
   font-family: var(--nav-font);
@@ -268,16 +206,10 @@ h6 {
   width: 100%;
 }
 
-.navmenu a .navicon,
-.navmenu a:focus .navicon {
-  font-size: 20px;
-  margin-right: 10px;
-}
+.navmenu a .navicon, .navmenu a:focus .navicon { font-size: 20px; margin-right: 10px; }
 
-.navmenu a .toggle-dropdown,
-.navmenu a:focus .toggle-dropdown {
+.navmenu a .toggle-dropdown, .navmenu a:focus .toggle-dropdown {
   font-size: 12px;
-  line-height: 0;
   margin-left: auto;
   width: 30px;
   height: 30px;
@@ -286,49 +218,22 @@ h6 {
   justify-content: center;
   border-radius: 50%;
   transition: 0.3s;
-  flex-shrink: 0;
   background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
 }
 
-.navmenu a .toggle-dropdown:hover,
-.navmenu a:focus .toggle-dropdown:hover {
+.navmenu a .toggle-dropdown:hover, .navmenu a:focus .toggle-dropdown:hover {
   background-color: var(--accent-color);
   color: var(--contrast-color);
 }
 
-.navmenu a:hover,
-.navmenu .active,
-.navmenu .active:focus {
-  color: var(--nav-hover-color);
-}
+.navmenu a:hover, .navmenu .active, .navmenu .active:focus { color: var(--nav-hover-color); }
+.navmenu a:hover .navicon, .navmenu .active .navicon { color: var(--accent-color); }
+.navmenu .active .toggle-dropdown { background-color: var(--accent-color); color: var(--contrast-color); transform: rotate(180deg); }
 
-.navmenu a:hover .navicon,
-.navmenu .active .navicon,
-.navmenu .active:focus .navicon {
-  color: var(--accent-color);
-}
+.navmenu .dropdown { display: block; }
 
-.navmenu .active .toggle-dropdown,
-.navmenu .active:focus .toggle-dropdown {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  transform: rotate(180deg);
-}
-
-.navmenu .dropdown {
-  display: block;
-}
-
-.navmenu .dropdown a,
-.navmenu .dropdown a:focus {
-  color: --nav-dropdown-color;
-}
-
-.navmenu .dropdown a:hover,
-.navmenu .dropdown .active,
-.navmenu .dropdown .active:focus {
-  color: var(--nav-dropdown-hover-color);
-}
+.navmenu .dropdown a, .navmenu .dropdown a:focus { color: --nav-dropdown-color; }
+.navmenu .dropdown a:hover, .navmenu .dropdown .active { color: var(--nav-dropdown-hover-color); }
 
 .navmenu .dropdown ul {
   position: static;
@@ -338,18 +243,10 @@ h6 {
   margin: 5px 10px;
   background-color: var(--nav-dropdown-background-color);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  box-shadow: none;
   transition: all 0.5s ease-in-out;
 }
-
-.navmenu .dropdown ul ul {
-  background-color: rgba(33, 37, 41, 0.1);
-}
-
-.navmenu .dropdown>.dropdown-active {
-  display: block;
-  background-color: rgba(33, 37, 41, 0.03);
-}
+.navmenu .dropdown ul ul { background-color: rgba(33, 37, 41, 0.1); }
+.navmenu .dropdown>.dropdown-active { display: block; background-color: rgba(33, 37, 41, 0.03); }
 
 /*--------------------------------------------------------------
 # Global Footer
@@ -362,16 +259,8 @@ h6 {
   position: relative;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
-
-.footer .copyright p {
-  margin-bottom: 0;
-}
-
-.footer .credits {
-  margin-top: 4px;
-  font-size: 13px;
-  text-align: center;
-}
+.footer .copyright p { margin-bottom: 0; }
+.footer .credits { margin-top: 4px; font-size: 13px; text-align: center; }
 
 /*--------------------------------------------------------------
 # Preloader
@@ -384,7 +273,6 @@ h6 {
   background: var(--background-color);
   transition: all 0.6s ease-out;
 }
-
 #preloader:before {
   content: "";
   position: fixed;
@@ -397,16 +285,7 @@ h6 {
   height: 60px;
   animation: animate-preloader 1.5s linear infinite;
 }
-
-@keyframes animate-preloader {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
+@keyframes animate-preloader { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }
 
 /*--------------------------------------------------------------
 # Scroll Top Button
@@ -424,127 +303,74 @@ h6 {
   border-radius: 50px;
   transition: all 0.4s;
 }
-
-.scroll-top i {
-  font-size: 24px;
-  color: var(--contrast-color);
-  line-height: 0;
-}
-
-.scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  color: var(--contrast-color);
-}
-
-.scroll-top.active {
-  visibility: visible;
-  opacity: 1;
-  bottom: 15px;
-}
+.scroll-top i { font-size: 24px; color: var(--contrast-color); }
+.scroll-top:hover { background-color: color-mix(in srgb, var(--accent-color), transparent 20%); color: var(--contrast-color); }
+.scroll-top.active { visibility: visible; opacity: 1; bottom: 15px; }
 
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
-  [data-aos-delay] {
-    transition-delay: 0 !important;
-  }
-}
+@media screen and (max-width: 768px) { [data-aos-delay] { transition-delay: 0 !important; } }
 
 /*--------------------------------------------------------------
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
-.page-title {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  padding: 25px 0;
-  position: relative;
-}
-
-.page-title h1 {
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.page-title .breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.page-title .breadcrumbs ol li+li {
-  padding-left: 10px;
-}
-
-.page-title .breadcrumbs ol li+li::before {
-  content: "/";
-  display: inline-block;
-  padding-right: 10px;
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
+.page-title { color: var(--default-color); background-color: var(--background-color); padding: 25px 0; position: relative; }
+.page-title h1 { font-size: 24px; font-weight: 700; }
+.page-title .breadcrumbs ol { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; font-size: 14px; font-weight: 400; }
+.page-title .breadcrumbs ol li+li { padding-left: 10px; }
+.page-title .breadcrumbs ol li+li::before { content: "/"; padding-right: 10px; color: color-mix(in srgb, var(--default-color), transparent 70%); }
 
 /*--------------------------------------------------------------
 # Global Sections
 --------------------------------------------------------------*/
-section,
-.section {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  padding: 60px 0;
-  overflow: clip;
-}
+section, .section { color: var(--default-color); background-color: var(--background-color); padding: 60px 0; overflow: clip; }
 
 /*--------------------------------------------------------------
 # Global Section Titles
 --------------------------------------------------------------*/
-.section-title {
-  padding-bottom: 60px;
-  position: relative;
-}
-
-.section-title h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  position: relative;
-}
-
-.section-title h2:after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: var(--accent-color);
-  left: 0;
-  bottom: 0;
-}
-
-.section-title p {
-  margin-bottom: 0;
-}
+.section-title { padding-bottom: 60px; position: relative; }
+.section-title h2 { font-size: 32px; font-weight: 700; margin-bottom: 20px; padding-bottom: 20px; position: relative; }
+.section-title h2:after { content: ""; width: 50px; height: 3px; background: var(--accent-color); position: absolute; left: 0; bottom: 0; }
+.section-title p { margin-bottom: 0; }
 
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.hero {
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-  padding: 80px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+.hero { width: 100%; min-height: 100vh; position: relative; padding: 80px 0; display: flex; align-items: center; justify-content: center; }
+.hero img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+.hero:before { content: ""; background: color-mix(in srgb, var(--background-color), transparent 70%); position: absolute; inset: 0; z-index: 2; }
+.hero .container { position: relative; z-index: 3; }
+.hero h2 { margin: 0; font-size: 64px; font-weight: 700; }
+.hero p { margin: 5px 0 0 0; font-size: 26px; }
+.hero p span { letter-spacing: 1px; border-bottom: 2px solid var(--accent-color); }
+.hero .social-links { margin-top: 25px; }
+.hero .social-links a { font-size: 24px; display: inline-block; color: color-mix(in srgb, var(--default-color), transparent 50%); margin-right: 20px; transition: 0.3s; }
+.hero .social-links a:hover { color: var(--accent-color); }
+@media (max-width: 768px) { .hero h2 { font-size: 32px; } .hero p { font-size: 20px; } }
 
-.hero img {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about .content h2 { font-weight: 700; font-size: 24px; }
+.about .content ul { list-style: none; padding: 0; }
+.about .content ul li { margin-bottom: 20px; display: flex; align-items: center; }
+.about .content ul strong { margin-right: 10px; }
+.about .content ul i { font-size: 16px; margin-right: 5px; color: var(--accent-color); }
+
+/*--------------------------------------------------------------
+# Stats Section
+--------------------------------------------------------------*/
+.stats .stats-item { padding: 30px; width: 100%; }
+.stats .stats-item i { color: var(--accent-color); font-size: 44px; float: left; }
+.stats .stats-item .purecounter { color: var(--heading-color); font-size: 48px; line-height: 40px; font-weight: 700; margin-left: 60px; }
+.stats .stats-item p { color: color-mix(in srgb, var(--default-color), transparent 40%); margin: 0 0 0 60px; font-family: var(--heading-font); font-size: 14px; padding: 15px 0 0; }
+
+/*--------------------------------------------------------------
+# Skills Section
+--------------------------------------------------------------*/
+.skills .progress { height: 60px; display: block; background: none; border-radius: 0; }
+.skills .progress .skill { color: var(--heading-color); margin: 0 0 6px 0; text-transform: uppercase; font-weight: 600; font-family: var(--heading-font); }
+.skills .progress .skill .val { float: right; font-style: normal; }
+.skills .progress-bar-wrap { background: color-mix(in srgb, var(--default-color), transparent 90%); height: 10px; }
+.skills .progress-bar { width: 1
