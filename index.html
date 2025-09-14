@@ -256,6 +256,59 @@
       var auditModal = bootstrap.Modal.getInstance(document.getElementById('auditModal'));
       auditModal.hide();
     });
+
+    // ✅ Formspree Form Handling
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contact-form');
+      
+      if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          const submitBtn = document.getElementById('submit-btn');
+          const formStatus = document.getElementById('form-status');
+          
+          // Disable button to prevent multiple submissions
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+          
+          // Clear previous status messages
+          formStatus.className = 'form-status';
+          formStatus.textContent = '';
+          
+          try {
+            const response = await fetch(this.action, {
+              method: 'POST',
+              body: new FormData(this),
+              headers: {
+                'Accept': 'application/json'
+              }
+            });
+            
+            if (response.ok) {
+              formStatus.className = 'form-status success';
+              formStatus.innerHTML = '<i class="bi bi-check-circle"></i> Your message has been sent successfully!';
+              contactForm.reset();
+            } else {
+              const errorData = await response.json();
+              formStatus.className = 'form-status error';
+              
+              if (errorData.errors) {
+                formStatus.textContent = errorData.errors.map(error => error.message).join(', ');
+              } else {
+                formStatus.textContent = 'Oops! There was a problem submitting your form.';
+              }
+            }
+          } catch (error) {
+            formStatus.className = 'form-status error';
+            formStatus.textContent = 'Oops! There was a problem submitting your form.';
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+          }
+        });
+      }
+    });
   </script>
 </body>
 </html>
