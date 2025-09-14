@@ -1,42 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Add this right after the opening <header> tag -->
-<i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-<div class="mobile-nav-backdrop"></div>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Activ3 Web Solutions - Websites, SEO & Email Marketing</title>
   <meta content="Activ3 Web Solutions provides website design, SEO optimization, and email marketing services to help businesses grow online." name="description">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #2c6bed;
+      --secondary-color: #1e3a8a;
+      --dark-color: #1a1a1a;
+      --light-color: #f8f9fa;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .dark-background {
+      background-color: var(--dark-color);
+      color: white;
+    }
+    
+    .light-background {
+      background-color: var(--light-color);
+      color: var(--dark-color);
+    }
+    
+    /* Header & Navigation */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 280px;
+      height: 100vh;
+      padding: 20px;
+      z-index: 999;
+      transition: all 0.3s ease;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+    
+    .profile-img {
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    .profile-img img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border: 4px solid var(--primary-color);
+    }
+    
+    .logo {
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+    
+    .sitename {
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      margin: 0;
+    }
+    
+    .social-links {
+      margin-bottom: 30px;
+    }
+    
+    .social-links a {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      text-align: center;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background: var(--primary-color);
+      transform: translateY(-3px);
+    }
+    
+    .navmenu {
+      padding: 0;
+      margin: 0;
+    }
+    
+    .navmenu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .navmenu li {
+      margin-bottom: 10px;
+    }
+    
+    .navmenu a {
+      display: flex;
+      align-items: center;
+      padding: 12px 15px;
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .navmenu a:hover,
+    .navmenu a.active {
+      background: var(--primary-color);
+      color: white;
+    }
+    
+    .navicon {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+    
+    /* Main Content */
+    .main {
+      margin-left: 280px;
+      transition: all 0.3s ease;
+    }
+    
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    
+    .hero img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+      z-index: -1;
+    }
+    
+    .hero h2 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+    
+    /* Sections */
+    .section {
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--primary-color);
+    }
+    
+    /* Skills Section */
+    .skills ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .skills li {
+      padding: 8px 0;
+      position: relative;
+      padding-left: 25px;
+    }
+    
+    .skills li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+    
+    /* Resume Section */
+    .resume-item {
+      padding: 20px;
+      margin-bottom: 20px;
+      border-left: 2px solid var(--primary-color);
+      background: white;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 0 5px 5px 0;
+    }
+    
+    /* Contact Form */
+    .contact-card {
+      background: white;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-control {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(44, 107, 237, 0.2);
+    }
+    
+    #submit-btn {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    #submit-btn:hover {
+      background: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+    
+    /* Footer */
+    .footer {
+      padding: 30px 0;
+      text-align: center;
+    }
+    
+    /* Scroll Top Button */
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+    
+    .scroll-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* Mobile Styles */
+    @media (max-width: 1199.98px) {
+      .header {
+        left: -280px;
+        width: 280px;
+      }
+      
+      .header.mobile-active {
+        left: 0;
+      }
+      
+      .header-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        color: white;
+        background: var(--primary-color);
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+      }
+      
+      .main {
+        margin-left: 0;
+      }
+      
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
 
 <body class="index-page">
 
   <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <i class="header-toggle bi bi-list"></i>
 
     <div class="profile-img">
-      <img src="assets/img/my-profile-img.png" alt="Activ3 Web Solutions" class="img-fluid rounded-circle">
+      <img src="https://placehold.co/200x200/2c6bed/FFFFFF?text=AW" alt="Activ3 Web Solutions" class="img-fluid rounded-circle">
     </div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
@@ -65,11 +385,11 @@
 
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="hero section dark-background">
-      <img src="assets/img/hero-bg.jpg" alt="Background" data-aos="fade-in">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <img src="https://placehold.co/1920x1080/000000/FFFFFF?text=Hero+Background" alt="Background">
+      <div class="container">
         <h2>Activ3 Web Solutions</h2>
         <p>
-          <span class="typed" data-typed-items="Websites, SEO, Email Marketing"></span>
+          <span class="typed">Websites, SEO, Email Marketing</span>
         </p>
         <div class="mt-3">
           <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary me-2">Schedule a Call</a>
@@ -80,11 +400,11 @@
 
     <!-- ======= Our Expertise Section ======= -->
     <section id="skills" class="skills section light-background">
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title">
         <h2>Our Expertise</h2>
         <p>We help businesses stand out online with professional web development, SEO, and marketing solutions.</p>
       </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
         <div class="row">
           <div class="col-lg-6">
             <h4>Core Services</h4>
@@ -108,11 +428,11 @@
 
     <!-- ======= Why Choose Us Section ======= -->
     <section id="why-us" class="resume section light-background">
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title">
         <h2>Why Choose Us</h2>
         <p>We deliver more than just websites — we create growth opportunities for your business.</p>
       </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
         <div class="row">
           <div class="col-lg-6">
             <div class="resume-item">
@@ -140,11 +460,11 @@
 
     <!-- ======= Client Success Stories Section ======= -->
     <section id="success" class="resume section light-background">
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title">
         <h2>Client Success Stories</h2>
         <p>Real results from businesses that chose Activ3 Web Solutions.</p>
       </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
         <ul>
           <li><strong>Local Retailer</strong> – Boosted website traffic by 200% in 3 months.</li>
           <li><strong>Startup Company</strong> – Achieved 40% email open rates with targeted campaigns.</li>
@@ -155,12 +475,12 @@
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact section light-background">
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title">
         <h2><i class="bi bi-envelope"></i> Contact</h2>
         <p>Get in touch with us using the form below:</p>
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
         <div class="contact-card">
           <form id="contact-form" action="https://formspree.io/f/movnzapb" method="POST">
             <div class="row gy-4">
@@ -199,7 +519,6 @@
   </footer>
 
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <div id="preloader"></div>
 
   <!-- ======= Free Audit Modal ======= -->
   <div class="modal fade" id="auditModal" tabindex="-1" aria-labelledby="auditModalLabel" aria-hidden="true">
@@ -233,48 +552,78 @@
     </div>
   </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <!-- NOTE: validate.js REMOVED to prevent conflict -->
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-  <!-- Simplified, Robust Custom JS -->
+  <!-- Bootstrap & jQuery JS -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  
   <script>
-    // ✅ Free Audit Form - Simple Calendly Redirect
+    // Mobile menu toggle functionality
     document.addEventListener('DOMContentLoaded', function() {
-        // Handle the Free Audit modal form
-        const auditForm = document.getElementById('auditForm');
-        if (auditForm) {
-            auditForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                window.open("https://calendly.com/jacobdavis-activ3websolutions/30min", "_blank");
-                // Hide the modal using Bootstrap's native method
-                const auditModal = bootstrap.Modal.getInstance(document.getElementById('auditModal'));
-                if (auditModal) auditModal.hide();
-            });
-        }
+      const header = document.getElementById('header');
+      const headerToggle = document.querySelector('.header-toggle');
+      
+      // Toggle mobile menu
+      if (headerToggle) {
+        headerToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          header.classList.toggle('mobile-active');
+        });
+      }
+      
+      // Close menu when clicking on a nav link
+      const navLinks = document.querySelectorAll('.navmenu a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth < 1200) {
+            header.classList.remove('mobile-active');
+          }
+        });
+      });
+      
+      // Scroll to top functionality
+      const scrollTop = document.getElementById('scroll-top');
+      if (scrollTop) {
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 100) {
+            scrollTop.classList.add('active');
+          } else {
+            scrollTop.classList.remove('active');
+          }
+        });
+        
+        scrollTop.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+      
+      // Free Audit Form - Simple Calendly Redirect
+      const auditForm = document.getElementById('auditForm');
+      if (auditForm) {
+        auditForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          window.open("https://calendly.com/jacobdavis-activ3websolutions/30min", "_blank");
+          
+          // Hide the modal
+          const auditModal = bootstrap.Modal.getInstance(document.getElementById('auditModal'));
+          if (auditModal) auditModal.hide();
+        });
+      }
 
-        // ✅ SIMPLE Formspree Handling - Let Formspree do the work!
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function() {
-                // Just show a temporary message, then let Formspree redirect.
-                const submitBtn = document.querySelector('#contact-form button[type="submit"]');
-                if (submitBtn) {
-                    submitBtn.disabled = true;
-                    submitBtn.textContent = 'Sending...';
-                }
-                // The form will now submit naturally. Formspree will show its own confirmation page.
-                // This is the most reliable method for GitHub Pages.
-            });
-        }
+      // Contact Form Handling
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function() {
+          const submitBtn = document.querySelector('#contact-form button[type="submit"]');
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+          }
+        });
+      }
     });
   </script>
 </body>
