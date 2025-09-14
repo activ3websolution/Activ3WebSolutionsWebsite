@@ -83,18 +83,19 @@
       top: 0; 
       left: 0; 
       bottom: 0; 
-      padding: 0 15px; 
+      padding: 30px 15px; 
       width: 300px; 
       transition: all ease-in-out 0.3s; 
       overflow-y: auto; 
       z-index: 997; 
       border-right: 1px solid rgba(39, 40, 41, 0.1);
+      box-sizing: border-box;
     }
 
-    .header .logo { line-height: 1; margin-bottom: 15px; }
+    .header .logo { line-height: 1; margin-bottom: 15px; text-align: center; }
     .header .logo h1 { font-size: 24px; margin: 0; font-weight: 700; color: var(--heading-color); }
 
-    .header .social-links { margin: 0 0 20px 0; }
+    .header .social-links { margin: 0 0 20px 0; text-align: center; }
     .header .social-links a {
       font-size: 16px;
       display: inline-flex;
@@ -116,6 +117,9 @@
       margin-left: 300px;
       transition: all 0.3s ease;
       background-color: white;
+      min-height: 100vh;
+      position: relative;
+      box-sizing: border-box;
     }
 
     /* Navigation */
@@ -153,7 +157,7 @@
       color: white;
     }
     
-    .hero img {
+    .hero-bg {
       position: absolute;
       inset: 0;
       display: block;
@@ -393,6 +397,61 @@
       background: white;
       color: #040b14;
     }
+
+    /* Container */
+    .container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media (min-width: 576px) {
+      .container {
+        max-width: 540px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 720px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .container {
+        max-width: 960px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+        max-width: 1140px;
+      }
+    }
+
+    /* Row and columns */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+
+    .col-lg-6 {
+      position: relative;
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    @media (min-width: 992px) {
+      .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
   </style>
 </head>
 
@@ -406,7 +465,7 @@
 
   <header id="header" class="header dark-background d-flex flex-column">
     <div class="profile-img">
-      <img src="https://placehold.co/150x150/149ddd/FFFFFF?text=AW" alt="Activ3 Web Solutions" class="img-fluid rounded-circle">
+      <img src="assets/img/my-profile-img.png" alt="Activ3 Web Solutions" class="img-fluid rounded-circle">
     </div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
@@ -435,7 +494,7 @@
 
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="hero section dark-background">
-      <img src="https://placehold.co/1920x1080/040b14/149ddd?text=Background" alt="Background">
+      <img src="assets/img/hero-bg.jpg" alt="Background" class="hero-bg">
       <div class="container">
         <h2>Activ3 Web Solutions</h2>
         <p>
