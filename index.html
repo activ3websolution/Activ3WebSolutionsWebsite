@@ -25,83 +25,6 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-  
-  <style>
-    /* Additional styles for better presentation */
-    .contact-card {
-      background: white;
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    }
-    
-    .btn-primary {
-      background-color: #0066cc;
-      border-color: #0066cc;
-    }
-    
-    .btn-primary:hover {
-      background-color: #0052a3;
-      border-color: #0052a3;
-    }
-    
-    .dark-background {
-      background-color: #1a1a1a;
-      color: white;
-    }
-    
-    .light-background {
-      background-color: #f8f9fa;
-    }
-    
-    .section {
-      padding: 80px 0;
-    }
-    
-    .hero {
-      text-align: center;
-      padding: 120px 0;
-      position: relative;
-    }
-    
-    .hero img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.3;
-      z-index: -1;
-    }
-    
-    .hero h2 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-    }
-    
-    .typed {
-      color: #0066cc;
-      font-weight: bold;
-    }
-    
-    .social-links a {
-      color: white;
-      margin: 0 10px;
-      font-size: 1.5rem;
-    }
-    
-    .profile-img {
-      text-align: center;
-      margin: 20px 0;
-    }
-    
-    .profile-img img {
-      width: 150px;
-      height: 150px;
-      border: 5px solid #0066cc;
-    }
-  </style>
 </head>
 
 <body class="index-page">
@@ -109,9 +32,9 @@
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
-    <div class="profile-img">
-      <img src="assets/img/my-profile-img.png" alt="Activ3 Web Solutions" class="img-fluid rounded-circle">
-    </div>
+<div class="profile-img">
+  <img src="assets/img/my-profile-img.png" alt="Activ3 Web Solutions" class="img-fluid rounded-circle">
+</div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
       <h1 class="sitename">Activ3 Web Solutions</h1>
@@ -120,6 +43,7 @@
     <div class="social-links text-center">
       <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
       <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <!-- ✅ Updated GitHub -->
       <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
     </div>
 
@@ -130,6 +54,7 @@
         <li><a href="service-details.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
         <li><a href="#why-us"><i class="bi bi-star navicon"></i> Why Choose Us</a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <!-- ✅ New menu item -->
         <li><a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
       </ul>
     </nav>
@@ -145,6 +70,7 @@
         <p>
           <span class="typed" data-typed-items="Websites, SEO, Email Marketing"></span>
         </p>
+        <!-- ✅ New buttons -->
         <div class="mt-3">
           <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary me-2">Schedule a Call</a>
           <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#auditModal">Free Audit</button>
@@ -251,11 +177,12 @@
               <div class="col-md-12">
                 <textarea name="message" rows="6" class="form-control" placeholder="Message" required></textarea>
               </div>
+              <!-- ✅ Updated email -->
               <div class="col-md-12">
-                <p><strong>Email us directly:</strong> <a href="mailto:jacob@activ3websolutions.com">jacob@activ3websolutions.com</a></p>
+                <p><strong>Email us directly:</strong> <a href="mailto:jacobdavis@activ3websolutions.com">jacobdavis@activ3websolutions.com</a></p>
               </div>
               <div class="col-md-12 text-center">
-                <button type="submit" id="submit-btn" class="btn btn-primary">Send Message</button>
+                <button type="submit" id="submit-btn">Send Message</button>
                 <div id="form-status" class="form-status"></div>
               </div>
             </div>
@@ -322,25 +249,12 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-    // Redirect Free Audit form to Calendly
+    // ✅ Redirect Free Audit form to Calendly
     document.getElementById('auditForm').addEventListener('submit', function (e) {
       e.preventDefault();
       window.open("https://calendly.com/jacobdavis-activ3websolutions/30min", "_blank");
       var auditModal = bootstrap.Modal.getInstance(document.getElementById('auditModal'));
       auditModal.hide();
-    });
-    
-    // Initialize Typed.js for the hero section
-    document.addEventListener('DOMContentLoaded', function() {
-      if (document.querySelector('.typed')) {
-        var typed = new Typed('.typed', {
-          strings: ['Websites', 'SEO', 'Email Marketing'],
-          typeSpeed: 100,
-          backSpeed: 50,
-          backDelay: 2000,
-          loop: true
-        });
-      }
     });
   </script>
 </body>
