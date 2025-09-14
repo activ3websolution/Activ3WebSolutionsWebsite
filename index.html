@@ -165,12 +165,14 @@
       height: 100%;
       object-fit: cover;
       z-index: 1;
-      opacity: 0.3;
+      /* Reduced opacity to make image brighter */
+      opacity: 0.6;
+      filter: brightness(1.2);
     }
     
     .hero:before {
       content: "";
-      background: rgba(4, 11, 20, 0.7);
+      background: rgba(4, 11, 20, 0.5); /* Reduced opacity to make image brighter */
       position: absolute;
       inset: 0;
       z-index: 2;
@@ -259,22 +261,71 @@
       margin-bottom: 0;
     }
 
-    /* Resume Items */
-    .resume-item {
-      padding: 20px;
-      margin-bottom: 20px;
-      border-left: 2px solid var(--accent-color);
+    /* Why Choose Us Section - Improved Layout */
+    .why-us-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    
+    .why-us-item {
+      flex: 0 0 calc(50% - 30px);
       background: white;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-      border-radius: 0 5px 5px 0;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 20px;
+    }
+    
+    .why-us-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .why-us-item h4 {
+      color: var(--accent-color);
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+    
+    .why-us-item p {
+      color: #555;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+    
+    @media (max-width: 992px) {
+      .why-us-item {
+        flex: 0 0 100%;
+      }
     }
 
-    /* Contact Form */
+    /* Contact Section - Improved Layout */
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+    
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .contact-form {
+      flex: 2;
+      min-width: 300px;
+    }
+    
     .contact-card {
       background: white;
       padding: 30px;
-      border-radius: 5px;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
     }
     
     .form-control {
@@ -283,6 +334,14 @@
       border-radius: 5px;
       margin-bottom: 20px;
       width: 100%;
+      font-family: var(--default-font);
+      transition: border-color 0.3s;
+    }
+    
+    .form-control:focus {
+      border-color: var(--accent-color);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(20, 157, 221, 0.1);
     }
     
     #submit-btn {
@@ -293,6 +352,12 @@
       border-radius: 5px;
       font-weight: 600;
       cursor: pointer;
+      transition: background 0.3s;
+      width: 100%;
+    }
+    
+    #submit-btn:hover {
+      background: #0d8ac5;
     }
 
     /* Footer */
@@ -369,11 +434,12 @@
     /* Button styles */
     .btn {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border-radius: 5px;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s;
+      font-size: 16px;
     }
     
     .btn-primary {
@@ -385,17 +451,19 @@
     .btn-outline-light {
       background: transparent;
       color: white;
-      border: 1px solid white;
+      border: 2px solid white;
     }
     
     .btn-primary:hover {
-      background: rgba(20, 157, 221, 0.8);
+      background: #0d8ac5;
       color: white;
+      transform: translateY(-2px);
     }
     
     .btn-outline-light:hover {
       background: white;
       color: #040b14;
+      transform: translateY(-2px);
     }
 
     /* Container */
@@ -543,26 +611,22 @@
         <p>We deliver more than just websites — we create growth opportunities for your business.</p>
       </div>
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="resume-item">
-              <h4>Proven Expertise</h4>
-              <p><em>Years of combined experience in web development, SEO, and digital marketing strategies.</em></p>
-            </div>
-            <div class="resume-item">
-              <h4>Results Driven</h4>
-              <p><em>Our strategies focus on measurable results — more traffic, leads, and conversions.</em></p>
-            </div>
+        <div class="why-us-container">
+          <div class="why-us-item">
+            <h4>Proven Expertise</h4>
+            <p><em>Years of combined experience in web development, SEO, and digital marketing strategies.</em></p>
           </div>
-          <div class="col-lg-6">
-            <div class="resume-item">
-              <h4>Affordable for Small Businesses</h4>
-              <p><em>We tailor solutions to your budget without compromising on quality or results.</em></p>
-            </div>
-            <div class="resume-item">
-              <h4>Dedicated Support</h4>
-              <p><em>We work closely with our clients, ensuring every project aligns with their goals.</em></p>
-            </div>
+          <div class="why-us-item">
+            <h4>Results Driven</h4>
+            <p><em>Our strategies focus on measurable results — more traffic, leads, and conversions.</em></p>
+          </div>
+          <div class="why-us-item">
+            <h4>Affordable for Small Businesses</h4>
+            <p><em>We tailor solutions to your budget without compromising on quality or results.</em></p>
+          </div>
+          <div class="why-us-item">
+            <h4>Dedicated Support</h4>
+            <p><em>We work closely with our clients, ensuring every project aligns with their goals.</em></p>
           </div>
         </div>
       </div>
@@ -590,30 +654,38 @@
         <p>Get in touch with us using the form below:</p>
       </div>
 
-      <div class="container">
-        <div class="contact-card">
-          <form id="contact-form" action="https://formspree.io/f/movnzapb" method="POST">
-            <div class="row gy-4">
-              <div class="col-md-6">
-                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+      <div class="container contact-container">
+        <div class="contact-form">
+          <div class="contact-card">
+            <form id="contact-form" action="https://formspree.io/f/movnzapb" method="POST">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="col-md-12">
+                  <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                </div>
+                <div class="col-md-12">
+                  <textarea name="message" rows="6" class="form-control" placeholder="Message" required></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <button type="submit" id="submit-btn">Send Message</button>
+                </div>
               </div>
-              <div class="col-md-6">
-                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-              </div>
-              <div class="col-md-12">
-                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-              </div>
-              <div class="col-md-12">
-                <textarea name="message" rows="6" class="form-control" placeholder="Message" required></textarea>
-              </div>
-              <div class="col-md-12">
-                <p><strong>Email us directly:</strong> <a href="mailto:jacob@activ3websolutions.com">jacob@activ3websolutions.com</a></p>
-              </div>
-              <div class="col-md-12 text-center">
-                <button type="submit" id="submit-btn">Send Message</button>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
+        </div>
+        <div class="contact-info">
+          <div class="contact-card">
+            <h4>Contact Information</h4>
+            <p><strong>Email us directly:</strong> <a href="mailto:jacob@activ3websolutions.com">jacob@activ3websolutions.com</a></p>
+            <p><strong>Schedule a call:</strong> <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank">Calendly Link</a></p>
+            <p><i class="bi bi-geo-alt"></i> Serving clients nationwide</p>
+            <p><i class="bi bi-clock"></i> Response within 24 hours</p>
+          </div>
         </div>
       </div>
     </section>
