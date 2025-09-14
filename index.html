@@ -309,6 +309,7 @@
       flex-wrap: wrap;
       gap: 40px;
       justify-content: center;
+      align-items: flex-start;
     }
     
     .contact-info {
@@ -323,41 +324,115 @@
     
     .contact-card {
       background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-info-card {
+      background: linear-gradient(135deg, #149ddd 0%, #0d8ac5 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      height: 100%;
+    }
+    
+    .contact-info-card h4 {
+      color: white;
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-size: 22px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .contact-info-card h4:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+    
+    .contact-info-card p {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .contact-info-card i {
+      margin-right: 12px;
+      font-size: 18px;
+      width: 20px;
+      text-align: center;
+    }
+    
+    .contact-info-card a {
+      color: white;
+      text-decoration: underline;
+      transition: opacity 0.3s;
+    }
+    
+    .contact-info-card a:hover {
+      opacity: 0.8;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
     }
     
     .form-control {
-      padding: 12px 15px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
+      padding: 15px;
+      border: 1px solid #e1e1e1;
+      border-radius: 6px;
       margin-bottom: 20px;
       width: 100%;
       font-family: var(--default-font);
-      transition: border-color 0.3s;
+      transition: all 0.3s;
+      font-size: 16px;
     }
     
     .form-control:focus {
       border-color: var(--accent-color);
       outline: none;
-      box-shadow: 0 0 0 3px rgba(20, 157, 221, 0.1);
+      box-shadow: 0 0 0 3px rgba(20, 157, 221, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
     }
     
     #submit-btn {
       background: var(--accent-color);
       color: white;
       border: none;
-      padding: 12px 30px;
-      border-radius: 5px;
+      padding: 15px 30px;
+      border-radius: 6px;
       font-weight: 600;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: all 0.3s;
       width: 100%;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
     
     #submit-btn:hover {
       background: #0d8ac5;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(13, 138, 197, 0.3);
     }
 
     /* Footer */
@@ -498,355 +573,268 @@
         max-width: 1140px;
       }
     }
-
-    /* Row and columns */
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      margin-right: -15px;
-      margin-left: -15px;
-    }
-
-    .col-lg-6 {
-      position: relative;
-      width: 100%;
-      padding-right: 15px;
-      padding-left: 15px;
-    }
-
-    @media (min-width: 992px) {
-      .col-lg-6 {
-        flex: 0 0 50%;
-        max-width: 50%;
-      }
-    }
   </style>
 </head>
 
-<body class="index-page">
+<body>
+  <!-- Header -->
+  <header id="header" class="header">
+    <div class="logo">
+      <h1>Activ3 Web Solutions</h1>
+    </div>
+    
+    <div class="profile-img">
+      <img src="https://placehold.co/150x150/149ddd/ffffff?text=A3" alt="Activ3 Web Solutions Logo">
+    </div>
+    
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
+        <li><a href="#about"><i class="bi bi-info-circle navicon"></i> About</a></li>
+        <li><a href="#services"><i class="bi bi-gear navicon"></i> Services</a></li>
+        <li><a href="#portfolio"><i class="bi bi-briefcase navicon"></i> Portfolio</a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+    
+    <div class="social-links">
+      <a href="#"><i class="bi bi-twitter"></i></a>
+      <a href="#"><i class="bi bi-facebook"></i></a>
+      <a href="#"><i class="bi bi-instagram"></i></a>
+      <a href="#"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </header>
 
-  <!-- Mobile menu toggle button -->
-  <i class="bi bi-list mobile-nav-toggle"></i>
+  <!-- Mobile Navigation Toggle -->
+  <div class="mobile-nav-toggle">
+    <i class="bi bi-list"></i>
+  </div>
   
   <!-- Backdrop overlay for mobile -->
   <div class="mobile-nav-backdrop"></div>
 
-  <header id="header" class="header dark-background d-flex flex-column">
-    <div class="profile-img">
-      <img src="assets/img/my-profile-img.png" alt="Activ3 Web Solutions" class="img-fluid rounded-circle">
-    </div>
-
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <h1 class="sitename">Activ3 Web Solutions</h1>
-    </a>
-
-    <div class="social-links text-center">
-      <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
-    </div>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="index.html" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
-        <li><a href="portfolio-details.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="service-details.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li><a href="#why-us"><i class="bi bi-star navicon"></i> Why Choose Us</a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-        <li><a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
-      </ul>
-    </nav>
-  </header>
-
+  <!-- Main Content -->
   <main class="main">
-
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="hero section dark-background">
-      <img src="assets/img/hero-bg.jpg" alt="Background" class="hero-bg">
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070" alt="Background" class="hero-bg">
       <div class="container">
         <h2>Activ3 Web Solutions</h2>
-        <p>
-          <span id="typed-text">Websites, SEO, Email Marketing</span>
-          <span class="typed-cursor">|</span>
-        </p>
-        <div class="mt-3">
-          <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary me-2">Schedule a Call</a>
-          <button type="button" class="btn btn-outline-light" id="auditButton">Free Audit</button>
+        <p>We provide <span class="typed" data-typed-items="Websites, SEO, Email Marketing, Digital Solutions"></span><span class="typed-cursor">|</span></p>
+        <div style="margin-top: 30px;">
+          <a href="#about" class="btn btn-outline-light" style="margin-right: 15px;">Learn More</a>
+          <a href="#contact" class="btn btn-primary">Get Started</a>
         </div>
       </div>
     </section>
 
-    <!-- ======= Our Expertise Section ======= -->
-    <section id="skills" class="skills section light-background">
-      <div class="container section-title">
-        <h2>Our Expertise</h2>
-        <p>We help businesses stand out online with professional web development, SEO, and marketing solutions.</p>
-      </div>
+    <!-- About Section -->
+    <section id="about" class="section">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h4>Core Services</h4>
-            <ul>
-              <li>Custom Website Design & Development</li>
-              <li>SEO Optimization & Ranking Strategies</li>
-              <li>Email Marketing Campaigns</li>
-            </ul>
-          </div>
-          <div class="col-lg-6">
-            <h4>Additional Expertise</h4>
-            <ul>
-              <li>Analytics & Performance Tracking</li>
-              <li>Client-Focused Support</li>
-              <li>Scalable Solutions for Growth</li>
-            </ul>
-          </div>
+        <div class="section-title">
+          <h2>About Us</h2>
+          <p>We are a team of passionate web developers and digital marketers dedicated to helping businesses succeed online.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- ======= Why Choose Us Section ======= -->
-    <section id="why-us" class="resume section light-background">
-      <div class="container section-title">
-        <h2>Why Choose Us</h2>
-        <p>We deliver more than just websites — we create growth opportunities for your business.</p>
-      </div>
-      <div class="container">
+        
         <div class="why-us-container">
           <div class="why-us-item">
-            <h4>Proven Expertise</h4>
-            <p><em>Years of combined experience in web development, SEO, and digital marketing strategies.</em></p>
+            <h4>Expertise</h4>
+            <p>With years of experience in web development and digital marketing, we have the skills to bring your vision to life.</p>
           </div>
+          
           <div class="why-us-item">
-            <h4>Results Driven</h4>
-            <p><em>Our strategies focus on measurable results — more traffic, leads, and conversions.</em></p>
+            <h4>Custom Solutions</h4>
+            <p>We don't believe in one-size-fits-all approaches. Every solution we create is tailored to your specific needs.</p>
           </div>
+          
           <div class="why-us-item">
-            <h4>Affordable for Small Businesses</h4>
-            <p><em>We tailor solutions to your budget without compromising on quality or results.</em></p>
+            <h4>Results-Driven</h4>
+            <p>Our focus is on delivering measurable results that help your business grow and succeed online.</p>
           </div>
+          
           <div class="why-us-item">
-            <h4>Dedicated Support</h4>
-            <p><em>We work closely with our clients, ensuring every project aligns with their goals.</em></p>
+            <h4>Ongoing Support</h4>
+            <p>We provide continuous support and maintenance to ensure your digital presence remains effective and up-to-date.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ======= Client Success Stories Section ======= -->
-    <section id="success" class="resume section light-background">
-      <div class="container section-title">
-        <h2>Client Success Stories</h2>
-        <p>Real results from businesses that chose Activ3 Web Solutions.</p>
-      </div>
+    <!-- Services Section -->
+    <section id="services" class="section light-background">
       <div class="container">
-        <ul>
-          <li><strong>Local Retailer</strong> – Boosted website traffic by 200% in 3 months.</li>
-          <li><strong>Startup Company</strong> – Achieved 40% email open rates with targeted campaigns.</li>
-          <li><strong>Service Business</strong> – Increased lead generation by 150% through SEO improvements.</li>
-        </ul>
+        <div class="section-title">
+          <h2>Our Services</h2>
+          <p>We offer a comprehensive range of digital services to help your business thrive online.</p>
+        </div>
+        
+        <div class="why-us-container">
+          <div class="why-us-item">
+            <h4>Website Design & Development</h4>
+            <p>Custom websites designed to convert visitors into customers, with responsive design that works on all devices.</p>
+          </div>
+          
+          <div class="why-us-item">
+            <h4>Search Engine Optimization</h4>
+            <p>Improve your visibility in search results and drive more qualified traffic to your website.</p>
+          </div>
+          
+          <div class="why-us-item">
+            <h4>Email Marketing</h4>
+            <p>Engage your audience with targeted email campaigns that drive conversions and build customer loyalty.</p>
+          </div>
+          
+          <div class="why-us-item">
+            <h4>E-Commerce Solutions</h4>
+            <p>Set up and optimize your online store to maximize sales and provide a seamless shopping experience.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact section light-background">
-      <div class="container section-title">
-        <h2><i class="bi bi-envelope"></i> Contact</h2>
-        <p>Get in touch with us using the form below:</p>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Portfolio</h2>
+          <p>Check out some of our recent projects and see the results we've delivered for our clients.</p>
+        </div>
+        
+        <div style="text-align: center; padding: 40px 0;">
+          <p>Portfolio items will be displayed here. We're currently updating our portfolio with our latest work.</p>
+          <a href="#contact" class="btn btn-primary">Request Case Studies</a>
+        </div>
       </div>
+    </section>
 
-      <div class="container contact-container">
-        <div class="contact-form">
-          <div class="contact-card">
-            <form id="contact-form" action="https://formspree.io/f/movnzapb" method="POST">
-              <div class="row gy-4">
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6">
-                  <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                </div>
-                <div class="col-md-12">
-                  <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-                </div>
-                <div class="col-md-12">
-                  <textarea name="message" rows="6" class="form-control" placeholder="Message" required></textarea>
-                </div>
-                <div class="col-md-12 text-center">
-                  <button type="submit" id="submit-btn">Send Message</button>
+    <!-- Contact Section - Improved Structure -->
+    <section id="contact" class="section light-background">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact Us</h2>
+          <p>Get in touch with us to discuss your project and how we can help your business grow.</p>
+        </div>
+        
+        <div class="contact-container">
+          <!-- Contact Information Card -->
+          <div class="contact-info">
+            <div class="contact-info-card">
+              <h4>Contact Information</h4>
+              <p><i class="bi bi-geo-alt"></i> 123 Web Street, Digital City, DC 10101</p>
+              <p><i class="bi bi-envelope"></i> <a href="mailto:info@activ3websolutions.com">info@activ3websolutions.com</a></p>
+              <p><i class="bi bi-phone"></i> <a href="tel:+11234567890">+1 (123) 456-7890</a></p>
+              <p><i class="bi bi-clock"></i> Monday-Friday: 9AM - 5PM</p>
+              <div style="margin-top: 30px;">
+                <div class="social-links">
+                  <a href="#"><i class="bi bi-twitter"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
-            </form>
+            </div>
           </div>
-        </div>
-        <div class="contact-info">
-          <div class="contact-card">
-            <h4>Contact Information</h4>
-            <p><strong>Email us directly:</strong> <a href="mailto:jacob@activ3websolutions.com">jacob@activ3websolutions.com</a></p>
-            <p><strong>Schedule a call:</strong> <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank">Calendly Link</a></p>
-            <p><i class="bi bi-geo-alt"></i> Serving clients nationwide</p>
-            <p><i class="bi bi-clock"></i> Response within 24 hours</p>
+          
+          <!-- Contact Form -->
+          <div class="contact-form">
+            <div class="contact-card">
+              <h4 style="margin-top: 0; margin-bottom: 25px; color: var(--heading-color);">Send us a message</h4>
+              <form id="contact-form">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                
+                <div class="form-group">
+                  <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                
+                <div class="form-group">
+                  <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                </div>
+                
+                <div class="form-group">
+                  <textarea name="message" class="form-control" placeholder="Your Message" rows="7" required></textarea>
+                </div>
+                
+                <button type="submit" id="submit-btn">Send Message</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2023 Activ3 Web Solutions. All rights reserved.</p>
+        <p>Designed with <i class="bi bi-heart" style="color: #e25555;"></i> by Activ3 Web Solutions</p>
+      </div>
+    </footer>
   </main>
 
-  <footer id="footer" class="footer position-relative light-background">
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>2025</span> <strong class="px-1 sitename">Activ3 Web Solutions</strong>. All Rights Reserved</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ======= Free Audit Modal ======= -->
-  <div id="auditModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000;">
-    <div style="position: relative; background: white; max-width: 500px; margin: 100px auto; padding: 20px; border-radius: 5px;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-        <h3 style="margin: 0;">Free Website Audit</h3>
-        <button id="closeModal" style="background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
-      </div>
-      <form id="auditForm">
-        <div style="margin-bottom: 15px;">
-          <label style="display: block; margin-bottom: 5px;">Do you already have a website?</label>
-          <input type="radio" name="hasWebsite" value="Yes" id="yesWebsite"> <label for="yesWebsite">Yes</label>
-          <input type="radio" name="hasWebsite" value="No" id="noWebsite" style="margin-left: 15px;"> <label for="noWebsite">No</label>
-        </div>
-        <div style="margin-bottom: 15px;">
-          <label style="display: block; margin-bottom: 5px;">If yes, what changes or updates would you like?</label>
-          <textarea name="changes" rows="3" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
-        </div>
-        <div style="margin-bottom: 15px;">
-          <label style="display: block; margin-bottom: 5px;">What is your business about?</label>
-          <textarea name="business" rows="3" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
-        </div>
-        <button type="submit" style="background: #149ddd; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;">Submit & Schedule</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- JavaScript -->
   <script>
-    // Mobile menu toggle functionality
+    // Mobile Navigation Toggle
+    document.querySelector('.mobile-nav-toggle').addEventListener('click', function() {
+      document.body.classList.toggle('mobile-nav-active');
+      this.querySelector('i').classList.toggle('bi-list');
+      this.querySelector('i').classList.toggle('bi-x');
+    });
+    
+    // Close mobile navigation when clicking on backdrop
+    document.querySelector('.mobile-nav-backdrop').addEventListener('click', function() {
+      document.body.classList.remove('mobile-nav-active');
+      document.querySelector('.mobile-nav-toggle i').classList.add('bi-list');
+      document.querySelector('.mobile-nav-toggle i').classList.remove('bi-x');
+    });
+    
+    // Simple form submission handling
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your message! We will get back to you soon.');
+      this.reset();
+    });
+    
+    // Simple typing effect for hero section
     document.addEventListener('DOMContentLoaded', function() {
-      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-      const body = document.body;
-      const backdrop = document.querySelector('.mobile-nav-backdrop');
-      const header = document.getElementById('header');
-      
-      // Toggle mobile menu
-      if (mobileNavToggle) {
-        mobileNavToggle.addEventListener('click', function(e) {
-          e.preventDefault();
-          body.classList.toggle('mobile-nav-active');
-          header.classList.toggle('header-show');
-        });
-      }
-      
-      // Close menu when clicking on backdrop
-      if (backdrop) {
-        backdrop.addEventListener('click', function() {
-          body.classList.remove('mobile-nav-active');
-          header.classList.remove('header-show');
-        });
-      }
-      
-      // Close menu when clicking on a nav link
-      const navLinks = document.querySelectorAll('.navmenu a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          if (window.innerWidth < 1200) {
-            body.classList.remove('mobile-nav-active');
-            header.classList.remove('header-show');
-          }
-        });
-      });
-      
-      // Free Audit Form - Simple Calendly Redirect
-      const auditForm = document.getElementById('auditForm');
-      if (auditForm) {
-        auditForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          window.open("https://calendly.com/jacobdavis-activ3websolutions/30min", "_blank");
-          document.getElementById('auditModal').style.display = 'none';
-        });
-      }
-
-      // Contact Form Handling
-      const contactForm = document.getElementById('contact-form');
-      if (contactForm) {
-        contactForm.addEventListener('submit', function() {
-          const submitBtn = document.querySelector('#contact-form button[type="submit"]');
-          if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-          }
-        });
-      }
-
-      // Modal functionality
-      const auditButton = document.getElementById('auditButton');
-      const auditModal = document.getElementById('auditModal');
-      const closeModal = document.getElementById('closeModal');
-      
-      if (auditButton && auditModal && closeModal) {
-        auditButton.addEventListener('click', function() {
-          auditModal.style.display = 'block';
-        });
+      const typedElement = document.querySelector('.typed');
+      if (typedElement) {
+        const typedItems = typedElement.getAttribute('data-typed-items').split(',');
+        let currentItem = 0;
         
-        closeModal.addEventListener('click', function() {
-          auditModal.style.display = 'none';
-        });
-        
-        window.addEventListener('click', function(event) {
-          if (event.target === auditModal) {
-            auditModal.style.display = 'none';
-          }
-        });
-      }
-
-      // Typing animation
-      const typedTextElement = document.getElementById('typed-text');
-      if (typedTextElement) {
-        const words = ['Websites', 'SEO', 'Email Marketing'];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typingSpeed = 100;
-        
-        function type() {
-          const currentWord = words[wordIndex];
+        function typeNext() {
+          const text = typedItems[currentItem];
+          let i = 0;
           
-          if (isDeleting) {
-            // Remove characters
-            typedTextElement.textContent = currentWord.substring(0, charIndex - 1);
-            charIndex--;
-            typingSpeed = 50;
-          } else {
-            // Add characters
-            typedTextElement.textContent = currentWord.substring(0, charIndex + 1);
-            charIndex++;
-            typingSpeed = 100;
+          typedElement.textContent = '';
+          
+          function type() {
+            if (i < text.length) {
+              typedElement.textContent += text.charAt(i);
+              i++;
+              setTimeout(type, 100);
+            } else {
+              setTimeout(erase, 2000);
+            }
           }
           
-          // Determine action when word is complete
-          if (!isDeleting && charIndex === currentWord.length) {
-            isDeleting = true;
-            typingSpeed = 1000; // Pause at end of word
-          } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
-            typingSpeed = 500; // Pause before starting next word
+          function erase() {
+            if (typedElement.textContent.length > 0) {
+              typedElement.textContent = typedElement.textContent.slice(0, -1);
+              setTimeout(erase, 50);
+            } else {
+              currentItem = (currentItem + 1) % typedItems.length;
+              setTimeout(typeNext, 500);
+            }
           }
           
-          setTimeout(type, typingSpeed);
+          type();
         }
         
-        // Start the typing animation
-        setTimeout(type, 1000);
+        typeNext();
       }
     });
   </script>
 </body>
+
 </html>
