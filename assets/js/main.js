@@ -41,7 +41,7 @@
   /**
    * Navbar links active state on scroll
    */
-  let navbarlinks = select('#navmenu .scrollto', true)
+  let navbarlinks = select('#navmenu a', true)
   const navbarlinksActive = () => {
     let position = window.scrollY + 200
     navbarlinks.forEach(navbarlink => {
@@ -65,6 +65,8 @@
     let header = select('#header')
     let offset = header.offsetHeight
 
+    if (!select(el)) return;
+    
     let elementPos = select(el).offsetTop
     window.scrollTo({
       top: elementPos - offset,
@@ -98,24 +100,7 @@
   })
 
   /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
-  on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
-      e.preventDefault()
-      let body = select('body')
-      if (body.classList.contains('mobile-nav-active')) {
-        body.classList.remove('mobile-nav-active')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
-      scrollto(this.hash)
-    }
-  }, true)
-
-  /**
-   * Scroll with ofset on page load with hash links in the url
+   * Scroll with offset on page load with hash links in the url
    */
   window.addEventListener('load', () => {
     if (window.location.hash) {
@@ -138,57 +123,69 @@
   /**
    * Initiate glightbox 
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  if (typeof GLightbox !== 'undefined') {
+    const glightbox = GLightbox({
+      selector: '.glightbox'
+    });
+  }
 
   /**
    * Initiate portfolio lightbox 
    */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
+  if (typeof GLightbox !== 'undefined') {
+    const portfolioLightbox = GLightbox({
+      selector: '.portfolio-lightbox'
+    });
+  }
 
   /**
    * Initiate portfolio details lightbox 
    */
-  const portfolioDetailsLightbox = GLightbox({
-    selector: '.portfolio-details-lightbox'
-  });
+  if (typeof GLightbox !== 'undefined') {
+    const portfolioDetailsLightbox = GLightbox({
+      selector: '.portfolio-details-lightbox'
+    });
+  }
 
   /**
    * Portfolio details slider
    */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
+  if (typeof Swiper !== 'undefined') {
+    new Swiper('.portfolio-details-slider', {
+      speed: 400,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      }
+    });
+  }
 
   /**
    * Initiate Pure Counter 
    */
-  new PureCounter();
+  if (typeof PureCounter !== 'undefined') {
+    new PureCounter();
+  }
 
   /**
    * Animation on scroll
    */
-  window.addEventListener('load', () => {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    })
-  });
+  if (typeof AOS !== 'undefined') {
+    window.addEventListener('load', () => {
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      })
+    });
+  }
 
   /**
    * Initiate Typed.js if available
@@ -225,52 +222,80 @@
   }
 
   /**
-   * Mobile navigation toggle
+   * Mobile navigation functionality
    */
-  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-  const body = document.querySelector('body');
-
-  if (mobileNavToggle) {
-    mobileNavToggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      body.classList.toggle('mobile-nav-active');
-      
-      // Toggle icon
-      this.classList.toggle('bi-list');
-      this.classList.toggle('bi-x');
-    });
-  }
-
-  /**
-   * Close mobile navigation when clicking on backdrop or nav links
-   */
-  document.addEventListener('click', function(e) {
-    if (body.classList.contains('mobile-nav-active')) {
-      // Close menu when clicking on backdrop or nav links
-      if (e.target.classList.contains('mobile-nav-backdrop') || 
-          e.target.closest('.navmenu a')) {
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const body = document.body;
+    const backdrop = document.querySelector('.mobile-nav-backdrop');
+    const header = document.getElementById('header');
+    const navLinks = document.querySelectorAll('.navmenu a');
+    
+    // Toggle mobile menu
+    if (mobileNavToggle) {
+      mobileNavToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        body.classList.toggle('mobile-nav-active');
+        header.classList.toggle('header-show');
+        
+        // Toggle icon
+        this.classList.toggle('bi-list');
+        this.classList.toggle('bi-x');
+      });
+    }
+    
+    // Close menu when clicking on backdrop
+    if (backdrop) {
+      backdrop.addEventListener('click', function() {
         body.classList.remove('mobile-nav-active');
-        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        header.classList.remove('header-show');
+        
+        // Reset toggle icon
+        if (mobileNavToggle) {
+          mobileNavToggle.classList.add('bi-list');
+          mobileNavToggle.classList.remove('bi-x');
+        }
+      });
+    }
+    
+    // Close menu when clicking on a nav link
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth < 1200) {
+          body.classList.remove('mobile-nav-active');
+          header.classList.remove('header-show');
+          
+          // Reset toggle icon
+          if (mobileNavToggle) {
+            mobileNavToggle.classList.add('bi-list');
+            mobileNavToggle.classList.remove('bi-x');
+          }
+        }
+        
+        // Handle internal page navigation
+        if (this.getAttribute('href').startsWith('#')) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (select(targetId)) {
+            scrollto(targetId);
+          }
+        }
+      });
+    });
+    
+    // Close mobile navigation when window is resized to desktop size
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 1199) {
+        body.classList.remove('mobile-nav-active');
+        header.classList.remove('header-show');
+        
+        // Reset toggle icon
         if (mobileNavToggle) {
           mobileNavToggle.classList.add('bi-list');
           mobileNavToggle.classList.remove('bi-x');
         }
       }
-    }
-  });
-
-  /**
-   * Close mobile navigation when window is resized to desktop size
-   */
-  window.addEventListener('resize', function() {
-    if (window.innerWidth > 1199) {
-      body.classList.remove('mobile-nav-active');
-      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-      if (mobileNavToggle) {
-        mobileNavToggle.classList.add('bi-list');
-        mobileNavToggle.classList.remove('bi-x');
-      }
-    }
+    });
   });
 
 })();
