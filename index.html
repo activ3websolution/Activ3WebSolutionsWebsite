@@ -159,7 +159,6 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="contact-card">
-          <!-- UPDATED FORMSPREE ENDPOINT -->
           <form id="contact-form" action="https://formspree.io/f/movnzapb" method="POST">
             <div class="row gy-4">
               <div class="col-md-6">
@@ -179,7 +178,6 @@
               </div>
               <div class="col-md-12 text-center">
                 <button type="submit" id="submit-btn">Send Message</button>
-                <div id="form-status" class="form-status"></div>
               </div>
             </div>
           </form>
@@ -239,7 +237,7 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <!-- REMOVED the validate.js script to prevent conflict -->
+  <!-- NOTE: validate.js REMOVED to prevent conflict -->
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
@@ -248,40 +246,32 @@
   <script>
     // ✅ Free Audit Form - Simple Calendly Redirect
     document.addEventListener('DOMContentLoaded', function() {
-      const auditForm = document.getElementById('auditForm');
-      if (auditForm) {
-        auditForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          window.open("https://calendly.com/jacobdavis-activ3websolutions/30min", "_blank");
-          // Hide the modal using Bootstrap's native method
-          const auditModal = bootstrap.Modal.getInstance(document.getElementById('auditModal'));
-          if (auditModal) auditModal.hide();
-        });
-      }
+        // Handle the Free Audit modal form
+        const auditForm = document.getElementById('auditForm');
+        if (auditForm) {
+            auditForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                window.open("https://calendly.com/jacobdavis-activ3websolutions/30min", "_blank");
+                // Hide the modal using Bootstrap's native method
+                const auditModal = bootstrap.Modal.getInstance(document.getElementById('auditModal'));
+                if (auditModal) auditModal.hide();
+            });
+        }
 
-      // ✅ Formspree Form Handling - SIMPLIFIED VERSION
-      const contactForm = document.getElementById('contact-form');
-      if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-          // This allows the form to submit naturally to Formspree.
-          // Formspree will handle the submission and redirect.
-          // We just show a temporary message.
-          const submitBtn = document.getElementById('submit-btn');
-          const formStatus = document.getElementById('form-status');
-          
-          if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-          }
-          if (formStatus) {
-            formStatus.textContent = 'Sending your message...';
-            formStatus.className = 'form-status';
-          }
-          // The form will now submit and the page will change as Formspree handles it.
-          // If you want to stay on the page, you would need the more complex async code,
-          // but that is more prone to error. This simple method is reliable.
-        });
-      }
+        // ✅ SIMPLE Formspree Handling - Let Formspree do the work!
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function() {
+                // Just show a temporary message, then let Formspree redirect.
+                const submitBtn = document.querySelector('#contact-form button[type="submit"]');
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                }
+                // The form will now submit naturally. Formspree will show its own confirmation page.
+                // This is the most reliable method for GitHub Pages.
+            });
+        }
     });
   </script>
 </body>
