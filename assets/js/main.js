@@ -224,4 +224,53 @@
     onscroll(document, headerScrolled)
   }
 
+  /**
+   * Mobile navigation toggle
+   */
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const body = document.querySelector('body');
+
+  if (mobileNavToggle) {
+    mobileNavToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      body.classList.toggle('mobile-nav-active');
+      
+      // Toggle icon
+      this.classList.toggle('bi-list');
+      this.classList.toggle('bi-x');
+    });
+  }
+
+  /**
+   * Close mobile navigation when clicking on backdrop or nav links
+   */
+  document.addEventListener('click', function(e) {
+    if (body.classList.contains('mobile-nav-active')) {
+      // Close menu when clicking on backdrop or nav links
+      if (e.target.classList.contains('mobile-nav-backdrop') || 
+          e.target.closest('.navmenu a')) {
+        body.classList.remove('mobile-nav-active');
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        if (mobileNavToggle) {
+          mobileNavToggle.classList.add('bi-list');
+          mobileNavToggle.classList.remove('bi-x');
+        }
+      }
+    }
+  });
+
+  /**
+   * Close mobile navigation when window is resized to desktop size
+   */
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 1199) {
+      body.classList.remove('mobile-nav-active');
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      if (mobileNavToggle) {
+        mobileNavToggle.classList.add('bi-list');
+        mobileNavToggle.classList.remove('bi-x');
+      }
+    }
+  });
+
 })();
