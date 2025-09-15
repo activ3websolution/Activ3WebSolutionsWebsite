@@ -10,61 +10,61 @@
    */
   document.addEventListener('DOMContentLoaded', function() {
     initMobileNavigation();
-    initTypingAnimation();
+    
+    // Only run these if we're on the homepage
+    if (document.getElementById('typed-text')) {
+      initTypingAnimation();
+    }
+    
     initForms();
     initModals();
   });
 
   /**
-   * Mobile navigation functionality
+   * Mobile navigation functionality - SIMPLIFIED AND ROBUST
    */
   function initMobileNavigation() {
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const body = document.body;
     const backdrop = document.querySelector('.mobile-nav-backdrop');
     const header = document.getElementById('header');
-    const navLinks = document.querySelectorAll('.navmenu a');
+    
+    if (!mobileNavToggle || !header) return;
     
     // Function to close mobile menu
     const closeMobileMenu = function() {
       body.classList.remove('mobile-nav-active');
       header.classList.remove('header-show');
-      
-      // Reset toggle icon
-      if (mobileNavToggle) {
-        mobileNavToggle.classList.add('bi-list');
-        mobileNavToggle.classList.remove('bi-x');
-      }
+      mobileNavToggle.classList.add('bi-list');
+      mobileNavToggle.classList.remove('bi-x');
+    };
+    
+    // Function to open mobile menu
+    const openMobileMenu = function() {
+      body.classList.add('mobile-nav-active');
+      header.classList.add('header-show');
+      mobileNavToggle.classList.remove('bi-list');
+      mobileNavToggle.classList.add('bi-x');
     };
     
     // Toggle mobile menu
-    if (mobileNavToggle) {
-      mobileNavToggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        const isOpening = !body.classList.contains('mobile-nav-active');
-        
-        if (isOpening) {
-          body.classList.add('mobile-nav-active');
-          header.classList.add('header-show');
-          this.classList.remove('bi-list');
-          this.classList.add('bi-x');
-        } else {
-          closeMobileMenu();
-        }
-      });
-    }
+    mobileNavToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      if (body.classList.contains('mobile-nav-active')) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
     
     // Close menu when clicking on backdrop
     if (backdrop) {
-      backdrop.addEventListener('click', function(e) {
-        e.stopPropagation();
-        closeMobileMenu();
-      });
+      backdrop.addEventListener('click', closeMobileMenu);
     }
     
-    // Close menu when clicking on a nav link
+    // Close menu when clicking on a nav link (for all pages)
+    const navLinks = document.querySelectorAll('.navmenu a');
     navLinks.forEach(link => {
       link.addEventListener('click', function() {
         if (window.innerWidth < 1200) {
@@ -79,27 +79,10 @@
         closeMobileMenu();
       }
     });
-
-    // Close menu when clicking outside on mobile
-    document.addEventListener('click', function(e) {
-      if (window.innerWidth < 1200 && 
-          body.classList.contains('mobile-nav-active') &&
-          !header.contains(e.target) && 
-          e.target !== mobileNavToggle) {
-        closeMobileMenu();
-      }
-    });
-
-    // Prevent clicks inside menu from closing it
-    if (header) {
-      header.addEventListener('click', function(e) {
-        e.stopPropagation();
-      });
-    }
   }
 
   /**
-   * Typing animation for hero section
+   * Typing animation for hero section (homepage only)
    */
   function initTypingAnimation() {
     const typedTextElement = document.getElementById('typed-text');
@@ -154,100 +137,51 @@
         e.preventDefault();
         window.open("https://calendly.com/jacobdavis-activ3websolutions/30min", "_blank");
         
-        // Close modal if it exists
-        const auditModal = document.getElementById('auditModal');
-        if (auditModal) {
-          auditModal.style.display = 'none';
-          
-          // If using Bootstrap modal
-          if (typeof bootstrap !== 'undefined') {
-            const bsModal = bootstrap.Modal.getInstance(auditModal);
-            if (bsModal) bsModal.hide();
-          }
-        }
-        
         // Reset form
         this.reset();
       });
     }
 
-    // Contact Form Handling
+    // Contact Form Handling (homepage only)
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        // This is just visual feedback - Formspree will handle the actual submission
+      contactForm.addEventListener('submit', function() {
         const submitBtn = this.querySelector('button[type="submit"]');
         if (submitBtn) {
           submitBtn.disabled = true;
           submitBtn.textContent = 'Sending...';
-          
-          // Re-enable after 5 seconds in case there's an error
-          setTimeout(() => {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
-          }, 5000);
         }
       });
     }
   }
 
   /**
-   * Modal functionality
+   * Modal functionality (homepage only)
    */
   function initModals() {
+    // Only run on homepage where these elements exist
     const auditButton = document.getElementById('auditButton');
     const auditModal = document.getElementById('auditModal');
     const closeModal = document.getElementById('closeModal');
     
-    if (auditButton && auditModal) {
-      auditButton.addEventListener('click', function() {
-        // Show modal - handle both plain JS and Bootstrap modals
-        if (typeof bootstrap !== 'undefined') {
-          const bsModal = new bootstrap.Modal(auditModal);
-          bsModal.show();
-        } else {
-          auditModal.style.display = 'block';
-        }
-      });
-    }
+    if (!auditButton || !auditModal) return;
     
-    if (closeModal && auditModal) {
+    auditButton.addEventListener('click', function() {
+      auditModal.style.display = 'block';
+    });
+    
+    if (closeModal) {
       closeModal.addEventListener('click', function() {
-        if (typeof bootstrap !== 'undefined') {
-          const bsModal = bootstrap.Modal.getInstance(auditModal);
-          if (bsModal) bsModal.hide();
-        } else {
-          auditModal.style.display = 'none';
-        }
+        auditModal.style.display = 'none';
       });
     }
     
     // Close modal when clicking outside
-    if (auditModal) {
-      window.addEventListener('click', function(event) {
-        if (event.target === auditModal) {
-          if (typeof bootstrap !== 'undefined') {
-            const bsModal = bootstrap.Modal.getInstance(auditModal);
-            if (bsModal) bsModal.hide();
-          } else {
-            auditModal.style.display = 'none';
-          }
-        }
-      });
-    }
-  }
-
-  /**
-   * Helper function to check if element is in viewport
-   */
-  function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
+    window.addEventListener('click', function(event) {
+      if (event.target === auditModal) {
+        auditModal.style.display = 'none';
+      }
+    });
   }
 
 })();
