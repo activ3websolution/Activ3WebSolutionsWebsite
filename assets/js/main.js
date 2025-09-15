@@ -155,7 +155,7 @@
       speed: 400,
       loop: true,
       autoplay: {
-        delay: 5000,
+        delay: 5e3,
         disableOnInteraction: false
       },
       pagination: {
@@ -260,8 +260,29 @@
     
     // Close menu when clicking on a nav link
     navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        if (window.innerWidth < 1200) {
+      link.addEventListener('click', function(e) {
+        // Only handle same-page anchor links
+        if (this.getAttribute('href').startsWith('#')) {
+          if (window.innerWidth < 1200) {
+            body.classList.remove('mobile-nav-active');
+            header.classList.remove('header-show');
+            
+            // Reset toggle icon
+            if (mobileNavToggle) {
+              mobileNavToggle.classList.add('bi-list');
+              mobileNavToggle.classList.remove('bi-x');
+            }
+          }
+          
+          // Handle smooth scrolling for same-page anchor links
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (select(targetId)) {
+            scrollto(targetId);
+          }
+        } else if (window.innerWidth < 1200) {
+          // For external page links, just close the menu
+          // Don't prevent default behavior - let the link work normally
           body.classList.remove('mobile-nav-active');
           header.classList.remove('header-show');
           
@@ -269,15 +290,6 @@
           if (mobileNavToggle) {
             mobileNavToggle.classList.add('bi-list');
             mobileNavToggle.classList.remove('bi-x');
-          }
-        }
-        
-        // Handle internal page navigation
-        if (this.getAttribute('href').startsWith('#')) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          if (select(targetId)) {
-            scrollto(targetId);
           }
         }
       });
