@@ -209,6 +209,7 @@ h1, h2, h3, h4, h5, h6 { color: var(--heading-color); font-family: var(--heading
   
   .mobile-nav-active .header {
     left: 0;
+    z-index: 9999;
   }
   
   /* Backdrop overlay for mobile */
@@ -249,6 +250,8 @@ h1, h2, h3, h4, h5, h6 { color: var(--heading-color); font-family: var(--heading
     color: #a8a9b4;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s;
+    z-index: 10000;
+    position: relative;
   }
   
   .navmenu a:hover,
@@ -273,6 +276,19 @@ h1, h2, h3, h4, h5, h6 { color: var(--heading-color); font-family: var(--heading
   /* Adjust logo size for mobile */
   .logo h1 {
     font-size: 20px;
+  }
+}
+
+/* Fix for service and portfolio pages */
+.service-details-page .header,
+.portfolio-details-page .header {
+  z-index: 997;
+}
+
+@media (max-width: 1199px) {
+  .service-details-page .header,
+  .portfolio-details-page .header {
+    z-index: 9999;
   }
 }
 
@@ -681,4 +697,54 @@ textarea.form-control {
     flex: 0 0 50%;
     max-width: 50%;
   }
+}
+
+/* Service Details Page Specific Styles */
+.service-details-page .service-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.service-details-page .service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-details-page .highlighted {
+  border: 2px solid var(--accent-color);
+  position: relative;
+}
+
+/* Portfolio Details Page Specific Styles */
+.portfolio-details-page .portfolio-info {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.github-btn {
+  background-color: #24292e;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.github-btn:hover {
+  background-color: #0366d6;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
