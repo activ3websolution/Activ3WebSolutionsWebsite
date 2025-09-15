@@ -6,222 +6,6 @@
   "use strict";
 
   /**
-   * Easy selector helper function
-   */
-  const select = (el, all = false) => {
-    el = el.trim()
-    if (all) {
-      return [...document.querySelectorAll(el)]
-    } else {
-      return document.querySelector(el)
-    }
-  }
-
-  /**
-   * Easy event listener function
-   */
-  const on = (type, el, listener, all = false) => {
-    let selectEl = select(el, all)
-    if (selectEl) {
-      if (all) {
-        selectEl.forEach(e => e.addEventListener(type, listener))
-      } else {
-        selectEl.addEventListener(type, listener)
-      }
-    }
-  }
-
-  /**
-   * Easy on scroll event listener 
-   */
-  const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
-  }
-
-  /**
-   * Navbar links active state on scroll
-   */
-  let navbarlinks = select('#navmenu a', true)
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200
-    navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
-      let section = select(navbarlink.hash)
-      if (!section) return
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active')
-      } else {
-        navbarlink.classList.remove('active')
-      }
-    })
-  }
-  window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
-
-  /**
-   * Scrolls to an element with header offset
-   */
-  const scrollto = (el) => {
-    let header = select('#header')
-    let offset = header.offsetHeight
-
-    if (!select(el)) return;
-    
-    let elementPos = select(el).offsetTop
-    window.scrollTo({
-      top: elementPos - offset,
-      behavior: 'smooth'
-    })
-  }
-
-  /**
-   * Back to top button
-   */
-  let backtotop = select('.back-to-top')
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active')
-      } else {
-        backtotop.classList.remove('active')
-      }
-    }
-    window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
-  }
-
-  /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('body').classList.toggle('mobile-nav-active')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
-
-  /**
-   * Scroll with offset on page load with hash links in the url
-   */
-  window.addEventListener('load', () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash)
-      }
-    }
-  });
-
-  /**
-   * Preloader
-   */
-  let preloader = select('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove()
-    });
-  }
-
-  /**
-   * Initiate glightbox 
-   */
-  if (typeof GLightbox !== 'undefined') {
-    const glightbox = GLightbox({
-      selector: '.glightbox'
-    });
-  }
-
-  /**
-   * Initiate portfolio lightbox 
-   */
-  if (typeof GLightbox !== 'undefined') {
-    const portfolioLightbox = GLightbox({
-      selector: '.portfolio-lightbox'
-    });
-  }
-
-  /**
-   * Initiate portfolio details lightbox 
-   */
-  if (typeof GLightbox !== 'undefined') {
-    const portfolioDetailsLightbox = GLightbox({
-      selector: '.portfolio-details-lightbox'
-    });
-  }
-
-  /**
-   * Portfolio details slider
-   */
-  if (typeof Swiper !== 'undefined') {
-    new Swiper('.portfolio-details-slider', {
-      speed: 400,
-      loop: true,
-      autoplay: {
-        delay: 5e3,
-        disableOnInteraction: false
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
-      }
-    });
-  }
-
-  /**
-   * Initiate Pure Counter 
-   */
-  if (typeof PureCounter !== 'undefined') {
-    new PureCounter();
-  }
-
-  /**
-   * Animation on scroll
-   */
-  if (typeof AOS !== 'undefined') {
-    window.addEventListener('load', () => {
-      AOS.init({
-        duration: 1000,
-        easing: 'ease-in-out',
-        once: true,
-        mirror: false
-      })
-    });
-  }
-
-  /**
-   * Initiate Typed.js if available
-   */
-  if (typeof Typed !== 'undefined') {
-    const typedElements = select('.typed');
-    if (typedElements) {
-      if (typedElements.getAttribute('data-typed-items')) {
-        new Typed('.typed', {
-          strings: typedElements.getAttribute('data-typed-items').split(','),
-          loop: true,
-          typeSpeed: 100,
-          backSpeed: 50,
-          backDelay: 2000
-        });
-      }
-    }
-  }
-
-  /**
-   * Toggle .header-scrolled class to #header when page is scrolled
-   */
-  let selectHeader = select('#header')
-  if (selectHeader) {
-    const headerScrolled = () => {
-      if (window.scrollY > 100) {
-        selectHeader.classList.add('header-scrolled')
-      } else {
-        selectHeader.classList.remove('header-scrolled')
-      }
-    }
-    window.addEventListener('load', headerScrolled)
-    onscroll(document, headerScrolled)
-  }
-
-  /**
    * Mobile navigation functionality
    */
   document.addEventListener('DOMContentLoaded', function() {
@@ -260,29 +44,8 @@
     
     // Close menu when clicking on a nav link
     navLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        // Only handle same-page anchor links
-        if (this.getAttribute('href').startsWith('#')) {
-          if (window.innerWidth < 1200) {
-            body.classList.remove('mobile-nav-active');
-            header.classList.remove('header-show');
-            
-            // Reset toggle icon
-            if (mobileNavToggle) {
-              mobileNavToggle.classList.add('bi-list');
-              mobileNavToggle.classList.remove('bi-x');
-            }
-          }
-          
-          // Handle smooth scrolling for same-page anchor links
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          if (select(targetId)) {
-            scrollto(targetId);
-          }
-        } else if (window.innerWidth < 1200) {
-          // For external page links, just close the menu
-          // Don't prevent default behavior - let the link work normally
+      link.addEventListener('click', function() {
+        if (window.innerWidth < 1200) {
           body.classList.remove('mobile-nav-active');
           header.classList.remove('header-show');
           
@@ -308,6 +71,90 @@
         }
       }
     });
+
+    // Typing animation
+    const typedTextElement = document.getElementById('typed-text');
+    if (typedTextElement) {
+      const words = ['Websites', 'SEO', 'Email Marketing'];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let typingSpeed = 100;
+      
+      function type() {
+        const currentWord = words[wordIndex];
+        
+        if (isDeleting) {
+          // Remove characters
+          typedTextElement.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+          typingSpeed = 50;
+        } else {
+          // Add characters
+          typedTextElement.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
+          typingSpeed = 100;
+        }
+        
+        // Determine action when word is complete
+        if (!isDeleting && charIndex === currentWord.length) {
+          isDeleting = true;
+          typingSpeed = 1000; // Pause at end of word
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          typingSpeed = 500; // Pause before starting next word
+        }
+        
+        setTimeout(type, typingSpeed);
+      }
+      
+      // Start the typing animation
+      setTimeout(type, 1000);
+    }
+
+    // Free Audit Form - Simple Calendly Redirect
+    const auditForm = document.getElementById('auditForm');
+    if (auditForm) {
+      auditForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        window.open("https://calendly.com/jacobdavis-activ3websolutions/30min", "_blank");
+        document.getElementById('auditModal').style.display = 'none';
+      });
+    }
+
+    // Contact Form Handling
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function() {
+        const submitBtn = document.querySelector('#contact-form button[type="submit"]');
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+        }
+      });
+    }
+
+    // Modal functionality
+    const auditButton = document.getElementById('auditButton');
+    const auditModal = document.getElementById('auditModal');
+    const closeModal = document.getElementById('closeModal');
+    
+    if (auditButton && auditModal && closeModal) {
+      auditButton.addEventListener('click', function() {
+        auditModal.style.display = 'block';
+      });
+      
+      closeModal.addEventListener('click', function() {
+        auditModal.style.display = 'none';
+      });
+      
+      window.addEventListener('click', function(event) {
+        if (event.target === auditModal) {
+          auditModal.style.display = 'none';
+        }
+      });
+    }
   });
 
 })();
