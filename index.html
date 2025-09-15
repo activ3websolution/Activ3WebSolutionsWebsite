@@ -17,140 +17,6 @@
   
   <!-- Your CSS -->
   <link href="main.css" rel="stylesheet">
-  
-  <!-- Contact Section Styles -->
-  <style>
-    .contact-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: center;
-      align-items: flex-start;
-    }
-    
-    .contact-info {
-      flex: 1;
-      min-width: 300px;
-    }
-    
-    .contact-form {
-      flex: 2;
-      min-width: 300px;
-    }
-    
-    .contact-card {
-      background: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      height: 100%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .contact-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    }
-    
-    .contact-info-card {
-      background: linear-gradient(135deg, #149ddd 0%, #0d8ac5 100%);
-      color: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      height: 100%;
-    }
-    
-    .contact-info-card h4 {
-      color: white;
-      margin-top: 0;
-      margin-bottom: 25px;
-      font-size: 22px;
-      position: relative;
-      padding-bottom: 15px;
-    }
-    
-    .contact-info-card h4:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 40px;
-      height: 3px;
-      background: rgba(255, 255, 255, 0.7);
-    }
-    
-    .contact-info-card p {
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-    }
-    
-    .contact-info-card i {
-      margin-right: 12px;
-      font-size: 18px;
-      width: 20px;
-      text-align: center;
-    }
-    
-    .contact-info-card a {
-      color: white;
-      text-decoration: underline;
-      transition: opacity 0.3s;
-    }
-    
-    .contact-info-card a:hover {
-      opacity: 0.8;
-    }
-    
-    .form-group {
-      margin-bottom: 20px;
-    }
-    
-    .form-control {
-      padding: 15px;
-      border: 1px solid #e1e1e1;
-      border-radius: 6px;
-      margin-bottom: 20px;
-      width: 100%;
-      font-family: var(--default-font);
-      transition: all 0.3s;
-      font-size: 16px;
-    }
-    
-    .form-control:focus {
-      border-color: var(--accent-color);
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(20, 157, 221, 0.15);
-      transform: translateY(-2px);
-    }
-    
-    textarea.form-control {
-      min-height: 150px;
-      resize: vertical;
-    }
-    
-    #submit-btn {
-      background: var(--accent-color);
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-      width: 100%;
-      font-size: 16px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-    
-    #submit-btn:hover {
-      background: #0d8ac5;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(13, 138, 197, 0.3);
-    }
-  </style>
 </head>
 
 <body class="index-page">
@@ -161,16 +27,16 @@
   <!-- Backdrop overlay for mobile -->
   <div class="mobile-nav-backdrop"></div>
 
-  <header id="header" class="header dark-background d-flex flex-column">
+  <header id="header" class="header dark-background">
     <div class="profile-img">
-      <img src="assets/img/my-profile-img.png" alt="Activ3 Web Solutions" class="img-fluid rounded-circle">
+      <img src="assets/img/my-profile-img.png" alt="Activ3 Web Solutions" class="img-fluid">
     </div>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+    <div class="logo">
       <h1 class="sitename">Activ3 Web Solutions</h1>
-    </a>
+    </div>
 
-    <div class="social-links text-center">
+    <div class="social-links">
       <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
       <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
       <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
@@ -191,7 +57,7 @@
   <main class="main">
 
     <!-- ======= Hero Section ======= -->
-    <section id="hero" class="hero section dark-background">
+    <section id="hero" class="hero">
       <img src="assets/img/hero-bg.jpg" alt="Background" class="hero-bg">
       <div class="container">
         <h2>Activ3 Web Solutions</h2>
@@ -199,8 +65,8 @@
           <span id="typed-text">Websites, SEO, Email Marketing</span>
           <span class="typed-cursor">|</span>
         </p>
-        <div class="mt-3">
-          <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary me-2">Schedule a Call</a>
+        <div class="hero-buttons">
+          <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary">Schedule a Call</a>
           <button type="button" class="btn btn-outline-light" id="auditButton">Free Audit</button>
         </div>
       </div>
@@ -235,7 +101,7 @@
     </section>
 
     <!-- ======= Why Choose Us Section ======= -->
-    <section id="why-us" class="resume section light-background">
+    <section id="why-us" class="why-us section light-background">
       <div class="container section-title">
         <h2>Why Choose Us</h2>
         <p>We deliver more than just websites — we create growth opportunities for your business.</p>
@@ -263,7 +129,7 @@
     </section>
 
     <!-- ======= Client Success Stories Section ======= -->
-    <section id="success" class="resume section light-background">
+    <section id="success" class="success section light-background">
       <div class="container section-title">
         <h2>Client Success Stories</h2>
         <p>Real results from businesses that chose Activ3 Web Solutions.</p>
@@ -277,7 +143,7 @@
       </div>
     </section>
 
-    <!-- ======= Contact Section - Improved ======= -->
+    <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact section light-background">
       <div class="container section-title">
         <h2><i class="bi bi-envelope"></i> Contact</h2>
@@ -319,12 +185,10 @@
             <p><i class="bi bi-geo-alt"></i> Serving clients nationwide</p>
             <p><i class="bi bi-clock"></i> Response within 24 hours</p>
             
-            <div style="margin-top: 30px;">
-              <div class="social-links">
-                <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
-              </div>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
             </div>
           </div>
         </div>
@@ -333,36 +197,40 @@
 
   </main>
 
-  <footer id="footer" class="footer position-relative light-background">
+  <footer id="footer" class="footer light-background">
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>2025</span> <strong class="px-1 sitename">Activ3 Web Solutions</strong>. All Rights Reserved</p>
+      <div class="copyright">
+        <p>© <span>2025</span> <strong class="sitename">Activ3 Web Solutions</strong>. All Rights Reserved</p>
       </div>
     </div>
   </footer>
 
   <!-- ======= Free Audit Modal ======= -->
-  <div id="auditModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000;">
-    <div style="position: relative; background: white; max-width: 500px; margin: 100px auto; padding: 20px; border-radius: 5px;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-        <h3 style="margin: 0;">Free Website Audit</h3>
-        <button id="closeModal" style="background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
+  <div id="auditModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Free Website Audit</h3>
+        <button id="closeModal" class="modal-close">&times;</button>
       </div>
       <form id="auditForm">
-        <div style="margin-bottom: 15px;">
-          <label style="display: block; margin-bottom: 5px;">Do you already have a website?</label>
-          <input type="radio" name="hasWebsite" value="Yes" id="yesWebsite"> <label for="yesWebsite">Yes</label>
-          <input type="radio" name="hasWebsite" value="No" id="noWebsite" style="margin-left: 15px;"> <label for="noWebsite">No</label>
+        <div class="form-group">
+          <label>Do you already have a website?</label>
+          <div class="radio-group">
+            <input type="radio" name="hasWebsite" value="Yes" id="yesWebsite"> 
+            <label for="yesWebsite">Yes</label>
+            <input type="radio" name="hasWebsite" value="No" id="noWebsite"> 
+            <label for="noWebsite">No</label>
+          </div>
         </div>
-        <div style="margin-bottom: 15px;">
-          <label style="display: block; margin-bottom: 5px;">If yes, what changes or updates would you like?</label>
-          <textarea name="changes" rows="3" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+        <div class="form-group">
+          <label>If yes, what changes or updates would you like?</label>
+          <textarea name="changes" rows="3" class="form-control"></textarea>
         </div>
-        <div style="margin-bottom: 15px;">
-          <label style="display: block; margin-bottom: 5px;">What is your business about?</label>
-          <textarea name="business" rows="3" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+        <div class="form-group">
+          <label>What is your business about?</label>
+          <textarea name="business" rows="3" class="form-control"></textarea>
         </div>
-        <button type="submit" style="background: #149ddd; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;">Submit & Schedule</button>
+        <button type="submit" class="btn btn-primary">Submit & Schedule</button>
       </form>
     </div>
   </div>
