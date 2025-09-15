@@ -812,7 +812,6 @@
   </div>
 
   <!-- JavaScript -->
-  <script src="main.js"></script>
   <script>
     // Mobile menu toggle functionality
     document.addEventListener('DOMContentLoaded', function() {
@@ -827,6 +826,10 @@
           e.preventDefault();
           body.classList.toggle('mobile-nav-active');
           header.classList.toggle('header-show');
+          
+          // Toggle icon
+          this.classList.toggle('bi-list');
+          this.classList.toggle('bi-x');
         });
       }
       
@@ -835,16 +838,55 @@
         backdrop.addEventListener('click', function() {
           body.classList.remove('mobile-nav-active');
           header.classList.remove('header-show');
+          
+          // Reset toggle icon
+          if (mobileNavToggle) {
+            mobileNavToggle.classList.add('bi-list');
+            mobileNavToggle.classList.remove('bi-x');
+          }
         });
       }
       
-      // Close menu when clicking on a nav link
+      // Close menu when clicking on a nav link (for same page anchors)
       const navLinks = document.querySelectorAll('.navmenu a');
       navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          if (window.innerWidth < 1200) {
+        link.addEventListener('click', function(e) {
+          // Only handle same-page anchor links, not external page links
+          if (this.getAttribute('href').startsWith('#')) {
+            if (window.innerWidth < 1200) {
+              body.classList.remove('mobile-nav-active');
+              header.classList.remove('header-show');
+              
+              // Reset toggle icon
+              if (mobileNavToggle) {
+                mobileNavToggle.classList.add('bi-list');
+                mobileNavToggle.classList.remove('bi-x');
+              }
+            }
+            
+            // Handle smooth scrolling for same-page anchor links
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              const headerHeight = document.querySelector('#header').offsetHeight;
+              const targetPosition = targetElement.offsetTop - headerHeight;
+              
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+            }
+          } else if (window.innerWidth < 1200) {
+            // For external page links, just close the menu
             body.classList.remove('mobile-nav-active');
             header.classList.remove('header-show');
+            
+            // Reset toggle icon
+            if (mobileNavToggle) {
+              mobileNavToggle.classList.add('bi-list');
+              mobileNavToggle.classList.remove('bi-x');
+            }
           }
         });
       });
@@ -932,6 +974,20 @@
         // Start the typing animation
         setTimeout(type, 1000);
       }
+      
+      // Close mobile navigation when window is resized to desktop size
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 1199) {
+          body.classList.remove('mobile-nav-active');
+          header.classList.remove('header-show');
+          
+          // Reset toggle icon
+          if (mobileNavToggle) {
+            mobileNavToggle.classList.add('bi-list');
+            mobileNavToggle.classList.remove('bi-x');
+          }
+        }
+      });
     });
   </script>
 </body>
