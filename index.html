@@ -879,6 +879,7 @@
             }
           } else if (window.innerWidth < 1200) {
             // For external page links, just close the menu
+            // Don't prevent default behavior - let the link work normally
             body.classList.remove('mobile-nav-active');
             header.classList.remove('header-show');
             
