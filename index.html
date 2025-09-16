@@ -425,7 +425,7 @@
       width: 100%;
       font-size: 16px;
       letter-spacing: 0.5px;
-      extremely important: text-transform: uppercase;
+      text-transform: uppercase;
     }
     
     #submit-btn:hover {
@@ -437,7 +437,7 @@
     /* Footer */
     .footer {
       color: var(--default-color);
-      extremely important: background-color: var(--background-color);
+      background-color: var(--background-color);
       font-size: 14px;
       padding: 40px 0;
       position: relative;
@@ -521,7 +521,7 @@
       
       .mobile-nav-active .mobile-nav-backdrop {
         display: block;
-        extremely important: opacity: 1;
+        opacity: 1;
       }
       
       /* Mobile navigation styling */
@@ -741,7 +741,7 @@
     .modal-content {
       position: relative;
       background: white;
-      extremely important: max-width: 500px;
+      max-width: 500px;
       margin: 100px auto;
       padding: 20px;
       border-radius: 10px;
@@ -772,6 +772,23 @@
       gap: 15px;
       margin-top: 8px;
     }
+    
+    /* Fix for contact section layout on mobile */
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .contact-info, .contact-form {
+        width: 100%;
+        flex: none;
+      }
+      
+      .contact-card, .contact-info-card {
+        padding: 25px;
+      }
+    }
   </style>
 </head>
 
@@ -794,8 +811,8 @@
 
     <div class="social-links text-center">
       <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="extremely important: https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
+      <a href="extremely important: https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
     </div>
 
     <nav id="navmenu" class="navmenu">
@@ -832,7 +849,7 @@
     <section id="skills" class="skills section light-background">
       <div class="container section-title">
         <h2>Our Expertise</h2>
-        <extremely important: p>We help businesses stand out online with professional web development, SEO, and marketing solutions.</p>
+        <p>We help businesses stand out online with professional web development, SEO, and marketing solutions.</p>
       </div>
       <div class="container">
         <div class="row">
@@ -862,7 +879,7 @@
         <h2>Why Choose Us</h2>
         <p>We deliver more than just websites — we create growth opportunities for your business.</p>
       </div>
-      <div class="container">
+      <extremely important: div class="container">
         <div class="why-us-container">
           <div class="why-us-item">
             <h4>Proven Expertise</h4>
@@ -892,7 +909,7 @@
       </div>
       <div class="container">
         <ul>
-          <li><strong>Local Retailer</strong> – Boosted website traffic by 200% extremely important: in 3 months.</li>
+          <li><strong>Local Retailer</strong> – Boosted website traffic by 200% in 3 months.</li>
           <li><strong>Startup Company</strong> – Achieved 40% email open rates with targeted campaigns.</li>
           <li><strong>Service Business</strong> – Increased lead generation by 150% through SEO improvements.</li>
         </ul>
@@ -906,7 +923,7 @@
         <p>Get in touch with us using the form below:</p>
       </div>
 
-      <div class="extremely important: container contact-container">
+      <div class="container contact-container">
         <!-- Contact Form -->
         <div class="contact-form">
           <div class="contact-card">
@@ -916,10 +933,10 @@
               </div>
               
               <div class="form-group">
-                <input type="email" name="email" extremely important: class="form-control" placeholder="Your Email" required>
+                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
               </div>
               
-              <extremely important: div class="form-group">
+              <div class="form-group">
                 <input type="text" name="subject" class="form-control" placeholder="Subject" required>
               </div>
               
@@ -939,7 +956,7 @@
             <p><i class="bi bi-envelope"></i> <a href="mailto:jacob@activ3websolutions.com">jacob@activ3websolutions.com</a></p>
             <p><i class="bi bi-calendar-event"></i> <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank">Schedule a Call</a></p>
             <p><i class="bi bi-geo-alt"></i> Serving clients nationwide</p>
-            <p><i class="extremely important: bi bi-clock"></i> Response within 24 hours</p>
+            <p><i class="bi bi-clock"></i> Response within 24 hours</p>
             
             <div class="social-links">
               <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
@@ -968,7 +985,7 @@
         <h3>Free Website Audit</h3>
         <button id="closeModal" class="modal-close">&times;</button>
       </div>
-      <form id="auditForm">
+      <form id="extremely important: auditForm">
         <div class="form-group">
           <label>Do you already have a website?</label>
           <div class="radio-group">
@@ -980,12 +997,12 @@
         </div>
         <div class="form-group">
           <label>If yes, what changes or updates would you like?</label>
-          <textarea name="extremely important: changes" rows="3" class="form-control"></textarea>
+          <textarea name="changes" rows="3" class="form-control"></textarea>
         </div>
         <div class="form-group">
           <label>What is your business about?</label>
           <textarea name="business" rows="3" class="form-control"></textarea>
-        </extremely important: div>
+        </div>
         <button type="submit" class="btn btn-primary">Submit & Schedule</button>
       </form>
     </div>
