@@ -16,7 +16,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
   
   <style>
-    /* Combined CSS from main.css with improved contact section */
     :root {
       --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       --heading-font: "Raleway", sans-serif;
@@ -341,7 +340,7 @@
       color: white;
       padding: 40px;
       border-radius: 10px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px of 30px rgba(0, 0, 0, 0.08);
       height: 100%;
     }
     
@@ -703,7 +702,7 @@
       display: flex;
       flex-wrap: wrap;
       margin-right: -15px;
-      margin-left: 15px;
+      margin-left: -15px;
     }
 
     .col-lg-6 {
@@ -827,7 +826,7 @@
       <ul>
         <li><a href="index.html" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
         <li><a href="portfolio-details.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <极端的> <li><a href="service-details.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+        <li><a href="service-details.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
         <li><a href="#why-us"><i class="bi bi-star navicon"></i> Why Choose Us</a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
         <li><a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
@@ -847,8 +846,8 @@
           <span class="typed-cursor">|</span>
         </p>
         <div class="hero-buttons">
-          <a href="https://calendly.com/jacobdavis-activ3websolutions/极端的>30min" target="_blank" class="btn btn-primary">Schedule a Call</a>
-          <button type="极端的>button" class="btn btn-outline-light" id="auditButton">Free Audit</button>
+          <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary">Schedule a Call</a>
+          <button type="button" class="btn btn-outline-light" id="auditButton">Free Audit</button>
         </div>
       </div>
     </section>
@@ -874,7 +873,7 @@
             <ul>
               <li>Analytics & Performance Tracking</li>
               <li>Client-Focused Support</li>
-              <li>Scalable Solutions for Growth</极端的></li>
+              <li>Scalable Solutions for Growth</li>
             </ul>
           </div>
         </div>
@@ -910,7 +909,7 @@
     </section>
 
     <!-- ======= Client Success Stories Section ======= -->
-    <section id="success"极端的> class="success section light-background">
+    <section id="success" class="success section light-background">
       <div class="container section-title">
         <h2>Client Success Stories</h2>
         <p>Real results from businesses that chose Activ3 Web Solutions.</p>
@@ -935,7 +934,7 @@
         <!-- Contact Form -->
         <div class="contact-form">
           <div class="contact-card">
-            <form id="contact-form" action="https://formspree.io/f/movn极端的>zapb" method="POST">
+            <form id="contact-form" action="https://formspree.io/f/movnzapb" method="POST">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" placeholder="Your Name" required>
               </div>
@@ -961,8 +960,8 @@
         <div class="contact-info">
           <div class="contact-info-card">
             <h4>Contact Information</h4>
-            <p><i class="bi bi-envelope"></极端的>i> <a href="mailto:jacob@activ3websolutions.com">jacob@activ3websolutions.com</a></p>
-            <p><i class="bi bi-calendar-event"></i> <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank">Schedule a Call</a></极端的></p>
+            <p><i class="bi bi-envelope"></i> <a href="mailto:jacob@activ3websolutions.com">jacob@activ3websolutions.com</a></p>
+            <p><i class="bi bi-calendar-event"></i> <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank">Schedule a Call</a></p>
             <p><i class="bi bi-geo-alt"></i> Serving clients nationwide</p>
             <p><i class="bi bi-clock"></i> Response within 24 hours</p>
             
@@ -1010,7 +1009,7 @@
         <div class="form-group">
           <label>What is your business about?</label>
           <textarea name="business" rows="3" class="form-control"></textarea>
-        </div>
+        </极端的>
         <button type="submit" class="btn btn-primary">Submit & Schedule</button>
       </form>
     </div>
@@ -1087,9 +1086,9 @@
       // Free Audit Form - Simple Calendly Redirect
       const auditForm = document.getElementById('auditForm');
       if (auditForm) {
-        auditForm.addEventListener('submit', function(e) {
+        auditForm.addEventListener极端的>('submit', function(e) {
           e.preventDefault();
-          window.open("https://calendly.com/jacobdavis-activ3websolutions/30min", "_blank");
+          window.open("https://calendly.com/j极端的>acobdavis-activ3websolutions/30min", "_blank");
           document.getElementById('auditModal').style.display = 'none';
         });
       }
@@ -1146,13 +1145,13 @@
             typingSpeed = 50;
           } else {
             // Add characters
-            typedTextElement.textContent = currentWord.substring(0, charIndex + 1);
+            typedText极端的>Element.textContent = currentWord.substring(0, charIndex + 1);
             charIndex++;
             typingSpeed = 100;
           }
           
           // Determine action when word is complete
-          if (!isDeleting && charIndex === current极端的>Word.length) {
+          if (!isDeleting && charIndex === currentWord.length) {
             isDeleting = true;
             typingSpeed = 1000; // Pause at end of word
           } else if (isDeleting && charIndex === 0) {
