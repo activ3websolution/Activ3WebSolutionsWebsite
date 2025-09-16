@@ -7,66 +7,38 @@
   <title>Activ3 Web Solutions - Portfolio</title>
   <meta content="Portfolio of Activ3 Web Solutions showcasing client websites, SEO projects, and digital marketing work." name="description">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <style>
-    .github-btn {
-      background-color: #24292e;
-      color: #ffffff;
-      border-radius: 8px;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-    .github-btn:hover {
-      background-color: #0366d6;
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-    }
-  </style>
 </head>
 
 <body class="portfolio-details-page">
 
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+  <!-- Mobile menu toggle button -->
+  <i class="bi bi-list mobile-nav-toggle"></i>
+  
+  <!-- Backdrop overlay for mobile -->
+  <div class="mobile-nav-backdrop"></div>
 
+  <header id="header" class="header dark-background">
     <div class="profile-img">
-      <img src="assets/img/my-profile-img.png" alt="Activ3 Web Solutions" class="img-fluid rounded-circle">
+      <img src="assets/img/my-profile-img.png" alt="Activ3 Web Solutions" class="img-fluid">
     </div>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+    <div class="logo">
       <h1 class="sitename">Activ3 Web Solutions</h1>
-    </a>
+    </div>
 
     <div class="social-links text-center">
       <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
       <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
-      <!-- ✅ Updated GitHub -->
       <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
     </div>
 
@@ -75,9 +47,7 @@
         <li><a href="index.html"><i class="bi bi-house navicon"></i> Home</a></li>
         <li><a href="portfolio-details.html" class="active"><i class="bi bi-images navicon"></i> Portfolio</a></li>
         <li><a href="service-details.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        
         <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-        <!-- ✅ New Schedule link -->
         <li><a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
       </ul>
     </nav>
@@ -87,32 +57,31 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-      <img src="assets/img/hero-bg.jpg" alt="Background" data-aos="fade-in">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <img src="assets/img/hero-bg.jpg" alt="Background" class="hero-bg">
+      <div class="container">
         <h2>Our Portfolio</h2>
         <p>Showcasing websites, SEO, and digital marketing projects</p>
-        <!-- ✅ Buttons -->
-        <div class="mt-3">
-          <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary me-2">Schedule a Call</a>
-          <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#auditModal">Free Audit</button>
+        <!-- Buttons -->
+        <div class="hero-buttons">
+          <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary">Schedule a Call</a>
+          <button type="button" class="btn btn-outline-light" id="auditButton">Free Audit</button>
         </div>
       </div>
     </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section light-background">
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title">
         <h2>Project Highlights</h2>
         <p>This page highlights the work of Activ3 Web Solutions, including website builds, SEO campaigns, and marketing projects. We focus on blending design, performance, and strategy to deliver measurable results.</p>
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 justify-content-center">
+      <div class="container">
+        <div class="row">
           <div class="col-lg-6">
             <div class="portfolio-info text-center">
               <h3>Explore Our Work</h3>
               <p>Check out recent projects, contributions, and code samples on our GitHub profile.</p>
-              <!-- ✅ Updated GitHub -->
               <a href="https://github.com/activ3websolution" target="_blank" class="github-btn"><i class="bi bi-github"></i> Visit Our GitHub</a>
             </div>
           </div>
@@ -122,69 +91,45 @@
 
   </main>
 
-  <footer id="footer" class="footer position-relative light-background">
+  <footer id="footer" class="footer light-background">
     <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>2025</span> <strong class="px-1 sitename">Activ3 Web Solutions</strong>. All Rights Reserved</p>
+      <div class="copyright text-center">
+        <p>© <span>2025</span> <strong class="sitename">Activ3 Web Solutions</strong>. All Rights Reserved</p>
       </div>
     </div>
   </footer>
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <div id="preloader"></div>
-
   <!-- ======= Free Audit Modal ======= -->
-  <div class="modal fade" id="auditModal" tabindex="-1" aria-labelledby="auditModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form id="auditForm">
-          <div class="modal-header">
-            <h5 class="modal-title" id="auditModalLabel">Free Website Audit</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="mb-3">
-              <label class="form-label">Do you already have a website?</label><br>
-              <input type="radio" name="hasWebsite" value="Yes"> Yes
-              <input type="radio" name="hasWebsite" value="No"> No
-            </div>
-            <div class="mb-3">
-              <label class="form-label">If yes, what changes or updates would you like?</label>
-              <textarea class="form-control" name="changes" rows="3"></textarea>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">What is your business about?</label>
-              <textarea class="form-control" name="business" rows="3"></textarea>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Submit & Schedule</button>
-          </div>
-        </form>
+  <div id="auditModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Free Website Audit</h3>
+        <button id="closeModal" class="modal-close">&times;</button>
       </div>
+      <form id="auditForm">
+        <div class="form-group">
+          <label>Do you already have a website?</label>
+          <div class="radio-group">
+            <input type="radio" name="hasWebsite" value="Yes" id="yesWebsite"> 
+            <label for="yesWebsite">Yes</label>
+            <input type="radio" name="hasWebsite" value="No" id="noWebsite"> 
+            <label for="noWebsite">No</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>If yes, what changes or updates would you like?</label>
+          <textarea name="changes" rows="3" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label>What is your business about?</label>
+          <textarea name="business" rows="3" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit & Schedule</button>
+      </form>
     </div>
   </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Main JS File -->
+  <!-- JavaScript -->
   <script src="assets/js/main.js"></script>
-
-  <!-- ✅ Calendly redirect -->
-  <script>
-    document.getElementById('auditForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      window.open("https://calendly.com/jacobdavis-activ3websolutions/30min", "_blank");
-      var modal = bootstrap.Modal.getInstance(document.getElementById('auditModal'));
-      modal.hide();
-    });
-  </script>
 </body>
 </html>
