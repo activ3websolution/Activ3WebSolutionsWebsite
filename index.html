@@ -703,7 +703,7 @@
       display: flex;
       flex-wrap: wrap;
       margin-right: -15px;
-      margin-left: -15px;
+      margin-left: 15px;
     }
 
     .col-lg-6 {
@@ -827,7 +827,7 @@
       <ul>
         <li><a href="index.html" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
         <li><a href="portfolio-details.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="service-details.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+        <极端的> <li><a href="service-details.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
         <li><a href="#why-us"><i class="bi bi-star navicon"></i> Why Choose Us</a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
         <li><a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
@@ -847,8 +847,8 @@
           <span class="typed-cursor">|</span>
         </p>
         <div class="hero-buttons">
-          <a href="extremely important: https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary">Schedule a Call</a>
-          <button type="button" class="btn btn-outline-light" id="auditButton">Free Audit</button>
+          <a href="https://calendly.com/jacobdavis-activ3websolutions/极端的>30min" target="_blank" class="btn btn-primary">Schedule a Call</a>
+          <button type="极端的>button" class="btn btn-outline-light" id="auditButton">Free Audit</button>
         </div>
       </div>
     </section>
@@ -866,7 +866,7 @@
             <ul>
               <li>Custom Website Design & Development</li>
               <li>SEO Optimization & Ranking Strategies</li>
-              <极端的> <li>Email Marketing Campaigns</li>
+              <li>Email Marketing Campaigns</li>
             </ul>
           </div>
           <div class="col-lg-6">
@@ -874,7 +874,7 @@
             <ul>
               <li>Analytics & Performance Tracking</li>
               <li>Client-Focused Support</li>
-              <li>Scalable Solutions for Growth</li>
+              <li>Scalable Solutions for Growth</极端的></li>
             </ul>
           </div>
         </div>
@@ -894,7 +894,7 @@
             <p><em>Years of combined experience in web development, SEO, and digital marketing strategies.</em></p>
           </div>
           <div class="why-us-item">
-            <h4>Results Driven</极端的>
+            <h4>Results Driven</h4>
             <p><em>Our strategies focus on measurable results — more traffic, leads, and conversions.</em></p>
           </div>
           <div class="why-us-item">
@@ -903,14 +903,14 @@
           </div>
           <div class="why-us-item">
             <h4>Dedicated Support</h4>
-            <p><极端的> <em>We work closely with our clients, ensuring every project aligns with their goals.</em></p>
+            <p><em>We work closely with our clients, ensuring every project aligns with their goals.</em></p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ======= Client Success Stories Section ======= -->
-    <section id="success" class="success section light-background">
+    <section id="success"极端的> class="success section light-background">
       <div class="container section-title">
         <h2>Client Success Stories</h2>
         <p>Real results from businesses that chose Activ3 Web Solutions.</p>
@@ -927,7 +927,7 @@
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact section light-background">
       <div class="container section-title">
-        <h2><i class="bi极端的> bi-envelope"></i> Contact</h2>
+        <h2><i class="bi bi-envelope"></i> Contact</h2>
         <p>Get in touch with us using the form below:</p>
       </div>
 
@@ -935,7 +935,7 @@
         <!-- Contact Form -->
         <div class="contact-form">
           <div class="contact-card">
-            <form id="contact-form" action="https://formspree.io/f/movnzapb" method="POST">
+            <form id="contact-form" action="https://formspree.io/f/movn极端的>zapb" method="POST">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" placeholder="Your Name" required>
               </div>
@@ -961,8 +961,8 @@
         <div class="contact-info">
           <div class="contact-info-card">
             <h4>Contact Information</h4>
-            <p><i class="bi bi-envelope"></i> <a href="mailto:jacob@activ3websolutions.com">jacob@activ3websolutions.com</a></p>
-            <p><i class="bi bi-calendar-event"></i> <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank">Schedule a Call</a></p>
+            <p><i class="bi bi-envelope"></极端的>i> <a href="mailto:jacob@activ3websolutions.com">jacob@activ3websolutions.com</a></p>
+            <p><i class="bi bi-calendar-event"></i> <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank">Schedule a Call</a></极端的></p>
             <p><i class="bi bi-geo-alt"></i> Serving clients nationwide</p>
             <p><i class="bi bi-clock"></i> Response within 24 hours</p>
             
@@ -1098,10 +1098,10 @@
       const contactForm = document.getElementById('contact-form');
       if (contactForm) {
         contactForm.addEventListener('submit', function() {
-          const submitBtn = document.querySelector('#contact-form button[type极端的>="submit"]');
+          const submitBtn = document.querySelector('#contact-form button[type="submit"]');
           if (submitBtn) {
             submitBtn.disabled = true;
-            submitBtn.text极端的>Content = 'Sending...';
+            submitBtn.textContent = 'Sending...';
           }
         });
       }
@@ -1139,7 +1139,7 @@
         function type() {
           const currentWord = words[wordIndex];
           
-          if (is极端的>Deleting) {
+          if (isDeleting) {
             // Remove characters
             typedTextElement.textContent = currentWord.substring(0, charIndex - 1);
             charIndex--;
@@ -1152,7 +1152,7 @@
           }
           
           // Determine action when word is complete
-          if (!isDeleting && charIndex === currentWord.length) {
+          if (!isDeleting && charIndex === current极端的>Word.length) {
             isDeleting = true;
             typingSpeed = 1000; // Pause at end of word
           } else if (isDeleting && charIndex === 0) {
