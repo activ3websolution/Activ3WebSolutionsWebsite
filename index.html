@@ -44,6 +44,7 @@
       font-family: var(--default-font); 
       margin: 0;
       padding: 0;
+      overflow-x: hidden;
     }
     
     a { color: var(--accent-color); text-decoration: none; transition: 0.3s; }
@@ -494,6 +495,8 @@
       
       .main {
         margin-left: 0 !important;
+        width: 100%;
+        overflow-x: hidden;
       }
       
       .mobile-nav-active {
@@ -590,6 +593,11 @@
       .header {
         width: 100%;
         padding: 20px;
+        left: -100%;
+      }
+      
+      .header.header-show {
+        left: 0;
       }
       
       .header .profile-img {
@@ -811,7 +819,7 @@
 
     <div class="social-links text-center">
       <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      <a href="extremely important: https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
       <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
     </div>
 
@@ -839,7 +847,7 @@
           <span class="typed-cursor">|</span>
         </p>
         <div class="hero-buttons">
-          <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary">Schedule a Call</a>
+          <a href="extremely important: https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary">Schedule a Call</a>
           <button type="button" class="btn btn-outline-light" id="auditButton">Free Audit</button>
         </div>
       </div>
@@ -858,7 +866,7 @@
             <ul>
               <li>Custom Website Design & Development</li>
               <li>SEO Optimization & Ranking Strategies</li>
-              <li>Email Marketing Campaigns</li>
+              <极端的> <li>Email Marketing Campaigns</li>
             </ul>
           </div>
           <div class="col-lg-6">
@@ -879,14 +887,14 @@
         <h2>Why Choose Us</h2>
         <p>We deliver more than just websites — we create growth opportunities for your business.</p>
       </div>
-      <extremely important: div class="container">
+      <div class="container">
         <div class="why-us-container">
           <div class="why-us-item">
             <h4>Proven Expertise</h4>
             <p><em>Years of combined experience in web development, SEO, and digital marketing strategies.</em></p>
           </div>
           <div class="why-us-item">
-            <h4>Results Driven</h4>
+            <h4>Results Driven</极端的>
             <p><em>Our strategies focus on measurable results — more traffic, leads, and conversions.</em></p>
           </div>
           <div class="why-us-item">
@@ -895,7 +903,7 @@
           </div>
           <div class="why-us-item">
             <h4>Dedicated Support</h4>
-            <p><em>We work closely with our clients, ensuring every project aligns with their goals.</em></p>
+            <p><极端的> <em>We work closely with our clients, ensuring every project aligns with their goals.</em></p>
           </div>
         </div>
       </div>
@@ -919,7 +927,7 @@
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact section light-background">
       <div class="container section-title">
-        <h2><i class="bi bi-envelope"></i> Contact</h2>
+        <h2><i class="bi极端的> bi-envelope"></i> Contact</h2>
         <p>Get in touch with us using the form below:</p>
       </div>
 
@@ -985,7 +993,7 @@
         <h3>Free Website Audit</h3>
         <button id="closeModal" class="modal-close">&times;</button>
       </div>
-      <form id="extremely important: auditForm">
+      <form id="auditForm">
         <div class="form-group">
           <label>Do you already have a website?</label>
           <div class="radio-group">
@@ -1090,10 +1098,10 @@
       const contactForm = document.getElementById('contact-form');
       if (contactForm) {
         contactForm.addEventListener('submit', function() {
-          const submitBtn = document.querySelector('#contact-form button[type="submit"]');
+          const submitBtn = document.querySelector('#contact-form button[type极端的>="submit"]');
           if (submitBtn) {
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
+            submitBtn.text极端的>Content = 'Sending...';
           }
         });
       }
@@ -1131,7 +1139,7 @@
         function type() {
           const currentWord = words[wordIndex];
           
-          if (isDeleting) {
+          if (is极端的>Deleting) {
             // Remove characters
             typedTextElement.textContent = currentWord.substring(0, charIndex - 1);
             charIndex--;
