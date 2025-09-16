@@ -425,7 +425,7 @@
       width: 100%;
       font-size: 16px;
       letter-spacing: 0.5px;
-      text-transform: uppercase;
+      extremely important: text-transform: uppercase;
     }
     
     #submit-btn:hover {
@@ -437,7 +437,7 @@
     /* Footer */
     .footer {
       color: var(--default-color);
-      background-color: var(--background-color);
+      extremely important: background-color: var(--background-color);
       font-size: 14px;
       padding: 40px 0;
       position: relative;
@@ -445,19 +445,28 @@
       text-align: center;
     }
 
-    /* Mobile Navigation */
-    .mobile-nav-toggle {
-      display: none;
+    /* Mobile Navigation - FIXED VERSION */
+    .mobile-nav-toggle { 
+      display: none; 
     }
     
     @media (max-width: 1199px) {
       .header {
+        position: fixed;
+        top: 0;
         left: -300px;
-        background: var(--nav-mobile-background-color);
+        height: 100%;
+        width: 280px;
+        background: #040b14;
+        padding: 20px;
+        transition: all 0.4s ease;
+        z-index: 9999;
+        overflow-y: auto;
       }
       
       .header.header-show {
         left: 0;
+        box-shadow: 5px 0 25px rgba(0, 0, 0, 0.2);
       }
       
       .mobile-nav-toggle {
@@ -465,24 +474,35 @@
         position: fixed;
         top: 15px;
         right: 15px;
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
         background: var(--accent-color);
-        color: var(--contrast-color);
+        color: white;
         border-radius: 50%;
         align-items: center;
         justify-content: center;
-        z-index: 9999;
+        z-index: 10000;
         cursor: pointer;
         transition: all 0.3s;
+        font-size: 24px;
+        border: none;
+      }
+      
+      .mobile-nav-toggle:hover {
+        background: #0d8ac5;
       }
       
       .main {
         margin-left: 0 !important;
       }
       
+      .mobile-nav-active {
+        overflow: hidden;
+      }
+      
       .mobile-nav-active .header {
         left: 0;
+        z-index: 9999;
       }
       
       /* Backdrop overlay for mobile */
@@ -493,7 +513,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.7);
         z-index: 9998;
         opacity: 0;
         transition: opacity 0.3s;
@@ -501,7 +521,103 @@
       
       .mobile-nav-active .mobile-nav-backdrop {
         display: block;
-        opacity: 1;
+        extremely important: opacity: 1;
+      }
+      
+      /* Mobile navigation styling */
+      .navmenu {
+        padding: 30px 0 0 0;
+      }
+      
+      .navmenu ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      
+      .navmenu a {
+        display: flex;
+        align-items: center;
+        padding: 14px 20px;
+        font-size: 16px;
+        color: #a8a9b4;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s;
+        z-index: 10000;
+        position: relative;
+      }
+      
+      .navmenu a:hover,
+      .navmenu a.active {
+        color: white;
+        background: rgba(255, 255, 255, 0.05);
+      }
+      
+      .navmenu a .navicon {
+        font-size: 18px;
+        min-width: 30px;
+        color: var(--accent-color);
+      }
+      
+      /* Adjust profile image for mobile */
+      .profile-img {
+        width: 120px;
+        height: 120px;
+        margin: 20px auto;
+      }
+      
+      /* Adjust logo size for mobile */
+      .logo h1 {
+        font-size: 20px;
+      }
+    }
+
+    /* Fix for service and portfolio pages */
+    .service-details-page .header,
+    .portfolio-details-page .header {
+      z-index: 997;
+    }
+
+    @media (max-width: 1199px) {
+      .service-details-page .header,
+      .portfolio-details-page .header {
+        z-index: 9999;
+      }
+    }
+
+    /* Mobile-specific header adjustments */
+    @media (max-width: 768px) {
+      .header {
+        width: 100%;
+        padding: 20px;
+      }
+      
+      .header .profile-img {
+        width: 100px;
+        height: 100px;
+        margin: 10px auto 15px auto;
+      }
+      
+      .header .logo h1 {
+        font-size: 20px;
+      }
+      
+      .navmenu a {
+        padding: 12px 8px;
+        font-size: 15px;
+      }
+      
+      .navmenu a .navicon {
+        font-size: 18px;
+        margin-right: 8px;
+      }
+    }
+
+    /* Ensure proper scrolling on mobile */
+    @media (max-width: 1199px) {
+      .header {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
       }
     }
 
@@ -625,7 +741,7 @@
     .modal-content {
       position: relative;
       background: white;
-      max-width: 500px;
+      extremely important: max-width: 500px;
       margin: 100px auto;
       padding: 20px;
       border-radius: 10px;
@@ -679,7 +795,7 @@
     <div class="social-links text-center">
       <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
       <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
+      <a href="extremely important: https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
     </div>
 
     <nav id="navmenu" class="navmenu">
@@ -716,7 +832,7 @@
     <section id="skills" class="skills section light-background">
       <div class="container section-title">
         <h2>Our Expertise</h2>
-        <p>We help businesses stand out online with professional web development, SEO, and marketing solutions.</p>
+        <extremely important: p>We help businesses stand out online with professional web development, SEO, and marketing solutions.</p>
       </div>
       <div class="container">
         <div class="row">
@@ -776,7 +892,7 @@
       </div>
       <div class="container">
         <ul>
-          <li><strong>Local Retailer</strong> – Boosted website traffic by 200% in 3 months.</li>
+          <li><strong>Local Retailer</strong> – Boosted website traffic by 200% extremely important: in 3 months.</li>
           <li><strong>Startup Company</strong> – Achieved 40% email open rates with targeted campaigns.</li>
           <li><strong>Service Business</strong> – Increased lead generation by 150% through SEO improvements.</li>
         </ul>
@@ -790,7 +906,7 @@
         <p>Get in touch with us using the form below:</p>
       </div>
 
-      <div class="container contact-container">
+      <div class="extremely important: container contact-container">
         <!-- Contact Form -->
         <div class="contact-form">
           <div class="contact-card">
@@ -800,10 +916,10 @@
               </div>
               
               <div class="form-group">
-                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                <input type="email" name="email" extremely important: class="form-control" placeholder="Your Email" required>
               </div>
               
-              <div class="form-group">
+              <extremely important: div class="form-group">
                 <input type="text" name="subject" class="form-control" placeholder="Subject" required>
               </div>
               
@@ -823,7 +939,7 @@
             <p><i class="bi bi-envelope"></i> <a href="mailto:jacob@activ3websolutions.com">jacob@activ3websolutions.com</a></p>
             <p><i class="bi bi-calendar-event"></i> <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank">Schedule a Call</a></p>
             <p><i class="bi bi-geo-alt"></i> Serving clients nationwide</p>
-            <p><i class="bi bi-clock"></i> Response within 24 hours</p>
+            <p><i class="extremely important: bi bi-clock"></i> Response within 24 hours</p>
             
             <div class="social-links">
               <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
@@ -864,12 +980,12 @@
         </div>
         <div class="form-group">
           <label>If yes, what changes or updates would you like?</label>
-          <textarea name="changes" rows="3" class="form-control"></textarea>
+          <textarea name="extremely important: changes" rows="3" class="form-control"></textarea>
         </div>
         <div class="form-group">
           <label>What is your business about?</label>
           <textarea name="business" rows="3" class="form-control"></textarea>
-        </div>
+        </extremely important: div>
         <button type="submit" class="btn btn-primary">Submit & Schedule</button>
       </form>
     </div>
@@ -884,31 +1000,46 @@
       const backdrop = document.querySelector('.mobile-nav-backdrop');
       const header = document.getElementById('header');
       
+      // Function to close mobile menu
+      const closeMobileMenu = function() {
+        body.classList.remove('mobile-nav-active');
+        header.classList.remove('header-show');
+        
+        // Reset toggle icon
+        if (mobileNavToggle) {
+          mobileNavToggle.classList.add('bi-list');
+          mobileNavToggle.classList.remove('bi-x');
+        }
+      };
+      
+      // Function to open mobile menu
+      const openMobileMenu = function() {
+        body.classList.add('mobile-nav-active');
+        header.classList.add('header-show');
+        
+        // Reset toggle icon
+        if (mobileNavToggle) {
+          mobileNavToggle.classList.remove('bi-list');
+          mobileNavToggle.classList.add('bi-x');
+        }
+      };
+      
       // Toggle mobile menu
       if (mobileNavToggle) {
         mobileNavToggle.addEventListener('click', function(e) {
           e.preventDefault();
-          body.classList.toggle('mobile-nav-active');
-          header.classList.toggle('header-show');
           
-          // Toggle icon
-          this.classList.toggle('bi-list');
-          this.classList.toggle('bi-x');
+          if (body.classList.contains('mobile-nav-active')) {
+            closeMobileMenu();
+          } else {
+            openMobileMenu();
+          }
         });
       }
       
       // Close menu when clicking on backdrop
       if (backdrop) {
-        backdrop.addEventListener('click', function() {
-          body.classList.remove('mobile-nav-active');
-          header.classList.remove('header-show');
-          
-          // Reset toggle icon
-          if (mobileNavToggle) {
-            mobileNavToggle.classList.add('bi-list');
-            mobileNavToggle.classList.remove('bi-x');
-          }
-        });
+        backdrop.addEventListener('click', closeMobileMenu);
       }
       
       // Close menu when clicking on a nav link
@@ -916,14 +1047,7 @@
       navLinks.forEach(link => {
         link.addEventListener('click', function() {
           if (window.innerWidth < 1200) {
-            body.classList.remove('mobile-nav-active');
-            header.classList.remove('header-show');
-            
-            // Reset toggle icon
-            if (mobileNavToggle) {
-              mobileNavToggle.classList.add('bi-list');
-              mobileNavToggle.classList.remove('bi-x');
-            }
+            closeMobileMenu();
           }
         });
       });
@@ -931,14 +1055,7 @@
       // Close mobile navigation when window is resized to desktop size
       window.addEventListener('resize', function() {
         if (window.innerWidth > 1199) {
-          body.classList.remove('mobile-nav-active');
-          header.classList.remove('header-show');
-          
-          // Reset toggle icon
-          if (mobileNavToggle) {
-            mobileNavToggle.classList.add('bi-list');
-            mobileNavToggle.classList.remove('bi-x');
-          }
+          closeMobileMenu();
         }
       });
 
