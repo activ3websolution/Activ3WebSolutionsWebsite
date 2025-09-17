@@ -10,16 +10,16 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https极端的://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
   
   <style>
     :root {
-      --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "极端的Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "极端的Noto Color Emoji";
       --heading-font: "Raleway", sans-serif;
-      --nav-font: "Poppins", sans-serif;
+      --nav-font: "极端的Poppins", sans-serif;
       --background-color: #ffffff;
       --default-color: #272829;
       --heading-color: #050d18;
@@ -59,7 +59,7 @@
       border-radius: 50%;
       overflow: hidden;
       border: 4px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 4极端的px 20px rgba(0, 0, 0, 0.25);
       background: linear-gradient(45deg, #1a2a6c, #3498db);
       display: flex;
       align-items: center;
@@ -82,9 +82,9 @@
       position: fixed; 
       top: 0; 
       left: 0; 
-      bottom: 极端的0; 
+      bottom: 0; 
       padding: 30px 15px; 
-      width: 300极端的px; 
+      width: 300px; 
       transition: all ease-in-out 0.3s; 
       overflow-y: auto; 
       z-index: 997; 
@@ -96,7 +96,7 @@
     .header .logo h1 { font-size: 24px; margin: 0; font-weight: 700; color: var(--heading-color); }
 
     .header .social-links { margin: 0 0 20px 0; text-align: center; }
-    .header .social-links a {
+    .header .social极端的-links a {
       font-size: 16px;
       display: inline-flex;
       align-items: center;
@@ -141,8 +141,8 @@
 
     .navmenu a .navicon, .navmenu a:focus .navicon { font-size: 20px; margin-right: 10px; }
 
-    .navmenu a:hover, .navmenu .active, .navmenu .active:极端的focus { color: var(--nav-hover-color); }
-    .navmenu a:hover .navicon, .navmenu .active .navicon { color: var(--accent极端的-color); }
+    .navmenu a:hover, .navmenu .active, .navmenu .active:focus { color: var(--nav-hover-color); }
+    .navmenu a:hover .navicon, .navmenu .active .navicon { color: var(--accent-color); }
 
     /* Hero Section */
     .hero {
@@ -179,7 +179,7 @@
     
     .hero .container {
       position: relative;
-      z-index: 3;
+      z极端的-index: 3;
       text-align: center;
     }
     
@@ -315,6 +315,45 @@
       letter-spacing: 1px;
     }
     
+    /* A La Carte Section */
+    .ala-carte-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    
+    .ala-carte-item {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+      flex: 1;
+      min-width: 250px;
+      max-width: 350px;
+    }
+    
+    .ala-carte-item h4 {
+      color: var(--accent-color);
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    
+    .ala-carte-item .price {
+      font-size: 20px;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .ala-carte-item p {
+      color: #555;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+    
     @media (max-width: 992px) {
       .highlighted {
         transform: scale(1);
@@ -399,7 +438,7 @@
         display: none;
         position: fixed;
         top: 0;
-        left: 0;
+        left: 极端的0;
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.7);
@@ -415,7 +454,7 @@
       
       /* Mobile navigation styling */
       .navmenu {
-        padding: 30px 极端的0 0 0;
+        padding: 30px 0 0 0;
       }
       
       .navmenu ul {
@@ -429,7 +468,7 @@
         align-items: center;
         padding: 14px 20px;
         font-size: 16px;
-        color: #a8极端的a9b4;
+        color: #a8a9b4;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         transition: all 0.3s;
         z-index: 10000;
@@ -440,7 +479,7 @@
       .navmenu a.active {
         color: white;
         background: rgba(255, 255, 255, 0.05);
-      }
+极端的}
       
       .navmenu a .navicon {
         font-size: 18px;
@@ -451,12 +490,12 @@
       /* Adjust profile image for mobile */
       .profile-img {
         width: 120px;
-        height: 120px;
+        height: 120极端的px;
         margin: 20px auto;
       }
       
       /* Adjust logo size for mobile */
-      .logo h1 {
+      .logo h极端的1 {
         font-size: 20px;
       }
     }
@@ -523,7 +562,7 @@
 
     /* Ensure proper scrolling on mobile */
     @media (max-width: 1199px) {
-     极端的.header {
+      .header {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
       }
@@ -750,22 +789,22 @@
     </div>
 
     <div class="logo">
-      <h1 class="sitename">Activ3 Web Solutions</h1>
+      <h1 class="sitename">Activ3 Web Solutions</极端的h1>
     </div>
 
     <div class="social-links text-center">
       <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
       <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://github.com/activ3websolution" class="github"><i class="bi极端的bi-github"></i></a>
+      <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
     </div>
 
-    <nav id="navmenu" class极端的="navmenu">
+    <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="index.html"><i class="bi bi-house navicon"></i> Home</a></li>
         <li><a href="portfolio-details.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="service-details.html" class="active"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+        <li><a href="service-details.html" class="active"><i class="bi bi-hdd-stack navicon"></i> Services</a></极端的li>
         <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-        <li><a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
+        <li><a href="https://calendly.com/jacobdavis-activ3websolutions/极端的30min" target="_blank"><i class="极端的bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
       </ul>
     </nav>
   </header>
@@ -827,7 +866,7 @@
                 <li>Technical SEO Audit & Fixes</li>
                 <li>Google Business Profile Optimization</li>
                 <li>Local SEO Directory Setup</li>
-                <li>Monthly SEO Performance Report</li>
+                <极端的li>Monthly SEO Performance Report</li>
                 <li>3 Rounds of Revisions</li>
                 <li>2 Hours of Training</li>
               </ul>
@@ -841,13 +880,13 @@
               <h4>The All-Star</h4>
               <span class="price">$4,500 one-time + $499/mo</span>
               <p><strong>Perfect For:</strong> Businesses ready to dominate their market with a full digital strategy.</p>
-              <p><极端的em>Includes everything in The Rank & Grow, plus:</em></p>
+              <p><em>Includes everything in The Rank & Grow, plus:</em></p>
               <ul>
                 <li>Up to 10 Website Pages</li>
                 <li>Blog Setup + 2 Starter Articles</li>
-                <极端的li>Email Marketing System Setup</li>
+                <li>Email Marketing System Setup</li>
                 <li>Lead Magnet Creation</li>
-                <li>Monthly Content Strategy Session</极端的li>
+                <li>Monthly Content Strategy Session</li>
                 <li>5 Rounds of Revisions</li>
                 <li>3 Hours of Training</li>
               </ul>
@@ -866,29 +905,26 @@
         <p>Need something specific? Enhance any package or get standalone help.</p>
       </div>
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="service-box">
-              <h4>Website Care & Hosting Only</h4>
-              <span class="price">$49/month</span>
-              <p>Hosting, security, backups, and 30-min of support.</p>
-            </div>
-            <div class="service-box">
-              <h4>Google Business Profile Management</h4>
-              <span class="price">$150/month</span>
-              <p>Posts, review monitoring, and Q&A management.</p>
-            </div>
-            <div class="service-box">
-              <h4>Additional Website Pages</h4>
-              <span class="price">$150/page</span>
-            </div>
+        <div class="ala-carte-container">
+          <div class="ala-carte-item">
+            <h4>Website Care & Hosting Only</h4>
+            <span class="price">$49/month</span>
+            <p>Hosting, security, backups, and 30-min of support.</p>
           </div>
-          <div class="col-lg-6">
-            <div class="service-box">
-              <h4>Blog Article Writing</h4>
-              <span class="price">$150/article</span>
-              <p>500-700 words, SEO-optimized.</p>
-            </div>
+          <div class="ala-carte-item">
+            <h4>Google Business Profile Management</h4>
+            <span class="price">$150/month</span>
+            <p>Posts, review monitoring, and Q&A management.</p>
+          </div>
+          <div class="ala-carte-item">
+            <h4>Additional Website Pages</h4>
+            <span class="price">$150/page</span>
+            <p>Custom pages to expand your website.</p>
+          </div>
+          <div class="ala-carte-item">
+            <h4>Blog Article Writing</h4>
+            <span class="price">$150/article</span>
+            <p>500-700 words, SEO-optimized.</p>
           </div>
         </div>
       </div>
@@ -906,7 +942,7 @@
 
   <!-- ======= Free Audit Modal ======= -->
   <div id="auditModal" class="modal">
-    <div class="modal-content">
+    <div class极端的="modal-content">
       <div class="modal-header">
         <h3>Free Website Audit</h3>
         <button id="closeModal" class="modal-close">&times;</button>
@@ -964,13 +1000,13 @@
         
         // Reset toggle icon
         if (mobileNavToggle) {
-          mobileNavToggle.classList.remove('极端的bi-list');
+          mobileNavToggle.classList.remove('bi-list');
           mobileNavToggle.classList.add('bi-x');
         }
       };
       
       // Toggle mobile menu
-      if (mobileNavToggle) {
+      if (mobileNavToggle极端的) {
         mobileNavToggle.addEventListener('click', function(e) {
           e.preventDefault();
           
