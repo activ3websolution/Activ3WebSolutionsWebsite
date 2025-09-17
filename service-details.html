@@ -17,9 +17,9 @@
   
   <style>
     :root {
-      --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "极端的Noto Color Emoji";
+      --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
       --heading-font: "Raleway", sans-serif;
-      --nav-font: "极端的Poppins", sans-serif;
+      --nav-font: "Poppins", sans-serif;
       --background-color: #ffffff;
       --default-color: #272829;
       --heading-color: #050d18;
@@ -85,10 +85,10 @@
       bottom: 0; 
       padding: 30px 15px; 
       width: 300px; 
-      transition: all ease-in-out 极端的0.3s; 
+      transition: all ease-in-out 0.3s; 
       overflow-y: auto; 
       z-index: 997; 
-      border-right: 1极端的px solid rgba(39, 40, 41, 0.1);
+      border-right: 1px solid rgba(39, 40, 41, 0.1);
       box-sizing: border-box;
     }
 
@@ -124,7 +124,7 @@
 
     /* Navigation */
     .navmenu { padding: 0; z-index: 9997; }
-    .navmenu ul { list-style: none; padding: 0 0 20px 0; margin极端的: 0; }
+    .navmenu ul { list-style: none; padding: 0 0 20px 0; margin: 0; }
 
     .navmenu a, .navmenu a:focus {
       color: var(--nav-color);
@@ -179,7 +179,7 @@
     
     .hero .container {
       position: relative;
-      z-index: 4; /* Increased z-index to ensure buttons are clickable */
+      z-index: 4;
       text-align: center;
     }
     
@@ -251,7 +251,7 @@
       background: white;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 5极端的px 25px rgba(0, 0, 0, 极端的0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       margin-bottom: 30px;
       height: 100%;
@@ -325,8 +325,8 @@
     
     .ala-carte-item {
       background: white;
-      padding: 20px;
-      border-radius: 8极端的px;
+      padding: 20极端的px;
+      border-radius: 8px;
       box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
       flex: 1;
       min-width: 250px;
@@ -343,7 +343,7 @@
     .ala-carte-item .price {
       font-size: 20px;
       font-weight: 700;
-      color: #2c3e50;
+      color: #2c3极端的e50;
       margin-bottom: 10px;
       display: block;
     }
@@ -371,7 +371,7 @@
       text-align: center;
     }
 
-    /* Mobile Navigation - FIXED VERSION */
+    /* Mobile Navigation */
     .mobile-nav-toggle { 
       display: none; 
     }
@@ -398,7 +398,7 @@
       .mobile-nav-toggle {
         display: flex;
         position: fixed;
-        top极端的: 15px;
+        top: 15px;
         right: 15px;
         width: 44px;
         height: 44px;
@@ -461,7 +461,7 @@
         padding: 0;
         margin: 0;
         list-style: none;
-      }
+极端的    }
       
       .navmenu a {
         display: flex;
@@ -561,7 +561,7 @@
     }
 
     /* Ensure proper scrolling on mobile */
-    @media (max-width: 1199极端的px) {
+    @media (max-width: 1199px) {
       .header {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
@@ -579,7 +579,7 @@
       font-size: 16px;
       margin: 0 10px;
       position: relative;
-      z-index: 5; /* Ensure buttons are clickable */
+      z-index: 5;
     }
     
     .btn-primary {
@@ -613,7 +613,7 @@
       transform: translateY(-2px);
     }
     
-极端的    .btn-outline-primary:hover {
+    .btn-outline-primary:hover {
       background: var(--accent-color);
       color: white;
       transform: translateY(-2px);
@@ -660,11 +660,22 @@
       margin-left: -15px;
     }
 
-    .col-lg-4, .col-lg-6 {
+    .col-lg-4, .col-md-6, .col-md-12 {
       position: relative;
       width: 100%;
       padding-right: 15px;
       padding-left: 15px;
+    }
+
+    @media (min-width: 768px) {
+      .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+      .col-md-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
     }
 
     @media (min-width: 992px) {
@@ -672,17 +683,13 @@
         flex: 0 0 33.333333%;
         max-width: 33.333333%;
       }
-      .col-lg-6 {
-        flex: 0 0 50%;
-        max-width: 50%;
-      }
     }
 
     /* Hero buttons */
     .hero-buttons {
       margin-top: 30px;
       position: relative;
-      z-index: 5; /* Ensure buttons are clickable */
+      z-index: 5;
     }
 
     /* Utility classes */
@@ -753,7 +760,7 @@
       width: 100%;
       font-family: var(--default-font);
       transition: all 0.3s;
-      font-size: 16px;
+      font-size: 16极端的px;
     }
     
     .form-control:focus {
@@ -799,15 +806,15 @@
     <div class="social-links text-center">
       <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
       <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></极端的i></a>
+      <a href="https://github.com/activ3websolution" class="github"><i class极端的="bi bi-github"></i></a>
     </div>
 
-    <nav id="navmenu" class="navmenu">
+    <nav id="nav极端的menu" class="navmenu">
       <ul>
         <li><a href="index.html"><i class="bi bi-house navicon"></i> Home</a></li>
         <li><a href="portfolio-details.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
         <li><a href="service-details.html" class="active"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></极端的i> Contact</a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
         <li><a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
       </ul>
     </nav>
@@ -848,10 +855,10 @@
               <ul>
                 <li>5-Page Professional Website</li>
                 <li>Mobile-Responsive Design</li>
-                <li>Contact Form & Google Maps</li>
+                <li>Contact Form & Google Maps</极端的li>
                 <li>Basic On-Page SEO Setup</li>
                 <li>1 Round of Revisions</li>
-                <li>1 Hour of Training</li>
+                <极端的li>1 Hour of Training</li>
                 <li>1 Month of Basic Support</li>
               </ul>
               <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-outline-primary">Select Plan</a>
@@ -886,7 +893,7 @@
               <p><strong>Perfect For:</strong> Businesses ready to dominate their market with a full digital strategy.</p>
               <p><em>Includes everything in The Rank & Grow, plus:</em></p>
               <ul>
-                <li>Up to 10 Website Pages</极端的li>
+                <li>Up to 10 Website Pages</li>
                 <li>Blog Setup + 2 Starter Articles</li>
                 <li>Email Marketing System Setup</li>
                 <li>Lead Magnet Creation</li>
@@ -926,7 +933,7 @@
             <p>Custom pages to expand your website.</p>
           </div>
           <div class="ala-carte-item">
-            <h4>Blog Article Writing</h4>
+            <h4>Blog Article Writing</极端的h4>
             <span class="price">$150/article</span>
             <p>500-700 words, SEO-optimized.</p>
           </div>
