@@ -59,7 +59,7 @@
       border-radius: 50%;
       overflow: hidden;
       border: 4px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 4极端的px 20px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
       background: linear-gradient(45deg, #1a2a6c, #3498db);
       display: flex;
       align-items: center;
@@ -85,10 +85,10 @@
       bottom: 0; 
       padding: 30px 15px; 
       width: 300px; 
-      transition: all ease-in-out 0.3s; 
+      transition: all ease-in-out 极端的0.3s; 
       overflow-y: auto; 
       z-index: 997; 
-      border-right: 1px solid rgba(39, 40, 41, 0.1);
+      border-right: 1极端的px solid rgba(39, 40, 41, 0.1);
       box-sizing: border-box;
     }
 
@@ -96,7 +96,7 @@
     .header .logo h1 { font-size: 24px; margin: 0; font-weight: 700; color: var(--heading-color); }
 
     .header .social-links { margin: 0 0 20px 0; text-align: center; }
-    .header .social极端的-links a {
+    .header .social-links a {
       font-size: 16px;
       display: inline-flex;
       align-items: center;
@@ -124,7 +124,7 @@
 
     /* Navigation */
     .navmenu { padding: 0; z-index: 9997; }
-    .navmenu ul { list-style: none; padding: 0 0 20px 0; margin: 0; }
+    .navmenu ul { list-style: none; padding: 0 0 20px 0; margin极端的: 0; }
 
     .navmenu a, .navmenu a:focus {
       color: var(--nav-color);
@@ -179,7 +179,7 @@
     
     .hero .container {
       position: relative;
-      z极端的-index: 3;
+      z-index: 4; /* Increased z-index to ensure buttons are clickable */
       text-align: center;
     }
     
@@ -326,7 +326,7 @@
     .ala-carte-item {
       background: white;
       padding: 20px;
-      border-radius: 8px;
+      border-radius: 8极端的px;
       box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
       flex: 1;
       min-width: 250px;
@@ -398,7 +398,7 @@
       .mobile-nav-toggle {
         display: flex;
         position: fixed;
-        top: 15px;
+        top极端的: 15px;
         right: 15px;
         width: 44px;
         height: 44px;
@@ -438,7 +438,7 @@
         display: none;
         position: fixed;
         top: 0;
-        left: 极端的0;
+        left: 0;
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.7);
@@ -479,7 +479,7 @@
       .navmenu a.active {
         color: white;
         background: rgba(255, 255, 255, 0.05);
-极端的}
+      }
       
       .navmenu a .navicon {
         font-size: 18px;
@@ -490,12 +490,12 @@
       /* Adjust profile image for mobile */
       .profile-img {
         width: 120px;
-        height: 120极端的px;
+        height: 120px;
         margin: 20px auto;
       }
       
       /* Adjust logo size for mobile */
-      .logo h极端的1 {
+      .logo h1 {
         font-size: 20px;
       }
     }
@@ -561,7 +561,7 @@
     }
 
     /* Ensure proper scrolling on mobile */
-    @media (max-width: 1199px) {
+    @media (max-width: 1199极端的px) {
       .header {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
@@ -578,6 +578,8 @@
       transition: all 0.3s;
       font-size: 16px;
       margin: 0 10px;
+      position: relative;
+      z-index: 5; /* Ensure buttons are clickable */
     }
     
     .btn-primary {
@@ -611,7 +613,7 @@
       transform: translateY(-2px);
     }
     
-    .btn-outline-primary:hover {
+极端的    .btn-outline-primary:hover {
       background: var(--accent-color);
       color: white;
       transform: translateY(-2px);
@@ -679,6 +681,8 @@
     /* Hero buttons */
     .hero-buttons {
       margin-top: 30px;
+      position: relative;
+      z-index: 5; /* Ensure buttons are clickable */
     }
 
     /* Utility classes */
@@ -789,22 +793,22 @@
     </div>
 
     <div class="logo">
-      <h1 class="sitename">Activ3 Web Solutions</极端的h1>
+      <h1 class="sitename">Activ3 Web Solutions</h1>
     </div>
 
     <div class="social-links text-center">
       <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
       <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
+      <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></极端的i></a>
     </div>
 
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="index.html"><i class="bi bi-house navicon"></i> Home</a></li>
         <li><a href="portfolio-details.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="service-details.html" class="active"><i class="bi bi-hdd-stack navicon"></i> Services</a></极端的li>
-        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-        <li><a href="https://calendly.com/jacobdavis-activ3websolutions/极端的30min" target="_blank"><i class="极端的bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
+        <li><a href="service-details.html" class="active"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></极端的i> Contact</a></li>
+        <li><a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
       </ul>
     </nav>
   </header>
@@ -836,7 +840,7 @@
         <div class="row">
 
           <!-- Package 1: The Launch Pad -->
-          <div class="col-lg-4">
+          <div class="col-lg-4 col-md-6">
             <div class="service-box package-card">
               <h4>The Launch Pad</h4>
               <span class="price">$1,500 one-time + $99/mo optional</span>
@@ -855,7 +859,7 @@
           </div>
 
           <!-- Package 2: The Rank & Grow -->
-          <div class="col-lg-4">
+          <div class="col-lg-4 col-md-6">
             <div class="service-box package-card highlighted">
               <h4>The Rank & Grow</h4>
               <span class="price">$2,800 one-time + $299/mo</span>
@@ -866,7 +870,7 @@
                 <li>Technical SEO Audit & Fixes</li>
                 <li>Google Business Profile Optimization</li>
                 <li>Local SEO Directory Setup</li>
-                <极端的li>Monthly SEO Performance Report</li>
+                <li>Monthly SEO Performance Report</li>
                 <li>3 Rounds of Revisions</li>
                 <li>2 Hours of Training</li>
               </ul>
@@ -875,14 +879,14 @@
           </div>
 
           <!-- Package 3: The All-Star -->
-          <div class="col-lg-4">
+          <div class="col-lg-4 col-md-12">
             <div class="service-box package-card">
               <h4>The All-Star</h4>
               <span class="price">$4,500 one-time + $499/mo</span>
               <p><strong>Perfect For:</strong> Businesses ready to dominate their market with a full digital strategy.</p>
               <p><em>Includes everything in The Rank & Grow, plus:</em></p>
               <ul>
-                <li>Up to 10 Website Pages</li>
+                <li>Up to 10 Website Pages</极端的li>
                 <li>Blog Setup + 2 Starter Articles</li>
                 <li>Email Marketing System Setup</li>
                 <li>Lead Magnet Creation</li>
@@ -942,7 +946,7 @@
 
   <!-- ======= Free Audit Modal ======= -->
   <div id="auditModal" class="modal">
-    <div class极端的="modal-content">
+    <div class="modal-content">
       <div class="modal-header">
         <h3>Free Website Audit</h3>
         <button id="closeModal" class="modal-close">&times;</button>
@@ -1006,7 +1010,7 @@
       };
       
       // Toggle mobile menu
-      if (mobileNavToggle极端的) {
+      if (mobileNavToggle) {
         mobileNavToggle.addEventListener('click', function(e) {
           e.preventDefault();
           
