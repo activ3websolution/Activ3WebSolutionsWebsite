@@ -10,14 +10,14 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https极端的://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
   
   <style>
     :root {
-      --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "极端的Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       --heading-font: "Raleway", sans-serif;
       --nav-font: "Poppins", sans-serif;
       --background-color: #ffffff;
@@ -82,17 +82,17 @@
       position: fixed; 
       top: 0; 
       left: 0; 
-      bottom: 0; 
+      bottom: 极端的0; 
       padding: 30px 15px; 
-      width: 300px; 
+      width: 300极端的px; 
       transition: all ease-in-out 0.3s; 
       overflow-y: auto; 
       z-index: 997; 
-      border-right: 1px solid rgba(39, 40, 41, 极端的0.1);
+      border-right: 1px solid rgba(39, 40, 41, 0.1);
       box-sizing: border-box;
     }
 
-    .header .logo { line-height: 1; margin-bottom: 15极端的px; text-align: center; }
+    .header .logo { line-height: 1; margin-bottom: 15px; text-align: center; }
     .header .logo h1 { font-size: 24px; margin: 0; font-weight: 700; color: var(--heading-color); }
 
     .header .social-links { margin: 0 0 20px 0; text-align: center; }
@@ -139,15 +139,15 @@
       width: 100%;
     }
 
-    .navmenu a .navicon, .navmenu a极端的:focus .navicon { font-size: 20px; margin-right: 10px; }
+    .navmenu a .navicon, .navmenu a:focus .navicon { font-size: 20px; margin-right: 10px; }
 
-    .navmenu a:hover, .navmenu .active, .navmenu .active:focus { color: var(--nav-hover-color); }
-    .navmenu a:hover .navicon, .navmenu .active .navicon { color: var(--accent-color); }
+    .navmenu a:hover, .navmenu .active, .navmenu .active:极端的focus { color: var(--nav-hover-color); }
+    .navmenu a:hover .navicon, .navmenu .active .navicon { color: var(--accent极端的-color); }
 
     /* Hero Section */
     .hero {
       width: 100%;
-      min-height: 100vh;
+      min-height: 60vh;
       position: relative;
       padding: 80px 0;
       display: flex;
@@ -185,39 +185,20 @@
     
     .hero h2 {
       margin: 0;
-      font-size: 64px;
+      font-size: 48px;
       font-weight: 700;
       color: white;
     }
     
     .hero p {
-      margin: 5px 0 0 0;
-      font-size: 26px;
+      margin: 15px 0 0 0;
+      font-size: 20px;
       color: white;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
-    .hero p span {
-      letter-spacing: 1px;
-      border-bottom: 2px solid var(--accent-color);
-    }
-    
-    .typed-cursor {
-      font-size: 26px;
-      color: white;
-      opacity: 1;
-      animation: typedjsBlink 0.7s infinite;
-    }
-    
-    @keyframes typedjsBlink {
-      50% { opacity: 0.0; }
-    }
-    
-    @media (max-width: 768px) {
-      .hero h2 { font-size: 32px; }
-      .hero p { font-size: 20px; }
-      .typed-cursor { font-size: 20px; }
-    }
-
     /* Sections */
     .section {
       color: var(--default-color);
@@ -232,7 +213,7 @@
 
     /* Section Titles */
     .section-title {
-      padding-bottom: 60px;
+      padding-bottom: 40px;
       position: relative;
       text-align: center;
     }
@@ -258,63 +239,80 @@
     
     .section-title p {
       margin-bottom: 0;
+      font-size: 18px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
     }
 
     /* Service Boxes */
     .service-box {
       background: white;
       padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       margin-bottom: 30px;
       height: 100%;
+      position: relative;
     }
     
     .service-box:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     }
     
     .service-box h4 {
       color: var(--accent-color);
       margin-top: 0;
       margin-bottom: 15px;
-      font-size: 20px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    
+    .service-box .price {
+      font-size: 24px;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 15px;
+      display: block;
     }
     
     .service-box p {
       color: #555;
-      margin-bottom: 0;
+      margin-bottom: 15px;
       line-height: 1.6;
     }
     
     .service-box ul {
       padding-left: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
     
     .service-box ul li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      line-height: 1.5;
     }
     
     .highlighted {
       border: 2px solid var(--accent-color);
-      transform: scale(1.05);
+      transform: scale(1.02);
       position: relative;
     }
     
     .highlighted:before {
-      content: "Most Popular";
+      content: "MOST POPULAR";
       position: absolute;
       top: -12px;
       right: 20px;
       background: var(--accent-color);
       color: white;
-      padding: 5px 15px;
+      padding: 6px 15px;
       border-radius: 20px;
       font-size: 12px;
       font-weight: bold;
+      letter-spacing: 1px;
     }
     
     @media (max-width: 992px) {
@@ -355,7 +353,7 @@
       
       .header.header-show {
         left: 0;
-        box-shadow: 5px极端的 0 25px rgba(0, 0, 0, 0.2);
+        box-shadow: 5px 0 25px rgba(0, 0, 0, 0.2);
       }
       
       .mobile-nav-toggle {
@@ -405,7 +403,7 @@
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.7);
-       极端的z-index: 9998;
+        z-index: 9998;
         opacity: 0;
         transition: opacity 0.3s;
       }
@@ -417,12 +415,12 @@
       
       /* Mobile navigation styling */
       .navmenu {
-        padding: 30px 0 0 0;
+        padding: 30px 极端的0 0 0;
       }
       
       .navmenu ul {
         padding: 0;
-        margin: 极端的0;
+        margin: 0;
         list-style: none;
       }
       
@@ -431,7 +429,7 @@
         align-items: center;
         padding: 14px 20px;
         font-size: 16px;
-        color: #a8a9b4;
+        color: #a8极端的a9b4;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         transition: all 0.3s;
         z-index: 10000;
@@ -507,11 +505,25 @@
         font-size: 18px;
         margin-right: 8px;
       }
+      
+      /* Hero adjustments for mobile */
+      .hero {
+        min-height: 50vh;
+        padding: 60px 0;
+      }
+      
+      .hero h2 {
+        font-size: 32px;
+      }
+      
+      .hero p {
+        font-size: 18px;
+      }
     }
 
     /* Ensure proper scrolling on mobile */
     @media (max-width: 1199px) {
-      .header {
+     极端的.header {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
       }
@@ -551,6 +563,7 @@
       background: #0d8ac5;
       color: white;
       transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(13, 138, 197, 0.3);
     }
     
     .btn-outline-light:hover {
@@ -626,7 +639,7 @@
 
     /* Hero buttons */
     .hero-buttons {
-      margin-top: 20px;
+      margin-top: 30px;
     }
 
     /* Utility classes */
@@ -656,7 +669,7 @@
       max-width: 500px;
       margin: 100px auto;
       padding: 20px;
-      border-radius: 10极端的px;
+      border-radius: 10px;
       box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     }
 
@@ -667,7 +680,7 @@
       margin-bottom: 20px;
     }
 
-    .modal极端的-close {
+    .modal-close {
       background: none;
       border: none;
       font-size: 24px;
@@ -743,16 +756,16 @@
     <div class="social-links text-center">
       <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
       <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
+      <a href="https://github.com/activ3websolution" class="github"><i class="bi极端的bi-github"></i></a>
     </div>
 
-    <nav id="navmenu" class="navmenu">
+    <nav id="navmenu" class极端的="navmenu">
       <ul>
         <li><a href="index.html"><i class="bi bi-house navicon"></i> Home</a></li>
         <li><a href="portfolio-details.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
         <li><a href="service-details.html" class="active"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li><a href="index.html#contact"><极端的i class="bi bi-envelope navicon"></i> Contact</a></li>
-        <极端的li><a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
       </ul>
     </nav>
   </header>
@@ -787,7 +800,7 @@
           <div class="col-lg-4">
             <div class="service-box package-card">
               <h4>The Launch Pad</h4>
-              <p class="fw-bold">$1,500 one-time + $99/mo optional</p>
+              <span class="price">$1,500 one-time + $99/mo optional</span>
               <p><strong>Perfect For:</strong> Businesses that need a professional online presence to start generating leads.</p>
               <ul>
                 <li>5-Page Professional Website</li>
@@ -806,12 +819,12 @@
           <div class="col-lg-4">
             <div class="service-box package-card highlighted">
               <h4>The Rank & Grow</h4>
-              <p class="fw-bold">$2,800 one-time + $299/mo</p>
+              <span class="price">$2,800 one-time + $299/mo</span>
               <p><strong>Perfect For:</strong> Businesses that have a website but aren't getting found online.</p>
               <p><em>Includes everything in The Launch Pad, plus:</em></p>
               <ul>
                 <li>Advanced On-Page SEO</li>
-                <li>Technical SEO Audit & Fixes</极端的li>
+                <li>Technical SEO Audit & Fixes</li>
                 <li>Google Business Profile Optimization</li>
                 <li>Local SEO Directory Setup</li>
                 <li>Monthly SEO Performance Report</li>
@@ -826,15 +839,15 @@
           <div class="col-lg-4">
             <div class="service-box package-card">
               <h4>The All-Star</h4>
-              <p class="fw-bold">$4,500 one-time + $499/mo</p>
+              <span class="price">$4,500 one-time + $499/mo</span>
               <p><strong>Perfect For:</strong> Businesses ready to dominate their market with a full digital strategy.</p>
-              <p><em>Includes everything in The Rank & Grow, plus:</em></p>
+              <p><极端的em>Includes everything in The Rank & Grow, plus:</em></p>
               <ul>
                 <li>Up to 10 Website Pages</li>
                 <li>Blog Setup + 2 Starter Articles</li>
-                <li>Email Marketing System Setup</li>
+                <极端的li>Email Marketing System Setup</li>
                 <li>Lead Magnet Creation</li>
-                <li>Monthly Content Strategy Session</li>
+                <li>Monthly Content Strategy Session</极端的li>
                 <li>5 Rounds of Revisions</li>
                 <li>3 Hours of Training</li>
               </ul>
@@ -857,23 +870,23 @@
           <div class="col-lg-6">
             <div class="service-box">
               <h4>Website Care & Hosting Only</h4>
-              <p class="fw-bold">$49/month</p>
+              <span class="price">$49/month</span>
               <p>Hosting, security, backups, and 30-min of support.</p>
             </div>
             <div class="service-box">
               <h4>Google Business Profile Management</h4>
-              <p class="fw-bold">$150/month</极端的p>
+              <span class="price">$150/month</span>
               <p>Posts, review monitoring, and Q&A management.</p>
             </div>
             <div class="service-box">
               <h4>Additional Website Pages</h4>
-              <p class="fw-bold">$150/page</p>
+              <span class="price">$150/page</span>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="service-box">
               <h4>Blog Article Writing</h4>
-              <p class="fw-bold">$150/article</p>
+              <span class="price">$150/article</span>
               <p>500-700 words, SEO-optimized.</p>
             </div>
           </div>
@@ -910,9 +923,9 @@
         </div>
         <div class="form-group">
           <label>If yes, what changes or updates would you like?</label>
-          <textarea name="changes" rows极端的="3" class="form-control"></textarea>
+          <textarea name="changes" rows="3" class="form-control"></textarea>
         </div>
-        <极端的div class="form-group">
+        <div class="form-group">
           <label>What is your business about?</label>
           <textarea name="business" rows="3" class="form-control"></textarea>
         </div>
@@ -951,7 +964,7 @@
         
         // Reset toggle icon
         if (mobileNavToggle) {
-          mobileNavToggle.classList.remove('bi-list');
+          mobileNavToggle.classList.remove('极端的bi-list');
           mobileNavToggle.classList.add('bi-x');
         }
       };
@@ -993,7 +1006,7 @@
 
       // Free Audit Form - Simple Calendly Redirect
       const auditForm = document.getElementById('auditForm');
-      if (audit极端的Form) {
+      if (auditForm) {
         auditForm.addEventListener('submit', function(e) {
           e.preventDefault();
           window.open("https://calendly.com/jacobdavis-activ3websolutions/30min", "_blank");
