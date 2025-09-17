@@ -47,7 +47,7 @@
     }
     
     a { color: var(--accent-color); text-decoration: none; transition: 0.3s; }
-    a:hover { color: rgba(20, 157, 221, 极端的0.8); text-decoration: none; }
+    a:hover { color: rgba(20, 157, 221, 0.8); text-decoration: none; }
     
     h1, h2, h3, h4, h5, h6 { color: var(--heading-color); font-family: var(--heading-font); }
 
@@ -60,7 +60,7 @@
       overflow: hidden;
       border: 4px solid rgba(255, 255, 255, 0.3);
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-      background: linear-gradient(45deg, #1a2a极端的6c, #3498db);
+      background: linear-gradient(45deg, #1a2a6c, #3498db);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -101,13 +101,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: rgba(39, 40, 41, 0.1);
+      background: rgba(39, 40, 41, 极端的0.1);
       color: var(--default-color);
       margin: 0 2px;
       border-radius: 50%;
       text-align: center;
-      width极端的: 40px;
-      height: 40极端的px;
+      width: 40px;
+      height: 40px;
       transition: 0.3s;
     }
     .header .social-links a:hover { color: var(--contrast-color); background: var(--accent-color); }
@@ -123,7 +123,7 @@
     }
 
     /* Navigation */
-    .navmenu { padding: 0; z-index: 9997; }
+    .navmenu { padding: 0; z-index极端的: 9997; }
     .navmenu ul { list-style: none; padding: 0 0 20px 0; margin: 0; }
 
     .navmenu a, .navmenu a:focus {
@@ -142,7 +142,7 @@
     .navmenu a .navicon, .navmenu a:focus .navicon { font-size: 20px; margin-right: 10px; }
 
     .navmenu a:hover, .navmenu .active, .navmenu .active:focus { color: var(--nav-hover-color); }
-    .navmenu a:hover .navicon极端的, .navmenu .active .navicon { color: var(--accent-color); }
+    .navmenu a:hover .navicon, .navmenu .active .navicon { color: var(--accent-color); }
 
     /* Hero Section */
     .hero {
@@ -183,7 +183,7 @@
       text-align: center;
     }
     
-    .hero h2 {
+    .极端的hero h2 {
       margin: 0;
       font-size: 48px;
       font-weight: 700;
@@ -191,7 +191,7 @@
     }
     
     .hero p {
-      margin: 15px 0 极端的0 0;
+      margin: 15极端的px 0 0 0;
       font-size: 20px;
       color: white;
       max-width: 600px;
@@ -252,7 +252,7 @@
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3极端的s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       margin-bottom: 30px;
       height: 100%;
       position: relative;
@@ -354,9 +354,27 @@
       line-height: 1.5;
     }
     
+    /* NEW CSS FOR PACKAGE LAYOUT FIX */
+    .package-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .package-card .btn {
+      margin-top: auto;
+      align-self: flex-start;
+    }
+    
     @media (max-width: 992px) {
       .highlighted {
         transform: scale(1);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .col-md-6 {
+        margin-bottom: 30px;
       }
     }
 
@@ -415,11 +433,11 @@
       }
       
       .mobile-nav-toggle:hover {
-        background: #0极端的d8ac5;
+        background: #0d8ac5;
       }
       
       .main {
-        margin-left极端的: 0 !important;
+        margin-left: 0 !important;
         width: 100%;
         overflow-x: hidden;
       }
@@ -454,7 +472,7 @@
       
       /* Mobile navigation styling */
       .navmenu {
-        padding: 30px 0 极端的0 0;
+        padding: 30px 0 0 0;
       }
       
       .navmenu ul {
@@ -469,7 +487,7 @@
         padding: 14px 20px;
         font-size: 16px;
         color: #a8a9b4;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba极端的(255, 255, 255, 0.05);
         transition: all 0.3s;
         z-index: 10000;
         position: relative;
@@ -482,9 +500,9 @@
       }
       
       .navmenu a .navicon {
-        font-size: 18px;
+        font-size极端的: 18px;
         min-width: 30px;
-极端的        color: var(--accent-color);
+        color: var(--accent-color);
       }
       
       /* Adjust profile image for mobile */
@@ -509,13 +527,13 @@
     @media (max-width: 1199px) {
       .service-details-page .header,
       .portfolio-details-page .header {
-        z-index极端的: 9999;
+        z-index: 9999;
       }
     }
 
     /* Mobile-specific header adjustments */
     @media (max-width: 768px) {
-      .极端的header {
+      .header {
         width: 100%;
         padding: 20px;
         left: -100%;
@@ -561,7 +579,7 @@
     }
 
     /* Ensure proper scrolling on mobile */
-    @media (max-width: 1199px) {
+    @media (max-width: 1199极端的px) {
       .header {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
@@ -720,7 +738,7 @@
       margin: 100px auto;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 5px 25px rgba极端的(0, 0, 0, 0.2);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     }
 
     .modal-header {
@@ -738,7 +756,7 @@
       color: #777;
     }
 
-    .modal极端的-close:hover {
+    .modal-close:hover {
       color: #333;
     }
 
@@ -830,84 +848,84 @@
         <p>Clear, packaged solutions designed to get Lubbock businesses found online.</p>
         <!-- Buttons -->
         <div class="hero-buttons">
-          <a href="极端的https://calendly.com/jacobdavis-activ3websolutions/30极端的min" target="_blank" class="btn btn-primary">Schedule a Call</a>
+          <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary">Schedule a Call</a>
           <button type="button" class="btn btn-outline-light" id="auditButton">Free Audit</button>
         </div>
       </div>
     </section>
 
-<!-- Service Details Section -->
-<section id="services" class="services section light-background">
-  <div class="container section-title">
-    <h2>Our Packages</h2>
-    <p>We don't just build websites; we build <strong>lead generation machines</strong> tailored for Lubbock businesses. Every package includes training and support because your success is our success.</p>
-  </div>
-
-  <div class="container">
-    <div class="row">
-
-      <!-- Package 1: The Launch Pad -->
-      <div class="col-lg-4 col-md-6">
-        <div class="service-box package-card">
-          <h4>The Launch Pad</h4>
-          <span class="price">$1,500 one-time + $99/mo optional</span>
-          <p><strong>Perfect For:</strong> Businesses that need a professional online presence to start generating leads.</p>
-          <ul>
-            <li>5-Page Professional Website</li>
-            <li>Mobile-Responsive Design</li>
-            <li>Contact Form & Google Maps</li>
-            <li>Basic On-Page SEO Setup</li>
-            <li>1 Round of Revisions</li>
-            <li>1 Hour of Training</li>
-            <li>1 Month of Basic Support</li>
-          </ul>
-          <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-outline-primary">Select Plan</a>
-        </div>
+    <!-- Service Details Section -->
+    <section id="services" class="services section light-background">
+      <div class="container section-title">
+        <h2>Our Packages</h2>
+        <p>We don't just build websites; we build <strong>lead generation machines</strong> tailored for Lubbock businesses. Every package includes training and support because your success is our success.</p>
       </div>
 
-      <!-- Package 2: The Rank & Grow -->
-      <div class="col-lg-4 col-md-6">
-        <div class="service-box package-card highlighted">
-          <h4>The Rank & Grow</h4>
-          <span class="price">$2,800 one-time + $299/mo</span>
-          <p><strong>Perfect For:</strong> Businesses that have a website but aren't getting found online.</p>
-          <p><em>Includes everything in The Launch Pad, plus:</em></p>
-          <ul>
-            <li>Advanced On-Page SEO</li>
-            <li>Technical SEO Audit & Fixes</li>
-            <li>Google Business Profile Optimization</li>
-            <li>Local SEO Directory Setup</li>
-            <li>Monthly SEO Performance Report</li>
-            <li>3 Rounds of Revisions</li>
-            <li>2 Hours of Training</li>
-          </ul>
-          <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary">Select Plan</a>
+      <div class="container">
+        <div class="row">
+
+          <!-- Package 1: The Launch Pad -->
+          <div class="col-lg-4 col-md-6">
+            <div class="service-box package-card">
+              <h4>The Launch Pad</h4>
+              <span class="price">$1,500 one-time + $99/mo optional</span>
+              <p><strong>Perfect For:</strong> Businesses that need a professional online presence to start generating leads.</p>
+              <ul>
+                <li>5-Page Professional Website</li>
+                <li>Mobile-Responsive Design</li>
+                <li>Contact Form & Google Maps</li>
+                <li>Basic On-Page SEO Setup</li>
+                <li>1 Round of Revisions</li>
+                <li>1 Hour of Training</li>
+                <li>1 Month of Basic Support</li>
+              </ul>
+              <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-outline-primary">Select Plan</a>
+            </div>
+          </div>
+
+          <!-- Package 2: The Rank & Grow -->
+          <div class="col-lg-4 col-md-6">
+            <div class="service-box package-card highlighted">
+              <h4>The Rank & Grow</h4>
+              <span class="price">$2,800 one-time + $299/mo</span>
+              <p><strong>Perfect For:</strong> Businesses that have a website but aren't getting found online.</p>
+              <p><em>Includes everything in The Launch Pad, plus:</em></p>
+              <ul>
+                <li>Advanced On-Page SEO</li>
+                <li>Technical SEO Audit & Fixes</li>
+                <li>Google Business Profile Optimization</li>
+                <li>Local SEO Directory Setup</li>
+                <li>Monthly SEO Performance Report</li>
+                <li>3 Rounds of Revisions</li>
+                <li>2 Hours of Training</li>
+              </ul>
+              <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary">Select Plan</a>
+            </div>
+          </div>
+
+          <!-- Package 3: The All-Star - FIXED COLUMN CLASS -->
+          <div class="col-lg-4 col-md-6"> <!-- Changed from col-md-12 to col-md-6 -->
+            <div class="service-box package-card">
+              <h4>The All-Star</h4>
+              <span class="price">$4,500 one-time + $499/mo</span>
+              <p><strong>Perfect For:</strong> Businesses ready to dominate their market with a full digital strategy.</p>
+              <p><em>Includes everything in The Rank & Grow, plus:</em></p>
+              <ul>
+                <li>Up to 10 Website Pages</li>
+                <li>Blog Setup + 2 Starter Articles</li>
+                <li>Email Marketing System Setup</li>
+                <li>Lead Magnet Creation</li>
+                <li>Monthly Content Strategy Session</li>
+                <li>5 Rounds of Revisions</li>
+                <li>3 Hours of Training</li>
+              </ul>
+              <a href="https://calendly.com/jacobdavis-activ3websolutions/30极端的min" target="_blank" class="btn btn-outline-primary">Select Plan</a>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      <!-- Package 3: The All-Star - FIXED COLUMN CLASS -->
-      <div class="col-lg-4 col-md-6"> <!-- Changed from col-md-12 to col-md-6 -->
-        <div class="service-box package-card">
-          <h4>The All-Star</h4>
-          <span class="price">$4,500 one-time + $499/mo</span>
-          <p><strong>Perfect For:</strong> Businesses ready to dominate their market with a full digital strategy.</p>
-          <p><em>Includes everything in The Rank & Grow, plus:</em></p>
-          <ul>
-            <li>Up to 10 Website Pages</li>
-            <li>Blog Setup + 2 Starter Articles</li>
-            <li>Email Marketing System Setup</li>
-            <li>Lead Magnet Creation</li>
-            <li>Monthly Content Strategy Session</li>
-            <li>5 Rounds of Revisions</li>
-            <li>3 Hours of Training</li>
-          </ul>
-          <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-outline-primary">Select Plan</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- À La Carte Section -->
     <section id="ala-carte" class="services section light-background">
@@ -968,13 +986,13 @@
             <label for="noWebsite">No</label>
           </div>
         </div>
-        <极端的div class="form-group">
+        <div class="form-group">
           <label>If yes, what changes or updates would you like?</label>
           <textarea name="changes" rows="3" class="form-control"></textarea>
         </div>
         <div class="form-group">
           <label>What is your business about?</label>
-          <textarea name="business" rows极端的="3" class="form-control"></textarea>
+          <textarea name="business" rows="3" class="form-control"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit & Schedule</button>
       </form>
