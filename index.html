@@ -388,7 +388,6 @@
     
     .form-group {
       margin-bottom: 20px;
-      position: relative;
     }
     
     .form-control {
@@ -545,7 +544,7 @@
         font-size: 16px;
         color: #a8a9b4;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        transition: all 极端的>0.3s;
+        transition: all 0.3s;
         z-index: 10000;
         position: relative;
       }
@@ -553,7 +552,7 @@
       .navmenu a:hover,
       .navmenu a.active {
         color: white;
-        background: rgba极端的>(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.05);
       }
       
       .navmenu a .navicon {
@@ -606,7 +605,7 @@
         margin: 10px auto 15px auto;
       }
       
-      .header .logo h极端的>1 {
+      .header .logo h1 {
         font-size: 20px;
       }
       
@@ -686,13 +685,13 @@
       }
     }
 
-    @media (极端的>min-width: 992px) {
+    @media (min-width: 992px) {
       .container {
         max-width: 960px;
       }
     }
 
-    @media (min-width: 1200极端的>px) {
+    @media (min-width: 1200px) {
       .container {
         max-width: 1140px;
       }
@@ -766,7 +765,7 @@
     .modal-close {
       background: none;
       border: none;
-      font-size极端的> 24px;
+      font-size: 24px;
       cursor: pointer;
       color: #777;
     }
@@ -796,33 +795,6 @@
       .contact-card, .contact-info-card {
         padding: 25px;
       }
-    }
-
-    /* Form validation styles */
-    .form-control.error {
-      border-color: #ff3860;
-    }
-    
-    .error-message {
-      color: #ff3860;
-      font-size: 12px;
-      margin-top: -15px;
-      margin-bottom: 15px;
-      display: none;
-    }
-    
-    .form-control.error + .error-message {
-      display: block;
-    }
-    
-    .form-success {
-      display: none;
-      background: #d4edda;
-      color: #155724;
-      padding: 15px;
-      border-radius: 6px;
-      margin-top: 20px;
-      text-align: center;
     }
   </style>
 </head>
@@ -856,7 +828,7 @@
         <li><a href="portfolio-details.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
         <li><a href="service-details.html"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
         <li><a href="#why-us"><i class="bi bi-star navicon"></i> Why Choose Us</a></li>
-        <li><a href="#contact"><极端的>i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
         <li><a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
       </ul>
     </nav>
@@ -911,7 +883,7 @@
     <!-- ======= Why Choose Us Section ======= -->
     <section id="why-us" class="why-us section light-background">
       <div class="container section-title">
-        <h2>Why Choose Us</极端的>h2>
+        <h2>Why Choose Us</h2>
         <p>We deliver more than just websites — we create growth opportunities for your business.</p>
       </div>
       <div class="container">
@@ -954,8 +926,8 @@
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact section light-background">
       <div class="container section-title">
-        <h2><i class="bi bi-envelope"></i> Contact Us</h2>
-        <p>Have questions or ready to start your project? Get in touch with us today!</p>
+        <h2><i class="bi bi-envelope"></i> Contact</h2>
+        <p>Get in touch with us using the form below:</p>
       </div>
 
       <div class="container contact-container">
@@ -965,29 +937,21 @@
             <form id="contact-form" action="https://formspree.io/f/movnzapb" method="POST">
               <div class="form-group">
                 <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                <div class="error-message">Please enter your name</div>
               </div>
               
               <div class="form-group">
                 <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                <div class="error-message">Please enter a valid email address</div>
               </div>
               
               <div class="form-group">
                 <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-                <div class="error-message">Please enter a subject</div>
               </div>
               
               <div class="form-group">
-                <textarea name="message" rows="6" class="form-control" placeholder="How can we help you?" required></textarea>
-                <div class="error-message">Please enter your message</div>
+                <textarea name="message" rows="6" class="form-control" placeholder="Message" required></textarea>
               </div>
               
               <button type="submit" id="submit-btn">Send Message</button>
-              
-              <div class="form-success" id="form-success">
-                <i class="bi bi-check-circle-fill"></i> Thank you! Your message has been sent successfully.
-              </div>
             </form>
           </div>
         </div>
@@ -995,13 +959,13 @@
         <!-- Contact Information -->
         <div class="contact-info">
           <div class="contact-info-card">
-            <h4>Get In Touch</h4>
+            <h4>Contact Information</h4>
             <p><i class="bi bi-envelope"></i> <a href="mailto:jacob@activ3websolutions.com">jacob@activ3websolutions.com</a></p>
-            <p><i class="bi bi-calendar-event"></i> <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank">Schedule a Free Consultation</a></p>
+            <p><i class="bi bi-calendar-event"></i> <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank">Schedule a Call</a></p>
             <p><i class="bi bi-geo-alt"></i> Serving clients nationwide</p>
             <p><i class="bi bi-clock"></i> Response within 24 hours</p>
             
-            <div class="social-links" style="margin-top: 30px;">
+            <div class="social-links">
               <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
               <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
               <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
@@ -1094,7 +1058,7 @@
           if (body.classList.contains('mobile-nav-active')) {
             closeMobileMenu();
           } else {
-            open极端的>MobileMenu();
+            openMobileMenu();
           }
         });
       }
@@ -1131,80 +1095,16 @@
         });
       }
 
-      // Contact Form Handling with validation
+      // Contact Form Handling
       const contactForm = document.getElementById('contact-form');
       if (contactForm) {
-        const inputs = contactForm.querySelectorAll('.form-control');
-        const successMessage = document.getElementById('form-success');
-        
-        // Add input validation
-        inputs.forEach(input => {
-          input.addEventListener('blur', function() {
-            validateField(this);
-          });
-          
-          input.addEventListener('input', function() {
-            if (this.classList.contains('error')) {
-              validateField(this);
-            }
-          });
-        });
-        
-        contactForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          let isValid = true;
-          inputs.forEach(input => {
-            if (!validateField(input)) {
-              isValid = false;
-            }
-          });
-          
-          if (isValid) {
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            if (submitBtn) {
-              submitBtn.disabled = true;
-              submitBtn.textContent = 'Sending...';
-              
-              // Simulate form submission
-              setTimeout(() => {
-                successMessage.style.display = 'block';
-                contactForm.reset();
-                
-                setTimeout(() => {
-                  submitBtn.disabled = false;
-                  submitBtn.textContent = 'Send Message';
-                }, 3000);
-              }, 1500);
-            }
+        contactForm.addEventListener('submit', function() {
+          const submitBtn = document.querySelector('#contact-form button[type="submit"]');
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
           }
         });
-        
-        function validateField(field) {
-          const errorMessage = field.nextElementSibling;
-          
-          if (field.hasAttribute('required') && !field.value.trim()) {
-            field.classList.add('error');
-            if (errorMessage) errorMessage.style.display = 'block';
-            return false;
-          }
-          
-          if (field.type === 'email' && field.value.trim()) {
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(field.value)) {
-              field.classList.add('error');
-              if (errorMessage) {
-                errorMessage.textContent = 'Please enter a valid email address';
-                errorMessage.style.display = 'block';
-              }
-              return false;
-            }
-          }
-          
-          field.classList.remove('error');
-          if (errorMessage) errorMessage.style.display = 'none';
-          return true;
-        }
       }
 
       // Modal functionality
