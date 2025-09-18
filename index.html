@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Activ3 Web Solutions</title>
-  <link rel="stylesheet" href="assets/main.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
 
@@ -14,80 +14,63 @@
     <div class="logo">
       <h1>Activ3</h1>
     </div>
-
     <div class="profile-img">
-      <img src="assets/profile.jpg" alt="Profile Image">
+      <img src="profile.jpg" alt="Jacob Davis">
     </div>
-
     <nav class="navmenu">
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#services"><i class="bi bi-gear navicon"></i>Services</a></li>
-        <li><a href="#portfolio"><i class="bi bi-grid navicon"></i>Portfolio</a></li>
+        <li><a href="#services"><i class="bi bi-briefcase navicon"></i>Services</a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i>Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Mobile nav toggle -->
+  <!-- Mobile Nav Toggle -->
   <button class="mobile-nav-toggle bi bi-list"></button>
   <div class="mobile-nav-backdrop"></div>
 
-  <!-- Main content -->
+  <!-- Main Content -->
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero container">
-      <h1>We Build <span id="typed-text"></span></h1>
-      <p>Websites, SEO, and Email Marketing solutions for your business</p>
-      <button id="auditButton" class="btn">Free Audit</button>
+    <section id="hero" class="hero">
+      <h1>Hello, I'm Jacob Davis</h1>
+      <h2 id="typed-text"></h2>
+      <p>I build <strong>Websites</strong>, grow businesses with <strong>SEO</strong>, and manage <strong>Email Marketing</strong>.</p>
+      <button class="btn" id="auditButton">Schedule Free Audit</button>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services container">
-      <h2 class="section-title">Our Services</h2>
-      <div class="row">
-        <div class="col service-card">
-          <h3>Web Development</h3>
-          <p>Custom websites built for performance and scalability.</p>
-        </div>
-        <div class="col service-card">
-          <h3>SEO</h3>
-          <p>Boost your search rankings and online visibility.</p>
-        </div>
-        <div class="col service-card">
-          <h3>Email Marketing</h3>
-          <p>Engage your audience with high-converting campaigns.</p>
-        </div>
+    <section id="services" class="services">
+      <div class="section-title">
+        <h2>Our Services</h2>
       </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio container">
-      <h2 class="section-title">Portfolio</h2>
-      <div class="row">
-        <div class="col portfolio-card">
-          <img src="assets/project1.jpg" alt="Project 1">
-          <h4>Project 1</h4>
+      <div class="card-container">
+        <div class="card">
+          <h4>Web Development</h4>
+          <p>Custom websites designed to convert visitors into customers. Mobile-friendly, fast, and modern.</p>
         </div>
-        <div class="col portfolio-card">
-          <img src="assets/project2.jpg" alt="Project 2">
-          <h4>Project 2</h4>
+        <div class="card">
+          <h4>SEO Optimization</h4>
+          <p>Boost your website's visibility on search engines and attract organic traffic to grow your business.</p>
         </div>
-        <div class="col portfolio-card">
-          <img src="assets/project3.jpg" alt="Project 3">
-          <h4>Project 3</h4>
+        <div class="card">
+          <h4>Email Marketing</h4>
+          <p>Create high-performing campaigns to engage your audience and increase sales with strategic email marketing.</p>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact container">
-      <h2 class="section-title">Contact Us</h2>
+    <section id="contact" class="contact">
+      <div class="section-title">
+        <h2>Contact Me</h2>
+      </div>
       <form id="contact-form">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
     </section>
@@ -95,16 +78,16 @@
   </main>
 
   <!-- Audit Modal -->
-  <div id="auditModal" class="modal">
+  <div id="auditModal" class="modal" style="display:none;">
     <div class="modal-content">
       <span id="closeModal" class="close">&times;</span>
-      <h2>Schedule a Free Audit</h2>
+      <p>Schedule your free audit using the form.</p>
       <form id="auditForm">
         <button type="submit">Book Now</button>
       </form>
     </div>
   </div>
 
-  <script src="assets/main.js" defer></script>
+  <script src="main.js"></script>
 </body>
 </html>
