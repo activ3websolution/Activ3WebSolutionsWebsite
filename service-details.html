@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Portfolio - Activ3 Web Solutions</title>
+  <title>Our Services - Activ3 Web Solutions</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
   <style>
     body {
@@ -29,10 +29,10 @@
       color: #555;
     }
 
-    /* Portfolio card */
-    .portfolio-card {
+    /* Service card */
+    .service-box {
       background: white;
-      padding: 20px;
+      padding: 30px;
       border-radius: 12px;
       box-shadow: 0 5px 25px rgba(0,0,0,0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -42,32 +42,26 @@
       height: 100%;
     }
 
-    .portfolio-card:hover {
+    .service-box:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 30px rgba(0,0,0,0.12);
     }
 
-    .portfolio-card img {
-      max-width: 100%;
-      border-radius: 8px;
+    .service-box h3 {
       margin-bottom: 15px;
+      font-size: 22px;
     }
 
-    .portfolio-card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .portfolio-card p {
+    .service-box p {
       flex-grow: 1;
+      margin-bottom: 20px;
       font-size: 15px;
-      margin-bottom: 15px;
     }
 
     .btn-custom {
       background: #007bff;
       color: white;
-      padding: 8px 16px;
+      padding: 10px 20px;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.3s;
@@ -86,90 +80,79 @@
       .container {
         padding: 40px 15px;
       }
-      .portfolio-card {
-        padding: 15px;
+      .service-box {
+        padding: 20px;
       }
-      .portfolio-card h3 {
-        font-size: 18px;
+      .service-box h3 {
+        font-size: 20px;
+      }
+      .service-box p {
+        font-size: 15px;
       }
     }
 
     @media (max-width: 576px) {
       h1 {
-        font-size: 26px;
+        font-size: 28px;
       }
       .btn-custom {
-        width: 100%; /* full width buttons on phones */
+        width: 100%; /* full width button on phones */
       }
     }
   </style>
 </head>
 <body>
+  <!-- 🔹 Header (keep yours if you already have one) -->
+  <header class="bg-white shadow-sm p-3 mb-5">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h2 class="m-0">Activ3 Web Solutions</h2>
+      <nav>
+        <a href="index.html" class="me-3">Home</a>
+        <a href="services.html" class="me-3">Services</a>
+        <a href="portfolio.html" class="me-3">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 🔹 Services Section -->
   <div class="container">
-    <h1>Our Portfolio</h1>
-    <p class="lead">A showcase of projects we’ve built for businesses like yours.</p>
+    <h1>Our Services</h1>
+    <p class="lead">Choose the right package to grow your business with Activ3 Web Solutions.</p>
 
     <div class="row g-4">
-      <!-- Portfolio Item 1 -->
+      <!-- Package 1 -->
       <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="portfolio-card">
-          <img src="images/project1.jpg" alt="Project 1">
-          <h3>Project One</h3>
-          <p>A modern responsive website built for a local business to improve their online presence and drive customer engagement.</p>
-          <a href="#" class="btn-custom">View Project</a>
+        <div class="service-box">
+          <h3>The Launch Pad</h3>
+          <p>Perfect for startups and small businesses wanting a professional online presence. Includes a responsive website and basic SEO setup.</p>
+          <a href="#" class="btn-custom">Select Plan</a>
         </div>
       </div>
 
-      <!-- Portfolio Item 2 -->
+      <!-- Package 2 -->
       <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="portfolio-card">
-          <img src="images/project2.jpg" alt="Project 2">
-          <h3>Project Two</h3>
-          <p>A full SEO campaign for an e-commerce store, boosting their rankings and helping them scale revenue month over month.</p>
-          <a href="#" class="btn-custom">View Project</a>
+        <div class="service-box">
+          <h3>The Rank & Grow</h3>
+          <p>For businesses ready to scale. Includes advanced SEO strategies, on-page optimization, and local ranking improvements.</p>
+          <a href="#" class="btn-custom">Select Plan</a>
         </div>
       </div>
 
-      <!-- Portfolio Item 3 -->
+      <!-- Package 3 -->
       <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="portfolio-card">
-          <img src="images/project3.jpg" alt="Project 3">
-          <h3>Project Three</h3>
-          <p>Custom web development with integrated booking system, optimized for conversions and mobile usability.</p>
-          <a href="#" class="btn-custom">View Project</a>
-        </div>
-      </div>
-
-      <!-- Portfolio Item 4 -->
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="portfolio-card">
-          <img src="images/project4.jpg" alt="Project 4">
-          <h3>Project Four</h3>
-          <p>Email marketing automation system that increased client engagement by 45% within the first three months.</p>
-          <a href="#" class="btn-custom">View Project</a>
-        </div>
-      </div>
-
-      <!-- Portfolio Item 5 -->
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="portfolio-card">
-          <img src="images/project5.jpg" alt="Project 5">
-          <h3>Project Five</h3>
-          <p>Redesigned an outdated site into a modern, responsive, and SEO-friendly platform to attract more leads.</p>
-          <a href="#" class="btn-custom">View Project</a>
-        </div>
-      </div>
-
-      <!-- Portfolio Item 6 -->
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="portfolio-card">
-          <img src="images/project6.jpg" alt="Project 6">
-          <h3>Project Six</h3>
-          <p>A complete digital transformation package, combining web dev, SEO, and marketing strategies to dominate their niche.</p>
-          <a href="#" class="btn-custom">View Project</a>
+        <div class="service-box">
+          <h3>The All-Star</h3>
+          <p>Our premium package with web development, full SEO, email marketing, and ongoing optimization to dominate your market.</p>
+          <a href="#" class="btn-custom">Select Plan</a>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- 🔹 Footer (keep yours if you already have one) -->
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <p class="mb-0">&copy; 2025 Activ3 Web Solutions. All rights reserved.</p>
+  </footer>
 </body>
 </html>
