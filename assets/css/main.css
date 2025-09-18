@@ -154,86 +154,67 @@ Sidebar
   padding: 50px;
 }
 
-/* Hero Section */
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
 .hero {
   text-align: center;
-  margin-top: 50px;
+  padding: 120px 20px 60px 20px;
+  background: linear-gradient(135deg, #1a2a6c, #3498db);
+  color: white;
 }
 
 .hero h1 {
+  font-family: var(--heading-font);
   font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-.hero #typed-text {
-  font-size: 36px;
-  color: var(--accent-color);
-  font-weight: 600;
+.hero h2 {
+  font-family: var(--heading-font);
+  font-size: 32px;
+  height: 40px;
+  margin-bottom: 20px;
 }
 
 .hero p {
   font-size: 18px;
-  margin-top: 10px;
-  color: #555;
+  margin-bottom: 30px;
 }
 
-/* Buttons */
-button, .btn {
-  padding: 12px 25px;
+.hero .btn {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 12px 28px;
   border: none;
   border-radius: 8px;
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
 }
 
-button:hover, .btn:hover {
+.hero .btn:hover {
   background-color: #0d8ac5;
 }
 
-/* Section Titles */
-.section-title {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.section-title h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.section-title h2:after {
-  content: "";
-  width: 50px;
-  height: 3px;
-  background: var(--accent-color);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-}
-
-/* Cards */
+/*--------------------------------------------------------------
+# Services Cards
+--------------------------------------------------------------*/
 .card-container {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  padding: 0 20px 60px 20px;
 }
 
 .card {
-  flex: 0 0 calc(33.333% - 20px);
-  background: white;
-  padding: 25px;
+  background: var(--surface-color);
+  padding: 30px 20px;
   border-radius: 12px;
   box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+  flex: 0 0 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
 }
 
 .card:hover {
@@ -244,11 +225,125 @@ button:hover, .btn:hover {
 .card h4 {
   color: var(--accent-color);
   margin-bottom: 15px;
+  font-size: 22px;
 }
 
 .card p {
-  color: #555;
+  color: var(--default-color);
+  font-size: 16px;
   line-height: 1.6;
+}
+
+/*--------------------------------------------------------------
+# Contact Form
+--------------------------------------------------------------*/
+.contact form {
+  max-width: 600px;
+  margin: 0 auto 80px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact input, 
+.contact textarea {
+  padding: 12px 15px;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: var(--default-font);
+  transition: border 0.3s;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.contact button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact button:hover {
+  background-color: #0d8ac5;
+}
+
+/*--------------------------------------------------------------
+# Modal
+--------------------------------------------------------------*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(0,0,0,0.6);
+  z-index: 10001;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: var(--surface-color);
+  padding: 30px 20px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+  animation: slideIn 0.3s ease;
+}
+
+.modal .close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 24px;
+  color: var(--default-color);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal .close:hover {
+  color: var(--accent-color);
+}
+
+/* Modal Animations */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideIn {
+  from {transform: translateY(-30px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+/*--------------------------------------------------------------
+# Responsive Adjustments
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+  .hero h2 {
+    font-size: 24px;
+    height: 30px;
+  }
+  .card-container {
+    gap: 20px;
+  }
 }
 
 /* Mobile */
