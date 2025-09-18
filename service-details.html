@@ -3,87 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Activ3 Web Solutions - Services</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Raleway:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <title>Services | Activ3 Web Solutions</title>
+  <link rel="stylesheet" href="assets/main.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body class="service-details-page">
 
   <!-- Sidebar -->
-  <header class="header">
+  <aside class="header">
     <div class="logo">
-      <h1>Activ3</h1>
+      <h1>Activ3 Web Solutions</h1>
     </div>
-
     <div class="profile-img">
-      <img src="profile.jpg" alt="Profile Image">
+      <img src="assets/profile.jpg" alt="Profile">
     </div>
-
     <nav class="navmenu">
       <ul>
-        <li><a href="index.html"><i class="navicon">🏠</i>Home</a></li>
-        <li><a href="services.html" class="active"><i class="navicon">💼</i>Services</a></li>
-        <li><a href="portfolio.html"><i class="navicon">🖼️</i>Portfolio</a></li>
-        <li><a href="contact.html"><i class="navicon">✉️</i>Contact</a></li>
+        <li><a href="index.html"><i class="fas fa-home navicon"></i>Home</a></li>
+        <li><a href="services.html" class="active"><i class="fas fa-cogs navicon"></i>Services</a></li>
+        <li><a href="portfolio.html"><i class="fas fa-briefcase navicon"></i>Portfolio</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope navicon"></i>Contact</a></li>
       </ul>
     </nav>
-
-    <div class="social-links">
-      <a href="#"><i>🔗</i></a>
-      <a href="#"><i>🐦</i></a>
-      <a href="#"><i>💼</i></a>
-    </div>
-  </header>
+  </aside>
 
   <!-- Mobile Toggle Button -->
-  <button class="mobile-nav-toggle">☰</button>
+  <button class="mobile-nav-toggle" id="mobile-toggle"><i class="fas fa-bars"></i></button>
   <div class="mobile-nav-backdrop"></div>
 
   <!-- Main Content -->
   <main class="main">
-
-    <!-- Hero Section -->
-    <section class="hero">
-      <img src="hero-services.jpg" alt="Hero Background" class="hero-bg">
-      <div class="container">
-        <h2>Our Services</h2>
-        <p>We build <span>lead-generating websites</span> for Lubbock businesses</p>
-      </div>
-    </section>
-
-    <!-- Services Section -->
     <section class="section">
       <div class="container">
         <div class="section-title">
-          <h2>Service Packages & Pricing</h2>
-          <p>Choose the plan that suits your business</p>
+          <h2>Our Services</h2>
+          <p>We build lead generation machines for Lubbock businesses</p>
         </div>
 
-        <div class="why-us-container">
-          
-          <!-- Package 1 -->
-          <div class="why-us-item service-box">
+        <div class="services-container">
+
+          <!-- Launch Pad -->
+          <div class="service-box">
             <h4>The Launch Pad</h4>
-            <p>Perfect For: Businesses that need a professional online presence or are replacing an outdated site.</p>
+            <p><strong>Perfect For:</strong> Businesses starting online or replacing an outdated site.</p>
+            <p><strong>Goal:</strong> Get you online with a beautiful, functional site that works on all devices.</p>
             <ul>
-              <li>5-Page Professional Website</li>
+              <li>5-Page Professional Website (Home, About, Services, Gallery, Contact)</li>
               <li>Mobile-Responsive Design</li>
               <li>Contact Form & Google Maps Integration</li>
-              <li>Basic On-Page SEO</li>
+              <li>Basic On-Page SEO Setup</li>
               <li>1 Round of Revisions</li>
               <li>1 Hour of Training</li>
               <li>1 Month of Basic Support</li>
             </ul>
-            <p><strong>One-Time Fee:</strong> $1,500</p>
-            <p><strong>Optional Care Plan:</strong> $99/month</p>
+            <p><strong>Investment:</strong> $1,500</p>
+            <p>Optional Care Plan: $99/month</p>
           </div>
 
-          <!-- Package 2 -->
-          <div class="why-us-item service-box highlighted">
+          <!-- Rank & Grow -->
+          <div class="service-box highlighted">
             <h4>The Rank & Grow</h4>
-            <p>Perfect For: Businesses that want to compete immediately and drive local traffic.</p>
+            <p><strong>Perfect For:</strong> Businesses that want to compete online immediately.</p>
+            <p><strong>Goal:</strong> Drive local traffic and convert visitors into customers.</p>
             <ul>
               <li>Everything in The Launch Pad</li>
               <li>Advanced On-Page SEO</li>
@@ -94,14 +75,15 @@
               <li>3 Rounds of Revisions</li>
               <li>2 Hours of Training</li>
             </ul>
-            <p><strong>One-Time Fee:</strong> $2,800</p>
-            <p><strong>Ongoing SEO Care:</strong> $299/month</p>
+            <p><strong>Investment:</strong> $2,800</p>
+            <p>Required SEO Care Plan: $299/month</p>
           </div>
 
-          <!-- Package 3 -->
-          <div class="why-us-item service-box">
+          <!-- All-Star -->
+          <div class="service-box">
             <h4>The All-Star</h4>
-            <p>Perfect For: Businesses ready to dominate the market with a full digital strategy.</p>
+            <p><strong>Perfect For:</strong> Businesses ready to dominate their market.</p>
+            <p><strong>Goal:</strong> Maximize visibility, leads, and customer retention.</p>
             <ul>
               <li>Everything in The Rank & Grow</li>
               <li>Up to 10 Website Pages</li>
@@ -112,32 +94,22 @@
               <li>5 Rounds of Revisions</li>
               <li>3 Hours of Training</li>
             </ul>
-            <p><strong>One-Time Fee:</strong> $4,500</p>
-            <p><strong>Ongoing Growth Plan:</strong> $499/month</p>
+            <p><strong>Investment:</strong> $4,500</p>
+            <p>Required Growth Plan: $499/month</p>
           </div>
 
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="copyright">
-        <p>© 2025 Activ3 Web Solutions. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Mobile Nav Script -->
+  <!-- Mobile Sidebar Script -->
   <script>
-    const toggle = document.querySelector('.mobile-nav-toggle');
+    const toggleBtn = document.getElementById('mobile-toggle');
     const header = document.querySelector('.header');
     const backdrop = document.querySelector('.mobile-nav-backdrop');
 
-    toggle.addEventListener('click', () => {
+    toggleBtn.addEventListener('click', () => {
       header.classList.toggle('header-show');
       document.body.classList.toggle('mobile-nav-active');
     });
@@ -147,6 +119,5 @@
       document.body.classList.remove('mobile-nav-active');
     });
   </script>
-
 </body>
 </html>
