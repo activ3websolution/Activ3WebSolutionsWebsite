@@ -1,158 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services - Activ3 Web Solutions</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #f8f9fa;
-      margin: 0;
-      padding: 0;
     }
-
-    .container {
-      padding: 60px 20px;
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: url("your-main-photo.jpg") center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
     }
-
-    h1 {
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.55);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 3rem;
       font-weight: bold;
       margin-bottom: 20px;
-      text-align: center;
     }
-
-    p.lead {
-      text-align: center;
-      margin-bottom: 40px;
-      color: #555;
+    .btn-custom {
+      background: #007bff;
+      color: #fff;
+      border-radius: 8px;
+      padding: 12px 25px;
+      margin: 10px;
+      font-weight: 500;
+      transition: background 0.3s;
     }
-
-    /* Service card */
-    .service-box {
-      background: white;
-      padding: 30px;
+    .btn-custom:hover {
+      background: #0056b3;
+    }
+    /* Service Cards */
+    .service-card {
+      background: #fff;
       border-radius: 12px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      padding: 25px;
       height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
-    .service-box:hover {
+    .service-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 30px rgba(0,0,0,0.12);
     }
-
-    .service-box h3 {
-      margin-bottom: 15px;
+    .service-card h3 {
       font-size: 22px;
+      margin-bottom: 15px;
     }
-
-    .service-box p {
-      flex-grow: 1;
-      margin-bottom: 20px;
+    .collapse-content {
+      margin-top: 15px;
       font-size: 15px;
+      color: #444;
     }
-
-    .btn-custom {
-      background: #007bff;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s;
+    /* À La Carte */
+    .alacarte-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      padding: 30px;
+      margin-top: 40px;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 20px;
       text-align: center;
-      display: inline-block;
-      font-weight: 500;
-    }
-
-    .btn-custom:hover {
-      background: #0056b3;
-      color: white;
-    }
-
-    /* Responsive tweaks */
-    @media (max-width: 768px) {
-      .container {
-        padding: 40px 15px;
-      }
-      .service-box {
-        padding: 20px;
-      }
-      .service-box h3 {
-        font-size: 20px;
-      }
-      .service-box p {
-        font-size: 15px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      h1 {
-        font-size: 28px;
-      }
-      .btn-custom {
-        width: 100%; /* full width button on phones */
-      }
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
-  <!-- 🔹 Header -->
-  <header class="bg-white shadow-sm p-3 mb-5">
-    <div class="container d-flex justify-content-between align-items-center">
-      <h2 class="m-0">Activ3 Web Solutions</h2>
-      <nav>
-        <a href="index.html" class="me-3">Home</a>
-        <a href="services.html" class="me-3 fw-bold text-primary">Services</a>
-        <a href="portfolio.html" class="me-3">Portfolio</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <!-- 🔹 Services Section -->
-  <div class="container">
-    <h1>Our Services</h1>
-    <p class="lead">Choose the right package to grow your business with Activ3 Web Solutions.</p>
+  <!-- Sidebar (reuse from index if you have it) -->
+  <nav class="d-none d-md-block bg-light p-3 position-fixed" style="height:100vh; width:220px;">
+    <h4 class="mb-4">Activ3</h4>
+    <ul class="nav flex-column">
+      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="services.html" class="nav-link active">Services</a></li>
+      <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
 
-    <div class="row g-4">
-      <!-- Package 1 -->
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="service-box">
-          <h3>The Launch Pad</h3>
-          <p>Perfect for startups and small businesses wanting a professional online presence. Includes a responsive website and basic SEO setup.</p>
-          <a href="#" class="btn-custom">Select Plan</a>
+  <!-- Main Content Wrapper -->
+  <div class="ms-md-5" style="margin-left:240px;">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Our Service Packages</h1>
+        <p>Helping Lubbock businesses grow online with websites, SEO, and marketing.</p>
+        <a href="#" class="btn btn-custom">Free Demo</a>
+        <a href="#" class="btn btn-custom">Free Audit</a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <div class="container py-5">
+      <div class="row g-4">
+        
+        <!-- Launch Pad -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <h3>The Launch Pad</h3>
+            <p>Perfect for businesses needing a professional online presence.</p>
+            <button class="btn btn-custom" data-bs-toggle="collapse" data-bs-target="#launchpad">View Details</button>
+            <div id="launchpad" class="collapse collapse-content">
+              <ul>
+                <li>5-Page Professional Website</li>
+                <li>Mobile Responsive</li>
+                <li>Basic SEO Setup</li>
+                <li>Contact Form + Google Maps</li>
+                <li>1 Round of Revisions</li>
+                <li>1 Hour Training + 1 Month Support</li>
+              </ul>
+              <p><strong>Investment:</strong> $1,500 one-time<br>
+              Optional Care Plan: $99/month</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rank & Grow -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <h3>The Rank & Grow</h3>
+            <p>For businesses ready to scale with SEO and traffic growth.</p>
+            <button class="btn btn-custom" data-bs-toggle="collapse" data-bs-target="#rankgrow">View Details</button>
+            <div id="rankgrow" class="collapse collapse-content">
+              <ul>
+                <li>Everything in Launch Pad</li>
+                <li>Advanced On-Page SEO</li>
+                <li>Technical SEO Fixes</li>
+                <li>Google Business Profile Optimization</li>
+                <li>Local SEO Directory Setup</li>
+                <li>Monthly SEO Report</li>
+              </ul>
+              <p><strong>Investment:</strong> $2,800 one-time<br>
+              SEO Care Plan: $299/month</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- All-Star -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <h3>The All-Star</h3>
+            <p>Our premium package: website + SEO + marketing domination.</p>
+            <button class="btn btn-custom" data-bs-toggle="collapse" data-bs-target="#allstar">View Details</button>
+            <div id="allstar" class="collapse collapse-content">
+              <ul>
+                <li>Everything in Rank & Grow</li>
+                <li>Up to 10 Website Pages</li>
+                <li>Blog Setup + 2 Articles</li>
+                <li>Email Marketing System</li>
+                <li>Lead Magnet Creation</li>
+                <li>Monthly Content Strategy Session</li>
+              </ul>
+              <p><strong>Investment:</strong> $4,500 one-time<br>
+              Growth Plan: $499/month</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Package 2 -->
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="service-box">
-          <h3>The Rank & Grow</h3>
-          <p>For businesses ready to scale. Includes advanced SEO strategies, on-page optimization, and local ranking improvements.</p>
-          <a href="#" class="btn-custom">Select Plan</a>
-        </div>
-      </div>
-
-      <!-- Package 3 -->
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="service-box">
-          <h3>The All-Star</h3>
-          <p>Our premium package with web development, full SEO, email marketing, and ongoing optimization to dominate your market.</p>
-          <a href="#" class="btn-custom">Select Plan</a>
+      <!-- À La Carte -->
+      <div class="alacarte-card">
+        <h3>À La Carte & Add-Ons</h3>
+        <p>Enhance your package with flexible add-ons tailored to your business needs.</p>
+        <button class="btn btn-custom" data-bs-toggle="collapse" data-bs-target="#alacarte">Explore Options</button>
+        <div id="alacarte" class="collapse collapse-content">
+          <ul>
+            <li>Website Care & Hosting Only: $49/month</li>
+            <li>Google Business Profile Management: $150/month</li>
+            <li>Additional Website Pages: $150/page</li>
+            <li>Blog Article Writing: $150/article</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 🔹 Footer -->
-  <footer class="bg-dark text-white text-center py-4 mt-5">
-    <p class="mb-0">&copy; 2025 Activ3 Web Solutions. All rights reserved.</p>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Activ3 Web Solutions. All rights reserved.</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
