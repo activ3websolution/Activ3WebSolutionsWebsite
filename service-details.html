@@ -1,118 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Activ3 Web Solutions - Services</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/main.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
-<body class="service-details-page">
+<body class="service-details-page dark-background">
 
-  <!-- Sidebar Header -->
-  <header class="header" id="header">
-    <div class="logo">
-      <h1>Activ3 Web Solutions</h1>
+  <!-- Mobile menu toggle button -->
+  <i class="bi bi-list mobile-nav-toggle"></i>
+  <div class="mobile-nav-backdrop"></div>
+
+  <header id="header" class="header dark-background">
+    <div class="profile-img">
+      <img src="assets/img/my-profile-img.png" alt="Activ3 Web Solutions">
     </div>
 
-    <div class="profile-img">
-      <img src="assets/profile.jpg" alt="Profile Image">
+    <div class="logo">
+      <h1 class="sitename">Activ3 Web Solutions</h1>
+    </div>
+
+    <div class="social-links text-center">
+      <a href="https://www.linkedin.com/in/jacob-l-davis"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.instagram.com/davisjacob05/"><i class="bi bi-instagram"></i></a>
+      <a href="https://github.com/activ3websolution"><i class="bi bi-github"></i></a>
     </div>
 
     <nav class="navmenu">
       <ul>
-        <li><a href="index.html" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="services.html"><i class="bi bi-briefcase navicon"></i>Services</a></li>
-        <li><a href="portfolio.html"><i class="bi bi-image navicon"></i>Portfolio</a></li>
-        <li><a href="contact.html"><i class="bi bi-envelope navicon"></i>Contact</a></li>
+        <li><a href="index.html"><i class="bi bi-house navicon"></i> Home</a></li>
+        <li><a href="portfolio-details.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="service-details.html" class="active"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+        <li><a href="#why-us"><i class="bi bi-star navicon"></i> Why Choose Us</a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
       </ul>
     </nav>
-
-    <div class="social-links">
-      <a href="#"><i class="bi bi-facebook"></i></a>
-      <a href="#"><i class="bi bi-twitter"></i></a>
-      <a href="#"><i class="bi bi-linkedin"></i></a>
-    </div>
   </header>
 
-  <!-- Mobile nav toggle -->
-  <button class="mobile-nav-toggle bi bi-list"></button>
-  <div class="mobile-nav-backdrop"></div>
-
-  <!-- Main Content -->
   <main class="main">
-    <section class="section">
+    <!-- Hero Section -->
+    <section class="hero">
+      <img src="assets/img/hero-bg.jpg" alt="Background" class="hero-bg">
+      <div class="container text-center">
+        <h2>Our Services</h2>
+        <p><span id="typed-text">Websites, SEO, Email Marketing</span><span class="typed-cursor">|</span></p>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section light-background">
+      <div class="container section-title">
+        <h2>Service Packages</h2>
+        <p>We deliver web solutions and marketing strategies tailored to your business.</p>
+      </div>
+
       <div class="container">
-        <div class="section-title">
-          <h2>Our Service Packages</h2>
-          <p>We build lead generation machines tailored for Lubbock businesses.</p>
-        </div>
-
         <div class="row gy-4">
-
           <!-- Package 1 -->
           <div class="col-lg-4">
-            <div class="service-box">
+            <div class="why-us-item">
               <h4>The Launch Pad</h4>
-              <p>Perfect for businesses that need a professional online presence.</p>
               <ul>
-                <li>5-Page Professional Website</li>
-                <li>Mobile-Responsive Design</li>
-                <li>Contact Form & Google Maps Integration</li>
-                <li>Basic On-Page SEO Setup</li>
-                <li>1 Round of Revisions + 1 Hour Training</li>
+                <li>5-Page Website</li>
+                <li>Responsive Design</li>
+                <li>Contact Form & Maps</li>
+                <li>Basic SEO Setup</li>
+                <li>1 Round of Revisions</li>
               </ul>
-              <p><strong>One-Time Build Fee:</strong> $1,500</p>
-              <p><strong>Optional Care Plan:</strong> $99/month</p>
+              <p><strong>Build Fee:</strong> $1,500</p>
+              <p><strong>Care Plan:</strong> $99/mo</p>
             </div>
           </div>
-
           <!-- Package 2 -->
           <div class="col-lg-4">
-            <div class="service-box highlighted">
+            <div class="why-us-item" style="border: 2px solid var(--accent-color);">
               <h4>The Rank & Grow</h4>
-              <p>For businesses that want to get found online quickly.</p>
               <ul>
-                <li>Everything in The Launch Pad</li>
-                <li>Advanced On-Page SEO</li>
-                <li>Technical SEO Audit & Fixes</li>
-                <li>Google Business Profile Optimization</li>
-                <li>Local SEO Directory Setup</li>
-                <li>Monthly SEO Report + 3 Rounds of Revisions</li>
+                <li>Everything in Launch Pad</li>
+                <li>Advanced SEO</li>
+                <li>GMB Optimization</li>
+                <li>Local SEO Setup</li>
+                <li>Monthly SEO Report</li>
               </ul>
-              <p><strong>One-Time Build Fee:</strong> $2,800</p>
-              <p><strong>Required SEO Care Plan:</strong> $299/month</p>
+              <p><strong>Build Fee:</strong> $2,800</p>
+              <p><strong>Care Plan:</strong> $299/mo</p>
             </div>
           </div>
-
           <!-- Package 3 -->
           <div class="col-lg-4">
-            <div class="service-box">
+            <div class="why-us-item">
               <h4>The All-Star</h4>
-              <p>For businesses ready to dominate their market with full digital strategy.</p>
               <ul>
-                <li>Everything in The Rank & Grow</li>
-                <li>Up to 10 Website Pages</li>
-                <li>Blog Setup + Starter Articles</li>
+                <li>Everything in Rank & Grow</li>
+                <li>10 Pages + Blog Setup</li>
                 <li>Email Marketing Setup</li>
                 <li>Lead Magnet Creation</li>
-                <li>Monthly Content Strategy + 5 Revisions</li>
+                <li>Monthly Content Strategy</li>
               </ul>
-              <p><strong>One-Time Build Fee:</strong> $4,500</p>
-              <p><strong>Required Growth Plan:</strong> $499/month</p>
+              <p><strong>Build Fee:</strong> $4,500</p>
+              <p><strong>Care Plan:</strong> $499/mo</p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="why-us section light-background">
+      <div class="container section-title">
+        <h2>Why Choose Us</h2>
+        <p>We create growth opportunities for your business.</p>
+      </div>
+      <div class="container">
+        <div class="why-us-container">
+          <div class="why-us-item"><h4>Proven Expertise</h4><p>Years of combined experience in web development, SEO, and digital marketing.</p></div>
+          <div class="why-us-item"><h4>Results Driven</h4><p>Strategies focused on measurable results — traffic, leads, conversions.</p></div>
+          <div class="why-us-item"><h4>Affordable</h4><p>Solutions tailored to your budget without compromising quality.</p></div>
+          <div class="why-us-item"><h4>Dedicated Support</h4><p>We work closely with clients ensuring every project aligns with their goals.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section light-background">
+      <div class="container section-title">
+        <h2>Contact</h2>
+        <p>Get in touch using the form below:</p>
+      </div>
+
+      <div class="container contact-container">
+        <div class="contact-form">
+          <div class="contact-card">
+            <form id="contact-form" action="https://formspree.io/f/movnzapb" method="POST">
+              <div class="form-group"><input type="text" name="name" class="form-control" placeholder="Your Name" required></div>
+              <div class="form-group"><input type="email" name="email" class="form-control" placeholder="Your Email" required></div>
+              <div class="form-group"><input type="text" name="subject" class="form-control" placeholder="Subject" required></div>
+              <div class="form-group"><textarea name="message" class="form-control" placeholder="Message" required></textarea></div>
+              <button type="submit" id="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+        <div class="contact-info">
+          <div class="contact-info-card">
+            <h4>Contact Information</h4>
+            <p><i class="bi bi-envelope"></i> <a href="mailto:jacob@activ3websolutions.com">jacob@activ3websolutions.com</a></p>
+            <p><i class="bi bi-calendar-event"></i> <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank">Schedule a Call</a></p>
+            <p><i class="bi bi-geo-alt"></i> Serving clients nationwide</p>
+            <p><i class="bi bi-clock"></i> Response within 24 hours</p>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/jacob-l-davis"><i class="bi bi-linkedin"></i></a>
+              <a href="https://www.instagram.com/davisjacob05/"><i class="bi bi-instagram"></i></a>
+              <a href="https://github.com/activ3websolution"><i class="bi bi-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="copyright">
-        <p>&copy; 2025 Activ3 Web Solutions. All Rights Reserved.</p>
-      </div>
+  <footer id="footer" class="footer light-background">
+    <div class="container text-center">
+      <p>© 2025 <strong class="sitename">Activ3 Web Solutions</strong>. All Rights Reserved</p>
     </div>
   </footer>
 
