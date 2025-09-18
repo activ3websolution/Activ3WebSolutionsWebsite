@@ -5,22 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Activ3 Web Solutions</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
-
   <!-- Sidebar -->
-  <header id="header" class="header">
+  <header class="header" id="header">
     <div class="logo">
       <h1>Activ3</h1>
     </div>
     <div class="profile-img">
-      <img src="profile.jpg" alt="Jacob Davis">
+      <img src="assets/profile.jpg" alt="Profile Image">
     </div>
     <nav class="navmenu">
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#services"><i class="bi bi-briefcase navicon"></i>Services</a></li>
+        <li><a href="#home" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="#services"><i class="bi bi-gear navicon"></i>Services</a></li>
+        <li><a href="#portfolio"><i class="bi bi-briefcase navicon"></i>Portfolio</a></li>
         <li><a href="#contact"><i class="bi bi-envelope navicon"></i>Contact</a></li>
       </ul>
     </nav>
@@ -32,62 +32,84 @@
 
   <!-- Main Content -->
   <main class="main">
-
     <!-- Hero Section -->
-    <section id="hero" class="hero">
-      <h1>Hello, I'm Jacob Davis</h1>
-      <h2 id="typed-text"></h2>
-      <p>I build <strong>Websites</strong>, grow businesses with <strong>SEO</strong>, and manage <strong>Email Marketing</strong>.</p>
-      <button class="btn" id="auditButton">Schedule Free Audit</button>
+    <section id="home" class="hero">
+      <div class="section-title">
+        <h2>We Build <span id="typed-text"></span></h2>
+      </div>
+      <p style="text-align:center;">Custom websites, SEO optimization, and email marketing solutions that grow your business.</p>
+      <div style="text-align:center; margin-top:20px;">
+        <button id="auditButton">Get a Free Audit</button>
+      </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="services">
       <div class="section-title">
         <h2>Our Services</h2>
       </div>
-      <div class="card-container">
-        <div class="card">
+      <div class="why-us-container">
+        <div class="why-us-item">
           <h4>Web Development</h4>
-          <p>Custom websites designed to convert visitors into customers. Mobile-friendly, fast, and modern.</p>
+          <p>Custom websites designed to convert visitors into customers.</p>
         </div>
-        <div class="card">
+        <div class="why-us-item">
           <h4>SEO Optimization</h4>
-          <p>Boost your website's visibility on search engines and attract organic traffic to grow your business.</p>
+          <p>Improve your search rankings and get more organic traffic.</p>
         </div>
-        <div class="card">
+        <div class="why-us-item">
           <h4>Email Marketing</h4>
-          <p>Create high-performing campaigns to engage your audience and increase sales with strategic email marketing.</p>
+          <p>Automated campaigns that engage your audience and drive sales.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+      <div class="section-title">
+        <h2>Portfolio</h2>
+      </div>
+      <div class="why-us-container">
+        <div class="why-us-item">
+          <h4>Project 1</h4>
+          <p>Website redesign for a tech startup.</p>
+        </div>
+        <div class="why-us-item">
+          <h4>Project 2</h4>
+          <p>SEO & marketing for a local business.</p>
+        </div>
+        <div class="why-us-item">
+          <h4>Project 3</h4>
+          <p>Custom eCommerce platform for retail.</p>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact">
       <div class="section-title">
-        <h2>Contact Me</h2>
+        <h2>Contact Us</h2>
       </div>
-      <form id="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
+      <form id="contact-form" style="max-width:500px; margin:auto;">
+        <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:10px; margin-bottom:10px;">
+        <input type="email" name="email" placeholder="Your Email" required style="width:100%; padding:10px; margin-bottom:10px;">
+        <textarea name="message" placeholder="Your Message" required style="width:100%; padding:10px; margin-bottom:10px;"></textarea>
+        <button type="submit" style="padding:10px 20px;">Send Message</button>
       </form>
     </section>
-
   </main>
 
   <!-- Audit Modal -->
-  <div id="auditModal" class="modal" style="display:none;">
-    <div class="modal-content">
-      <span id="closeModal" class="close">&times;</span>
-      <p>Schedule your free audit using the form.</p>
+  <div id="auditModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:10000;">
+    <div style="background:white; padding:30px; border-radius:10px; max-width:400px; margin:auto; position:relative;">
+      <span id="closeModal" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px;">&times;</span>
+      <h3>Schedule Your Free Audit</h3>
       <form id="auditForm">
-        <button type="submit">Book Now</button>
+        <button type="submit" style="padding:10px 20px; margin-top:20px;">Book Now</button>
       </form>
     </div>
   </div>
 
-  <script src="main.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
