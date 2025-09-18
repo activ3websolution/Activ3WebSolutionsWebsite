@@ -1,201 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Services - Activ3 Web Solutions</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/css/style.css" rel="stylesheet" /> <!-- ✅ use same stylesheet as index -->
-  <style>
-    /* Hero Section */
-    .hero {
-      position: relative;
-      background: url("assets/img/hero-bg.jpg") center/cover no-repeat; /* ✅ same as index */
-      color: white;
-      text-align: center;
-      padding: 120px 20px;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.55);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-    .btn-custom {
-      background: #007bff;
-      color: #fff;
-      border-radius: 8px;
-      padding: 12px 25px;
-      margin: 10px;
-      font-weight: 500;
-      transition: background 0.3s;
-    }
-    .btn-custom:hover {
-      background: #0056b3;
-      color: #fff;
-    }
-    /* Service Cards */
-    .service-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      padding: 25px;
-      height: 100%;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-    }
-    .service-card h3 {
-      font-size: 22px;
-      margin-bottom: 15px;
-    }
-    .collapse-content {
-      margin-top: 15px;
-      font-size: 15px;
-      color: #444;
-    }
-    /* À La Carte */
-    .alacarte-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      padding: 30px;
-      margin-top: 40px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activ3 Web Solutions | Services</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="service-details-page">
 
-  <!-- ✅ Sidebar (copied from index.html) -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-  <header id="header">
-    <div class="d-flex flex-column">
+  <!-- Sidebar / Header -->
+  <header class="header">
+    <div class="logo">
+      <h1>Activ3 Web Solutions</h1>
+    </div>
 
-      <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Activ3 Web Solutions</a></h1>
-      </div>
+    <div class="profile-img">
+      <img src="images/profile.jpg" alt="Profile">
+    </div>
 
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="index.html" class="nav-link"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="services.html" class="nav-link active"><i class="bx bx-server"></i> <span>Services</span></a></li>
-          <li><a href="portfolio.html" class="nav-link"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-          <li><a href="contact.html" class="nav-link"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
+    <nav class="navmenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
     </div>
   </header>
 
-  <!-- Main Content Wrapper -->
-  <main id="main" class="ms-md-5" style="margin-left:260px;">
-
+  <main class="main">
     <!-- Hero Section -->
-    <section class="hero d-flex align-items-center">
-      <div class="hero-content container">
-        <h1>Our Service Packages</h1>
-        <p>Helping Lubbock businesses grow online with websites, SEO, and marketing.</p>
-        <a href="#" class="btn btn-custom">Free Demo</a>
-        <a href="#" class="btn btn-custom">Free Audit</a>
+    <section class="hero">
+      <div class="container">
+        <h2>Our Services</h2>
+        <p>We build lead-generating websites and marketing solutions for Lubbock businesses.</p>
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="container py-5">
-      <div class="row g-4">
-        
-        <!-- Launch Pad -->
-        <div class="col-lg-4 col-md-6">
-          <div class="service-card">
-            <h3>The Launch Pad</h3>
-            <p>Perfect for businesses needing a professional online presence.</p>
-            <button class="btn btn-custom" data-bs-toggle="collapse" data-bs-target="#launchpad">View Details</button>
-            <div id="launchpad" class="collapse collapse-content">
-              <ul>
-                <li>5-Page Professional Website</li>
-                <li>Mobile Responsive</li>
-                <li>Basic SEO Setup</li>
-                <li>Contact Form + Google Maps</li>
-                <li>1 Round of Revisions</li>
-                <li>1 Hour Training + 1 Month Support</li>
-              </ul>
-              <p><strong>Investment:</strong> $1,500 one-time<br>
-              Optional Care Plan: $99/month</p>
-            </div>
+    <!-- Service Cards Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Service Packages & Pricing</h2>
+          <p>Choose the right package to grow your business online.</p>
+        </div>
+
+        <div class="service-cards-container">
+          <!-- Package 1 -->
+          <div class="service-box">
+            <h4>The Launch Pad</h4>
+            <p>Perfect for businesses starting online or replacing an outdated site.</p>
+            <ul>
+              <li>5-Page Professional Website</li>
+              <li>Mobile-Responsive Design</li>
+              <li>Contact Form & Google Maps</li>
+              <li>Basic On-Page SEO Setup</li>
+              <li>1 Round of Revisions</li>
+              <li>1 Hour of Training</li>
+              <li>1 Month of Basic Support</li>
+            </ul>
+            <p><strong>Build Fee:</strong> $1,500</p>
+            <p><strong>Care Plan:</strong> $99/month (optional)</p>
+          </div>
+
+          <!-- Package 2 -->
+          <div class="service-box highlighted">
+            <h4>The Rank & Grow</h4>
+            <p>For businesses that need better visibility online and more leads.</p>
+            <ul>
+              <li>Everything in The Launch Pad</li>
+              <li>Advanced On-Page SEO</li>
+              <li>Technical SEO Audit & Fixes</li>
+              <li>Google Business Profile Optimization</li>
+              <li>Local SEO Directory Setup</li>
+              <li>Monthly SEO Performance Report</li>
+              <li>3 Rounds of Revisions</li>
+              <li>2 Hours of Training</li>
+            </ul>
+            <p><strong>Build Fee:</strong> $2,800</p>
+            <p><strong>SEO Care Plan:</strong> $299/month (required)</p>
+          </div>
+
+          <!-- Package 3 -->
+          <div class="service-box">
+            <h4>The All-Star</h4>
+            <p>Full digital strategy: Website + SEO + Marketing for maximum impact.</p>
+            <ul>
+              <li>Everything in The Rank & Grow</li>
+              <li>Up to 10 Website Pages</li>
+              <li>Blog Setup + 2 Starter Articles</li>
+              <li>Email Marketing System Setup</li>
+              <li>Lead Magnet Creation</li>
+              <li>Monthly Content Strategy Session</li>
+              <li>5 Rounds of Revisions</li>
+              <li>3 Hours of Training</li>
+            </ul>
+            <p><strong>Build Fee:</strong> $4,500</p>
+            <p><strong>Growth Plan:</strong> $499/month (required)</p>
           </div>
         </div>
 
-        <!-- Rank & Grow -->
-        <div class="col-lg-4 col-md-6">
-          <div class="service-card">
-            <h3>The Rank & Grow</h3>
-            <p>For businesses ready to scale with SEO and traffic growth.</p>
-            <button class="btn btn-custom" data-bs-toggle="collapse" data-bs-target="#rankgrow">View Details</button>
-            <div id="rankgrow" class="collapse collapse-content">
-              <ul>
-                <li>Everything in Launch Pad</li>
-                <li>Advanced On-Page SEO</li>
-                <li>Technical SEO Fixes</li>
-                <li>Google Business Profile Optimization</li>
-                <li>Local SEO Directory Setup</li>
-                <li>Monthly SEO Report</li>
-              </ul>
-              <p><strong>Investment:</strong> $2,800 one-time<br>
-              SEO Care Plan: $299/month</p>
-            </div>
-          </div>
+        <!-- À La Carte Services -->
+        <div class="section-title" style="margin-top: 60px;">
+          <h2>À La Carte & Add-On Services</h2>
         </div>
 
-        <!-- All-Star -->
-        <div class="col-lg-4 col-md-6">
-          <div class="service-card">
-            <h3>The All-Star</h3>
-            <p>Our premium package: website + SEO + marketing domination.</p>
-            <button class="btn btn-custom" data-bs-toggle="collapse" data-bs-target="#allstar">View Details</button>
-            <div id="allstar" class="collapse collapse-content">
-              <ul>
-                <li>Everything in Rank & Grow</li>
-                <li>Up to 10 Website Pages</li>
-                <li>Blog Setup + 2 Articles</li>
-                <li>Email Marketing System</li>
-                <li>Lead Magnet Creation</li>
-                <li>Monthly Content Strategy Session</li>
-              </ul>
-              <p><strong>Investment:</strong> $4,500 one-time<br>
-              Growth Plan: $499/month</p>
-            </div>
+        <div class="service-cards-container">
+          <div class="service-box">
+            <h4>Website Care & Hosting Only</h4>
+            <p>$49/month (hosting, security, backups, 30-min support)</p>
           </div>
-        </div>
-      </div>
-
-      <!-- À La Carte -->
-      <div class="alacarte-card">
-        <h3>À La Carte & Add-Ons</h3>
-        <p>Enhance your package with flexible add-ons tailored to your business needs.</p>
-        <button class="btn btn-custom" data-bs-toggle="collapse" data-bs-target="#alacarte">Explore Options</button>
-        <div id="alacarte" class="collapse collapse-content">
-          <ul>
-            <li>Website Care & Hosting Only: $49/month</li>
-            <li>Google Business Profile Management: $150/month</li>
-            <li>Additional Website Pages: $150/page</li>
-            <li>Blog Article Writing: $150/article</li>
-          </ul>
+          <div class="service-box">
+            <h4>Google Business Profile Management</h4>
+            <p>$150/month (posts, review monitoring, Q&A)</p>
+          </div>
+          <div class="service-box">
+            <h4>Additional Website Pages</h4>
+            <p>$150/page</p>
+          </div>
+          <div class="service-box">
+            <h4>Blog Article Writing</h4>
+            <p>$150/article (500-700 words, SEO-optimized)</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-4 mt-5">
-    <p class="mb-0">&copy; 2025 Activ3 Web Solutions. All rights reserved.</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
