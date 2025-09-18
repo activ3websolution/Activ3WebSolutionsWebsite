@@ -227,43 +227,60 @@ a:hover {
   bottom: 0;
 }
 
-/* Service Page Cards */
-.service-details-page .services-container {
+/*--------------------------------------------------------------
+# Service Page Cards
+--------------------------------------------------------------*/
+.service-details-page .why-us-container {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
 }
 
-.service-details-page .service-box {
-  flex: 0 0 30%;
+.service-details-page .why-us-item {
+  flex: 0 0 calc(33.333% - 20px);
   background: white;
-  border-radius: 10px;
   padding: 30px;
+  border-radius: 10px;
   box-shadow: 0 5px 25px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-details-page .service-box:hover {
+.service-details-page .why-us-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-.service-details-page .service-box h4 {
+.service-details-page .why-us-item h4 {
   color: var(--accent-color);
   margin-top: 0;
   margin-bottom: 15px;
   font-size: 22px;
 }
 
-.service-details-page .service-box p,
-.service-details-page .service-box ul li {
+.service-details-page .why-us-item p {
   color: #555;
   line-height: 1.6;
+  margin-bottom: 10px;
 }
 
+.service-details-page .why-us-item ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.service-details-page .why-us-item ul li {
+  margin-bottom: 8px;
+}
+
+.service-details-page .why-us-item.highlighted {
+  border: 2px solid var(--accent-color);
+}
+
+/* Responsive adjustments */
 @media (max-width: 992px) {
-  .service-details-page .service-box {
+  .service-details-page .why-us-item {
     flex: 0 0 100%;
   }
 }
+
