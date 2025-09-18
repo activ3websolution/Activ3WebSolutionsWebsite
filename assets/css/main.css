@@ -2,25 +2,17 @@
   --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
   --heading-font: "Raleway", sans-serif;
   --nav-font: "Poppins", sans-serif;
-
   --background-color: #ffffff;
   --default-color: #272829;
   --heading-color: #050d18;
   --accent-color: #149ddd;
   --surface-color: #ffffff;
   --contrast-color: #ffffff;
-
   --nav-color: #a8a9b4;
   --nav-hover-color: #ffffff;
   --nav-mobile-background-color: #040b14;
-  --nav-dropdown-background-color: #040b14;
-  --nav-dropdown-color: #a8a9b4;
-  --nav-dropdown-hover-color: #ffffff;
 }
 
-/*------------------------------
-General Body & Typography
--------------------------------*/
 body {
   margin: 0;
   padding: 0;
@@ -28,11 +20,6 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   overflow-x: hidden;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--heading-font);
-  color: var(--heading-color);
 }
 
 a {
@@ -45,9 +32,7 @@ a:hover {
   color: rgba(20,157,221,0.8);
 }
 
-/*------------------------------
-Sidebar
--------------------------------*/
+/* Sidebar */
 .header {
   position: fixed;
   top: 0;
@@ -68,8 +53,9 @@ Sidebar
 }
 
 .header .logo h1 {
-  font-size: 24px;
+  font-size: 28px;
   margin: 0;
+  color: var(--heading-color);
   font-weight: 700;
 }
 
@@ -144,7 +130,7 @@ Sidebar
   color: var(--accent-color);
 }
 
-/* Main Content */
+/* Main content */
 .main {
   margin-left: 300px;
   transition: all 0.3s ease;
@@ -154,237 +140,220 @@ Sidebar
   padding: 50px;
 }
 
-/*--------------------------------------------------------------
-# Hero Section
---------------------------------------------------------------*/
-.hero {
-  text-align: center;
-  padding: 120px 20px 60px 20px;
-  background: linear-gradient(135deg, #1a2a6c, #3498db);
-  color: white;
-}
-
-.hero h1 {
-  font-family: var(--heading-font);
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-.hero h2 {
-  font-family: var(--heading-font);
-  font-size: 32px;
-  height: 40px;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
-.hero .btn {
-  background-color: var(--accent-color);
-  color: white;
-  padding: 12px 28px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.hero .btn:hover {
-  background-color: #0d8ac5;
-}
-
-/*--------------------------------------------------------------
-# Services Cards
---------------------------------------------------------------*/
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  padding: 0 20px 60px 20px;
-}
-
-.card {
-  background: var(--surface-color);
-  padding: 30px 20px;
-  border-radius: 12px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-  flex: 0 0 300px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-.card h4 {
-  color: var(--accent-color);
-  margin-bottom: 15px;
-  font-size: 22px;
-}
-
-.card p {
-  color: var(--default-color);
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/*--------------------------------------------------------------
-# Contact Form
---------------------------------------------------------------*/
-.contact form {
-  max-width: 600px;
-  margin: 0 auto 80px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.contact input, 
-.contact textarea {
-  padding: 12px 15px;
-  border: 1px solid rgba(0,0,0,0.2);
-  border-radius: 8px;
-  font-size: 16px;
-  font-family: var(--default-font);
-  transition: border 0.3s;
-}
-
-.contact input:focus,
-.contact textarea:focus {
-  outline: none;
-  border-color: var(--accent-color);
-}
-
-.contact button {
-  background-color: var(--accent-color);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.contact button:hover {
-  background-color: #0d8ac5;
-}
-
-/*--------------------------------------------------------------
-# Modal
---------------------------------------------------------------*/
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+/* Mobile toggle */
+.mobile-nav-toggle {
   display: none;
-  background: rgba(0,0,0,0.6);
-  z-index: 10001;
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 0.3s ease;
 }
 
-.modal-content {
-  background: var(--surface-color);
-  padding: 30px 20px;
-  border-radius: 12px;
-  max-width: 400px;
-  width: 90%;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.2);
-  animation: slideIn 0.3s ease;
-}
-
-.modal .close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  font-size: 24px;
-  color: var(--default-color);
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.modal .close:hover {
-  color: var(--accent-color);
-}
-
-/* Modal Animations */
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-@keyframes slideIn {
-  from {transform: translateY(-30px); opacity: 0;}
-  to {transform: translateY(0); opacity: 1;}
-}
-
-/*--------------------------------------------------------------
-# Responsive Adjustments
---------------------------------------------------------------*/
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 36px;
-  }
-  .hero h2 {
-    font-size: 24px;
-    height: 30px;
-  }
-  .card-container {
-    gap: 20px;
-  }
-}
-
-/* Mobile */
 @media (max-width: 1199px) {
   .header {
     left: -300px;
     width: 280px;
     padding: 20px;
     background: var(--nav-mobile-background-color);
-    z-index: 9999;
   }
-
-  .header.header-show {
-    left: 0;
-    box-shadow: 5px 0 25px rgba(0,0,0,0.2);
-  }
-
-  .mobile-nav-toggle {
-    display: flex;
+  .header.header-show { left: 0; }
+  .mobile-nav-toggle { display: flex; }
+  .main { margin-left: 0 !important; }
+  .mobile-nav-backdrop {
+    display: none;
     position: fixed;
-    top: 15px;
-    right: 15px;
-    width: 44px;
-    height: 44px;
-    background: var(--accent-color);
-    color: white;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    cursor: pointer;
-    font-size: 24px;
-    border: none;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 9998;
+    opacity: 0;
+    transition: opacity 0.3s;
   }
+  .mobile-nav-active .mobile-nav-backdrop { display: block; opacity: 1; }
+}
 
-  .main {
-    margin-left: 0 !important;
-    padding: 25px;
-  }
+/* Section Titles */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-  .card {
-    flex: 0 0 100%;
-  }
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2:after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero-section h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-family: var(--heading-font);
+}
+
+.hero-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero-section #typed-text {
+  font-weight: 700;
+  color: var(--accent-color);
+  font-size: 28px;
+}
+
+.btn-accent {
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.btn-accent:hover {
+  background-color: #0d8ac5;
+}
+
+/* Services Cards */
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.service-card {
+  background: var(--surface-color);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+  flex: 0 0 calc(33% - 20px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.service-card h4 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Portfolio Cards */
+.portfolio-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.portfolio-card {
+  background: var(--surface-color);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+  flex: 0 0 calc(33% - 20px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.portfolio-card h4 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.portfolio-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.contact-form button {
+  align-self: flex-start;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: var(--surface-color);
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.modal .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal .close:hover {
+  color: var(--accent-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .service-card, .portfolio-card { flex: 0 0 100%; }
 }
