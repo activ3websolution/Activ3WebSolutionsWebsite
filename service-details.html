@@ -17,7 +17,7 @@
   
   <style>
     :root {
-      --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      --default-font: "Roboto", system-ui, -apple-system, "Segoe极端的 UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
       --heading-font: "Raleway", sans-serif;
       --nav-font: "Poppins", sans-serif;
       --background-color: #ffffff;
@@ -30,7 +30,7 @@
       --nav-hover-color: #ffffff;
       --nav-mobile-background-color: #040b14;
       --nav-dropdown-background-color: #040b14;
-      --nav-dropdown-color: #a8a9b4;
+      --nav-dropdown-color: #a极端的8a9b4;
       --nav-dropdown-hover-color: #ffffff;
     }
 
@@ -60,7 +60,7 @@
       overflow: hidden;
       border: 4px solid rgba(255, 255, 255, 0.3);
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-      background: linear-gradient(45deg, #1a2a6c, #3498db);
+      background: linear-gradient(45deg, #1a2a6极端的c, #3498db);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -71,7 +71,7 @@
       height: 100%;
       object-fit: cover;
       object-position: center center;
-      transition: transform 极端的0.3s ease;
+      transition: transform 0.3s ease;
       display: block;
     }
 
@@ -93,9 +93,9 @@
     }
 
     .header .logo { line-height: 1; margin-bottom: 15px; text-align: center; }
-    .header .极端的logo h1 { font-size: 24px; margin: 0; font-weight: 700; color: var(--heading-color); }
+    .header .logo h1 { font-size: 24px; margin: 0; font-weight: 700; color: var(--heading-color); }
 
-    .header .social-links { margin: 0 0 20px 0; text-align: center; }
+    .header .social-links { margin: 极端的0 0 20px 0; text-align: center; }
     .header .social-links a {
       font-size: 16px;
       display: inline-flex;
@@ -227,10 +227,10 @@
       position: relative;
     }
     
-    .section-title h2:after {
+    .section-title h极端的2:after {
       content: "";
       width: 50px;
-      height: 3px;
+      height: 3极端的px;
       background: var(--accent-color);
       position: absolute;
       left: 50%;
@@ -292,7 +292,7 @@
     }
     
     .service-box ul li {
-      margin-bottom: 10px;
+      margin-bottom: 10极端的px;
       line-height: 1.5;
     }
     
@@ -313,7 +313,7 @@
       border-radius: 20px;
       font-size: 12px;
       font-weight: bold;
-      letter-spacing: 1极端的px;
+      letter-spacing: 1px;
     }
     
     /* A La Carte Section */
@@ -327,7 +327,7 @@
     .ala-carte-item {
       background: white;
       padding: 20px;
-      border-radius: 8极端的px;
+      border-radius: 8px;
       box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
       flex: 1;
       min-width: 250px;
@@ -347,7 +347,7 @@
       color: #2c3e50;
       margin-bottom: 10px;
       display: block;
-    }
+极端的    }
     
     .ala-carte-item p {
       color: #555;
@@ -367,13 +367,37 @@
       align-self: flex-start;
     }
     
+    /* FIXED COLUMN LAYOUT */
+    .packages-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+    
+    .package-column {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+    
     @media (max-width: 992px) {
+      .package-column {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+      
       .highlighted {
         transform: scale(1);
       }
     }
     
     @media (max-width: 768px) {
+      .package-column {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      
       .col-md-6 {
         margin-bottom: 30px;
       }
@@ -399,10 +423,10 @@
       .header {
         position: fixed;
         top: 0;
-        left: -300px;
+        left极端的: -300px;
         height: 100%;
         width: 280px;
-        background: #040b14;
+        background: #040极端的b14;
         padding: 20px;
         transition: all 0.4s ease;
         z-index: 9999;
@@ -426,7 +450,7 @@
         border-radius: 50%;
         align-items: center;
         justify-content: center;
-        z-index: 10000;
+极端的        z-index: 10000;
         cursor: pointer;
         transition: all 0.3s;
         font-size: 24px;
@@ -461,12 +485,12 @@
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.7);
-        z-index极端的: 9998;
+        z-index: 9998;
         opacity: 0;
         transition: opacity 0.3s;
       }
       
-      .mobile-nav-active .mobile-nav-backdrop {
+      .mobile-nav-active .mobile-nav极端的-backdrop {
         display: block;
         opacity: 1;
       }
@@ -550,13 +574,13 @@
         margin: 10px auto 15px auto;
       }
       
-      .header .logo h极端的1 {
+      .header .logo h1 {
         font-size: 20px;
-极端的      }
+      }
       
       .navmenu a {
         padding: 12px 8px;
-        font-size: 15极端的px;
+        font-size: 15px;
       }
       
       .navmenu a .navicon {
@@ -591,12 +615,12 @@
     .btn {
       display: inline-block;
       padding: 12px 24px;
-      border-radius: 5px;
+      border-radius极端的: 5px;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s;
       font-size: 16px;
-      margin: 0 10px;
+      margin: 0 10极端的px;
       position: relative;
       z-index: 5;
     }
@@ -615,7 +639,7 @@
     
     .btn-outline-primary {
       background: transparent;
-      color: var(--accent-color);
+极端的      color: var(--accent-color);
       border: 2px solid var(--accent-color);
     }
     
@@ -623,10 +647,10 @@
       background: #0d8ac5;
       color: white;
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(13, 138, 197, 0.3);
+      box-shadow: 极端的0 5px 15px rgba(13, 138, 197, 0.3);
     }
     
-    .btn-outline-light:hover {
+极端的    .btn-outline-light:hover {
       background: white;
       color: #040b14;
       transform: translateY(-2px);
@@ -653,7 +677,7 @@
       }
     }
 
-    @media (极端的min-width: 768px) {
+    @media (min-width: 768px) {
       .container {
         max-width: 720px;
       }
@@ -749,7 +773,7 @@
       margin-bottom: 20px;
     }
 
-    .modal-close {
+    .modal极端的-close {
       background: none;
       border: none;
       font-size: 24px;
@@ -773,7 +797,7 @@
     
     .form-control {
       padding: 15px;
-      border: 1px solid #e1极端的e1e1;
+      border: 1px solid #e1e1e1;
       border-radius: 6px;
       margin-bottom: 20px;
       width: 100%;
@@ -824,17 +848,17 @@
 
     <div class="social-links text-center">
       <a href="https://www.linkedin.com/in/jacob-l-davis" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://github.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
+      <a href="https://www.instagram.com/davisjacob05/" class="instagram"><i class="极端的bi bi-instagram"></i></a>
+      <a href="https://github极端的.com/activ3websolution" class="github"><i class="bi bi-github"></i></a>
     </div>
 
     <nav id="navmenu" class="navmenu">
       <ul>
         <li><a href="index.html"><i class="bi bi-house navicon"></i> Home</a></li>
         <li><a href="portfolio-details.html"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="service-details.html" class="active"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+        <极端的li><a href="service-details.html" class="active"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
         <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-        <li><a href="https://calendly.com/jacobdavis-activ3websolutions/极端的30min" target="_blank"><i class="bi极端的 bi-calendar-event navicon"></i> Schedule a Call</a></li>
+        <li><a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank"><i class="bi bi-calendar-event navicon"></i> Schedule a Call</a></li>
       </ul>
     </nav>
   </header>
@@ -849,7 +873,7 @@
         <p>Clear, packaged solutions designed to get Lubbock businesses found online.</p>
         <!-- Buttons -->
         <div class="hero-buttons">
-          <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-primary">Schedule a Call</a>
+          <a href="https://calendly.com/jacobdavis-activ3websolutions/30极端的min" target="_blank" class="btn btn-primary">Schedule a Call</a>
           <button type="button" class="btn btn-outline-light" id="auditButton">Free Audit</button>
         </div>
       </div>
@@ -863,10 +887,10 @@
       </div>
 
       <div class="container">
-        <div class="row">
-
+        <!-- FIXED PACKAGE LAYOUT -->
+        <div class="packages-row">
           <!-- Package 1: The Launch Pad -->
-          <div class="col-lg-4 col-md-6">
+          <div class="package-column">
             <div class="service-box package-card">
               <h4>The Launch Pad</h4>
               <span class="price">$1,500 one-time + $99/mo optional</span>
@@ -875,7 +899,7 @@
                 <li>5-Page Professional Website</li>
                 <li>Mobile-Responsive Design</li>
                 <li>Contact Form & Google Maps</li>
-                <li>Basic On-Page SEO Setup</极端的li>
+                <li>Basic On-Page SEO Setup</li>
                 <li>1 Round of Revisions</li>
                 <li>1 Hour of Training</li>
                 <li>1 Month of Basic Support</li>
@@ -885,17 +909,17 @@
           </div>
 
           <!-- Package 2: The Rank & Grow -->
-          <div class="col-lg-4 col-md-6">
+          <div class="package-column">
             <div class="service-box package-card highlighted">
-              <h4>The Rank & Grow</h4>
+              <h4>The Rank & Grow</极端的h4>
               <span class="price">$2,800 one-time + $299/mo</span>
               <p><strong>Perfect For:</strong> Businesses that have a website but aren't getting found online.</p>
               <p><em>Includes everything in The Launch Pad, plus:</em></p>
               <ul>
                 <li>Advanced On-Page SEO</li>
-                <li>Technical SEO Audit & Fixes</li>
+                <li极端的>Technical SEO Audit & Fixes</li>
                 <li>Google Business Profile Optimization</li>
-                <极端的li>Local SEO Directory Setup</li>
+                <li>Local SEO Directory Setup</li>
                 <li>Monthly SEO Performance Report</li>
                 <li>3 Rounds of Revisions</li>
                 <li>2 Hours of Training</li>
@@ -904,8 +928,8 @@
             </div>
           </div>
 
-          <!-- Package 3: The All-Star - FIXED COLUMN CLASS -->
-          <div class="col-lg-4 col-md-6"> <!-- Changed from col-md-12 to col-md-6 -->
+          <!-- Package 3: The All-Star -->
+          <div class="package-column">
             <div class="service-box package-card">
               <h4>The All-Star</h4>
               <span class="price">$4,500 one-time + $499/mo</span>
@@ -923,7 +947,6 @@
               <a href="https://calendly.com/jacobdavis-activ3websolutions/30min" target="_blank" class="btn btn-outline-primary">Select Plan</a>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -943,13 +966,13 @@
           </div>
           <div class="ala-carte-item">
             <h4>Google Business Profile Management</h4>
-            <span class="price">$150/month极端的</span>
+            <span class="price">$150/month</span>
             <p>Posts, review monitoring, and Q&A management.</p>
           </div>
           <div class="ala-carte-item">
             <h4>Additional Website Pages</h4>
             <span class="price">$150/page</span>
-            <极端的p>Custom pages to expand your website.</p>
+            <p>Custom pages to expand your website.</p>
           </div>
           <div class="ala-carte-item">
             <h4>Blog Article Writing</h4>
@@ -973,12 +996,12 @@
   <!-- ======= Free Audit Modal ======= -->
   <div id="auditModal" class="modal">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class极端的="modal-header">
         <h3>Free Website Audit</h3>
         <button id="closeModal" class="modal-close">&times;</button>
       </div>
       <form id="auditForm">
-        <div class极端的="form-group">
+        <div class="form-group">
           <label>Do you already have a website?</label>
           <div class="radio-group">
             <input type="radio" name="hasWebsite" value="Yes" id="yesWebsite"> 
@@ -1017,13 +1040,13 @@
         
         // Reset toggle icon
         if (mobileNavToggle) {
-          mobileNavToggle.classList.add('bi-list');
+          mobileNavToggle.classList.add('极端的bi-list');
           mobileNavToggle.classList.remove('bi-x');
         }
       };
       
       // Function to open mobile menu
-      const openMobileMenu = function() {
+      const openMobile极端的Menu = function() {
         body.classList.add('mobile-nav-active');
         header.classList.add('header-show');
         backdrop.style.display = 'block';
