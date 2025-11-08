@@ -268,19 +268,19 @@ body {
 
 /* Typing Animation */
 #typed-text {
-    border-right: 2px solid var(--primary-color);
-    animation: blink 1s infinite;
+    /* Remove duplicate cursor line and harsh blink for smoother feel */
+    transition: opacity 0.25s ease;
 }
 
 .typing-cursor {
     display: inline-block;
-    animation: blink 1s infinite;
+    animation: blink 1.2s ease-in-out infinite;
     color: var(--primary-color);
 }
 
 @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+    0%, 45% { opacity: 1; }
+    55%, 100% { opacity: 0; }
 }
 
 /* Buttons */
@@ -1136,4 +1136,29 @@ section {
 
 .btn-text.hidden {
     opacity: 0;
+}
+/* Promo Banner */
+.promo-banner {
+  background: #f1f5ff;
+  border: 1px solid #dbe4ff;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px;
+  text-align: center;
+}
+.promo-banner .promo-eyebrow {
+  font-size: 0.9rem;
+  color: #0d6efd;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.promo-banner h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.6rem;
+}
+.promo-banner .promo-sub {
+  margin: 0;
+  color: #495057;
 }

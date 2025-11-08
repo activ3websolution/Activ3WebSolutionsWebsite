@@ -72,27 +72,33 @@ document.addEventListener('DOMContentLoaded', function() {
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        const typeSpeed = 150;
-        const deleteSpeed = 100;
-        const pauseTime = 2000;
+
+        // Smoother, more natural cadence with slight random variance
+        const typeSpeedBase = 90;      // ms per char when typing
+        const deleteSpeedBase = 70;    // ms per char when deleting
+        const variance = 60;           // add up to ~60ms variance for natural feel
+        const pauseTime = 1400;        // dwell on full word before deleting
 
         function typeWriter() {
             const currentWord = words[wordIndex];
-            
+
             if (isDeleting) {
-                typedTextElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
+                typedTextElement.textContent = currentWord.substring(0, Math.max(0, charIndex - 1));
+                charIndex = Math.max(0, charIndex - 1);
             } else {
-                typedTextElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
+                typedTextElement.textContent = currentWord.substring(0, Math.min(currentWord.length, charIndex + 1));
+                charIndex = Math.min(currentWord.length, charIndex + 1);
             }
 
-            let nextTimeout = isDeleting ? deleteSpeed : typeSpeed;
+            // Calculate next frame delay with variance for smoothness
+            let nextTimeout = (isDeleting ? deleteSpeedBase : typeSpeedBase) + Math.floor(Math.random() * variance);
 
             if (!isDeleting && charIndex === currentWord.length) {
+                // Pause briefly on the full word
                 nextTimeout = pauseTime;
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
+                // Move to next word and give a slight pause before typing
                 isDeleting = false;
                 wordIndex = (wordIndex + 1) % words.length;
                 nextTimeout = 500;
