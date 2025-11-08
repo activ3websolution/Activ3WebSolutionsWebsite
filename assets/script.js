@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const typedTextElement = document.getElementById('typed-text');
         if (!typedTextElement) return;
 
-        const words = ['Websites', 'SEO', 'Email Marketing'];
+        const words = ['Websites', 'SEO', 'Hosting & Maintenance'];
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
