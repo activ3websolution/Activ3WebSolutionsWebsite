@@ -64,10 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Typing Animation for Hero Section
-document.addEventListener('DOMContentLoaded', function() {
-    const typedTextElement = document.getElementById('typed-text');
-    
-    if (typedTextElement) {
+(function initTyping() {
+    function startTyping() {
+        const typedTextElement = document.getElementById('typed-text');
+        if (!typedTextElement) return;
+
         const words = ['Websites', 'SEO', 'Email Marketing'];
         let wordIndex = 0;
         let charIndex = 0;
@@ -110,7 +111,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Start the animation
         typeWriter();
     }
-});
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', startTyping);
+    } else {
+        startTyping();
+    }
+})();
 
 // Smooth scrolling for anchor links
 document.addEventListener('DOMContentLoaded', function() {
